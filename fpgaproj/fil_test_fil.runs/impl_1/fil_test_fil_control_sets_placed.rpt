@@ -1,0 +1,125 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Tue Aug 28 20:33:22 2018
+| Host         : DESKTOP-BC98OQD running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file fil_test_fil_control_sets_placed.rpt
+| Design       : fil_test_fil
+| Device       : xc7z010
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    54 |
+| Unused register locations in slices containing registers |   159 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              39 |           15 |
+| No           | No                    | Yes                    |             294 |           73 |
+| No           | Yes                   | No                     |             207 |           67 |
+| Yes          | No                    | No                     |               8 |            3 |
+| Yes          | No                    | Yes                    |             164 |           38 |
+| Yes          | Yes                   | No                     |              97 |           30 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+|        Clock Signal        |                                                                 Enable Signal                                                                 |                                                                    Set/Reset Signal                                                                    | Slice Load Count | Bel Load Count |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rst_rd_reg2                                                     |                1 |              1 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rst_rd_reg2                                                     |                1 |              1 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rst_rd_reg2                                                    |                1 |              1 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rst_d2                                                          |                1 |              2 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[2]                                                   |                1 |              2 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[2]                                                   |                1 |              2 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rst_d2                                                          |                1 |              2 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].rrst_inst/AS[0]  |                2 |              3 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].rrst_inst/AS[0] |                2 |              3 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].rrst_inst/AS[0]  |                2 |              3 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].wrst_inst/AS[0]  |                1 |              3 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rst_d2                                                         |                1 |              3 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].wrst_inst/AS[0]  |                1 |              3 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].wrst_inst/AS[0] |                1 |              3 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/sm_cnt[1]                                                                                                                                   |                1 |              4 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rst_wr_reg2                                                    |                1 |              4 |
+|  u_clk_wiz_0/inst/clk_out1 | u_mwfil_chiftop/u_mwfil_chifcore/u_dut2bus/rd_addr_reg[3][0]                                                                                  | u_jtag_mac/u_post_chif_fifo/SR[0]                                                                                                                      |                1 |              4 |
+|  u_clk_wiz_0/inst/clk_out1 | u_mwfil_chiftop/u_mwfil_chifcore/u_dut2bus/E[0]                                                                                               | u_jtag_mac/u_post_chif_fifo/SR[0]                                                                                                                      |                2 |              4 |
+|  u_clk_wiz_0/inst/clk_out1 | u_mwfil_chiftop/u_mwfil_chifcore/NormalBlock.u_b2dfifo/rd_addr[3]_i_1__0_n_0                                                                  | u_jtag_mac/u_post_chif_fifo/SR[0]                                                                                                                      |                1 |              4 |
+|  u_clk_wiz_0/inst/clk_out1 | u_mwfil_chiftop/u_mwfil_chifcore/NormalBlock.u_bus2dut/E[0]                                                                                   | u_jtag_mac/u_post_chif_fifo/SR[0]                                                                                                                      |                1 |              4 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rst_wr_reg2                                                     |                2 |              4 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rst_wr_reg2                                                     |                1 |              4 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/ver_output_reg[16]_i_1_n_0                                                                                                                  |                3 |              7 |
+|  u_clk_wiz_0/inst/clk_out1 | u_mwfil_chiftop/u_mwfil_chifcore/u_controller/dataout_reg[0]                                                                                  | u_jtag_mac/u_post_chif_fifo/SR[0]                                                                                                                      |                3 |              8 |
+|  u_clk_wiz_0/inst/clk_out1 | u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/E[0]                       | u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[2]                                                   |                2 |              8 |
+|  u_clk_wiz_0/inst/clk_out1 | u_mwfil_chiftop/u_mwfil_chifcore/u_dut2bus/dout[7]_i_1_n_0                                                                                    | u_jtag_mac/u_post_chif_fifo/SR[0]                                                                                                                      |                3 |              8 |
+|  u_clk_wiz_0/inst/clk_out1 | u_jtag_mac/u_post_chif_fifo/shiftreg_reg[7][0]                                                                                                |                                                                                                                                                        |                3 |              8 |
+|  u_clk_wiz_0/inst/clk_out1 | u_jtag_mac/E[0]                                                                                                                               | u_mwfil_chiftop/u_mwfil_chifcore/NormalBlock.u_bus2dut/counter[9]_i_1_n_0                                                                              |                3 |             10 |
+|  TCK_BUFG                  | u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/E[0]                       | u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg[1]                                                   |                3 |             12 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/sys_rst                                                                                                                                     |                6 |             12 |
+|  TCK_BUFG                  |                                                                                                                                               |                                                                                                                                                        |                9 |             13 |
+|  TCK_BUFG                  | u_jtag_mac/rd_len[12]_i_1_n_0                                                                                                                 | u_jtag_mac/u_post_chif_fifo/SR[0]                                                                                                                      |                6 |             13 |
+|  TCK_BUFG                  | u_jtag_mac/wr_len[12]_i_1_n_0                                                                                                                 | u_jtag_mac/u_post_chif_fifo/SR[0]                                                                                                                      |                2 |             13 |
+|  TCK_BUFG                  | u_jtag_mac/act_rd_len0                                                                                                                        | u_jtag_mac/u_post_chif_fifo/SR[0]                                                                                                                      |                5 |             13 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[2]                                                  |                3 |             14 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/ver_act_rd_cnt[1]                                                                                                                           |                4 |             15 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/act_wr_cnt[15]_i_1_n_0                                                                                                                      |                4 |             15 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/act_rd_cnt[1]                                                                                                                               |                4 |             15 |
+|  u_clk_wiz_0/inst/clk_out1 | u_jtag_mac/simcycle_rd_en_d1                                                                                                                  | u_jtag_mac/u_post_chif_fifo/SR[0]                                                                                                                      |                3 |             16 |
+|  u_clk_wiz_0/inst/clk_out1 | u_mwfil_chiftop/u_mwfil_chifcore/u_dut2bus/E[0]                                                                                               |                                                                                                                                                        |                2 |             16 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[1]                                                   |                3 |             16 |
+|  u_clk_wiz_0/inst/clk_out1 | u_mwfil_chiftop/u_mwfil_chifcore/NormalBlock.u_bus2dut/E[0]                                                                                   |                                                                                                                                                        |                2 |             16 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg[0]                                                   |                3 |             16 |
+|  u_clk_wiz_0/inst/clk_out1 | u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/E[0]                       | u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[2]                                                   |                6 |             24 |
+|  TCK_BUFG                  | u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/E[0]                      | u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[2]                                                  |                6 |             24 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               |                                                                                                                                                        |                6 |             26 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[1]                                                   |                8 |             48 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[1]                                                  |               10 |             48 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg[0]                                                   |                8 |             48 |
+|  TCK_BUFG                  | u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/gic0.gc1.count_d1_reg[11]  | u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg[1]                                                   |               12 |             48 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg[0]                                                  |               11 |             48 |
+|  u_clk_wiz_0/inst/clk_out1 | u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/gic0.gc1.count_d1_reg[11] | u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg[1]                                                  |                9 |             48 |
+|  u_clk_wiz_0/inst/clk_out1 |                                                                                                                                               | u_jtag_mac/u_post_chif_fifo/SR[0]                                                                                                                      |               18 |             49 |
+|  TCK_BUFG                  |                                                                                                                                               | u_jtag_mac/u_post_chif_fifo/SR[0]                                                                                                                      |               33 |            102 |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                     3 |
+| 2      |                     4 |
+| 3      |                     7 |
+| 4      |                     8 |
+| 7      |                     1 |
+| 8      |                     4 |
+| 10     |                     1 |
+| 12     |                     2 |
+| 13     |                     4 |
+| 14     |                     1 |
+| 15     |                     3 |
+| 16+    |                    16 |
++--------+-----------------------+
+
+

@@ -1,0 +1,8 @@
+AWFG_Phase2.c.o: AWFG_Phase2.c AWFG_Phase2.h rtwtypes.h \
+ zero_crossing_types.h
+
+AWFG_Phase2.h:
+
+rtwtypes.h:
+
+zero_crossing_types.h:

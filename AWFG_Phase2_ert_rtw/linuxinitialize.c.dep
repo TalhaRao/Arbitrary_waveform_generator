@@ -1,0 +1,8 @@
+linuxinitialize.c.o: \
+ H:/toolbox/target/codertarget/rtos/src/linuxinitialize.c \
+ H:/toolbox/target/codertarget/rtos/inc/linuxinitialize.h \
+ F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/AWFG_Phase2_ert_rtw/MW_custom_RTOS_header.h
+
+H:/toolbox/target/codertarget/rtos/inc/linuxinitialize.h:
+
+F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/AWFG_Phase2_ert_rtw/MW_custom_RTOS_header.h:

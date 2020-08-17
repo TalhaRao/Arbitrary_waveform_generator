@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Aug 28 20:24:37 2018
+# Process ID: 466536
+# Current directory: F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj
+# Command line: vivado.exe -mode batch -source createproject.tcl
+# Log file: F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/vivado.log
+# Journal file: F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj\vivado.jou
+#-----------------------------------------------------------
+source createproject.tcl

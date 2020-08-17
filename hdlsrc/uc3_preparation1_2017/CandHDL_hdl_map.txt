@@ -1,0 +1,7 @@
+ --> CandHDL_hdl_pkg
+uc3_preparation1_2017/CandHDL_hdl/hdlgenerate/FPGA_simulation/ FPGA_Part/SinglePortRAM_generic --> SinglePortRAM_generic
+uc3_preparation1_2017/CandHDL_hdl/hdlgenerate/FPGA_simulation/ FPGA_Part --> alphaFPGA_Part
+uc3_preparation1_2017/CandHDL_hdl/hdlgenerate/FPGA_simulation/TimeGenerator --> TimeGenerator
+uc3_preparation1_2017/CandHDL_hdl/hdlgenerate/FPGA_simulation --> FPGA_simulation
+uc3_preparation1_2017/CandHDL_hdl/hdlgenerate --> hdlgenerate
+uc3_preparation1_2017/CandHDL_hdl --> CandHDL_hdl

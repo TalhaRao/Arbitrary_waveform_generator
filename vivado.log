@@ -1,0 +1,35 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Aug 28 20:34:50 2018
+# Process ID: 243900
+# Current directory: F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work
+# Command line: vivado.exe -mode batch -source _vivado_program.cmd
+# Log file: F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/vivado.log
+# Journal file: F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work\vivado.jou
+#-----------------------------------------------------------
+source _vivado_program.cmd
+# set chain_position 1
+# open_hw
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.2
+  **** Build date : Jun 15 2017-18:53:26
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 268.352 ; gain = 1.793
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210279A42E2DA
+# current_hw_device [lindex [get_hw_devices] $chain_position]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] $chain_position]
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+# set_property PROGRAM.FILE {F:\Master_Studies\Semester_2\Model_Based_Simulation\Labs\Lab_4\Practical_work\fpgaproj\fil_test_fil.bit} [lindex [get_hw_devices] $chain_position]
+# program_hw_devices [lindex [get_hw_devices] $chain_position]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+# disconnect_hw_server
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 28 20:35:12 2018...

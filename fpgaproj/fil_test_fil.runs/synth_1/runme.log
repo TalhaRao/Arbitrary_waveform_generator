@@ -1,0 +1,763 @@
+
+*** Running vivado
+    with args -log fil_test_fil.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source fil_test_fil.tcl
+
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source fil_test_fil.tcl -notrace
+Command: synth_design -top fil_test_fil -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010-clg400'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010-clg400'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 455384 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 374.672 ; gain = 81.574
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'fil_test_fil' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.vhd:27]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'u_clk_wiz_0' of component 'clk_wiz_0' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.vhd:115]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/realtime/clk_wiz_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'BSCANE2' declared at 'F:/Xilinx2/Vivado/2017.2/scripts/rt/data/unisim_comp.v:422' bound to instance 'u_BSCANE2' of component 'BSCANE2' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.vhd:123]
+INFO: [Synth 8-638] synthesizing module 'BSCANE2' [F:/Xilinx2/Vivado/2017.2/scripts/rt/data/unisim_comp.v:422]
+	Parameter DISABLE_JTAG bound to: FALSE - type: string 
+	Parameter JTAG_CHAIN bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'BSCANE2' (1#1) [F:/Xilinx2/Vivado/2017.2/scripts/rt/data/unisim_comp.v:422]
+INFO: [Synth 8-3491] module 'jtag_mac' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac.v:13' bound to instance 'u_jtag_mac' of component 'jtag_mac' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.vhd:138]
+INFO: [Synth 8-638] synthesizing module 'jtag_mac' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac.v:13]
+	Parameter VERSION bound to: 191724 - type: integer 
+	Parameter idle bound to: 15'b000000000000000 
+	Parameter user_rst bound to: 15'b000000000000001 
+	Parameter get_cmd bound to: 15'b000000000000010 
+	Parameter get_wr_len bound to: 15'b000000000000100 
+	Parameter get_sim bound to: 15'b000000000001000 
+	Parameter wr bound to: 15'b000000000010000 
+	Parameter get_rd_len bound to: 15'b000000001000000 
+	Parameter get_skip bound to: 15'b000000010000000 
+	Parameter exe_skip bound to: 15'b000000100000000 
+	Parameter rdbk_len bound to: 15'b000001000000000 
+	Parameter rdbk_dat bound to: 15'b000010000000000 
+	Parameter ver_get_skip bound to: 15'b000100000000000 
+	Parameter ver_exe_skip bound to: 15'b001000000000000 
+	Parameter ver_rdbk_len bound to: 15'b010000000000000 
+	Parameter ver_rdbk_dat bound to: 15'b100000000000000 
+INFO: [Synth 8-638] synthesizing module 'simcycle_fifo_wrapper' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/simcycle_fifo_wrapper.vhd:28]
+INFO: [Synth 8-3491] module 'simcycle_fifo' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/realtime/simcycle_fifo_stub.vhdl:5' bound to instance 'u_simcycle_fifo' of component 'simcycle_fifo' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/simcycle_fifo_wrapper.vhd:46]
+INFO: [Synth 8-638] synthesizing module 'simcycle_fifo' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/realtime/simcycle_fifo_stub.vhdl:20]
+INFO: [Synth 8-256] done synthesizing module 'simcycle_fifo_wrapper' (2#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/simcycle_fifo_wrapper.vhd:28]
+INFO: [Synth 8-638] synthesizing module 'jtag_mac_fifo_wrapper' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac_fifo_wrapper.vhd:30]
+INFO: [Synth 8-3491] module 'jtag_mac_fifo' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/realtime/jtag_mac_fifo_stub.vhdl:5' bound to instance 'u_jtag_mac_fifo' of component 'jtag_mac_fifo' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac_fifo_wrapper.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'jtag_mac_fifo' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/realtime/jtag_mac_fifo_stub.vhdl:22]
+INFO: [Synth 8-256] done synthesizing module 'jtag_mac_fifo_wrapper' (3#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac_fifo_wrapper.vhd:30]
+WARNING: [Synth 8-350] instance 'u_pre_chif_fifo' of module 'jtag_mac_fifo_wrapper' requires 11 connections, but only 10 given [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac.v:68]
+WARNING: [Synth 8-567] referenced signal 'wr_len' should be on the sensitivity list [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac.v:187]
+WARNING: [Synth 8-567] referenced signal 'skip_len' should be on the sensitivity list [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac.v:187]
+WARNING: [Synth 8-567] referenced signal 'act_rd_len' should be on the sensitivity list [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac.v:187]
+INFO: [Synth 8-256] done synthesizing module 'jtag_mac' (4#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac.v:13]
+INFO: [Synth 8-3491] module 'mwfil_chiftop' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chiftop.vhd:13' bound to instance 'u_mwfil_chiftop' of component 'mwfil_chiftop' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.vhd:155]
+INFO: [Synth 8-638] synthesizing module 'mwfil_chiftop' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chiftop.vhd:27]
+	Parameter INWORD bound to: 1 - type: integer 
+	Parameter OUTWORD bound to: 1 - type: integer 
+	Parameter WORDSIZE bound to: 8 - type: integer 
+	Parameter HASENABLE bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'mwfil_chifcore' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chifcore.vhd:15' bound to instance 'u_mwfil_chifcore' of component 'mwfil_chifcore' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chiftop.vhd:73]
+INFO: [Synth 8-638] synthesizing module 'mwfil_chifcore' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chifcore.vhd:42]
+	Parameter INWORD bound to: 1 - type: integer 
+	Parameter OUTWORD bound to: 1 - type: integer 
+	Parameter WORDSIZE bound to: 8 - type: integer 
+	Parameter HASENABLE bound to: 1 - type: integer 
+	Parameter WORDSIZE bound to: 8 - type: integer 
+	Parameter OUTWORD bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'mwfil_bus2dut' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_bus2dut.vhd:13' bound to instance 'u_bus2dut' of component 'mwfil_bus2dut' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chifcore.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'mwfil_bus2dut' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_bus2dut.vhd:34]
+	Parameter WORDSIZE bound to: 8 - type: integer 
+	Parameter OUTWORD bound to: 1 - type: integer 
+WARNING: [Synth 8-3919] null assignment ignored [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_bus2dut.vhd:45]
+WARNING: [Synth 8-6014] Unused sequential element shiftreg_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_bus2dut.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'mwfil_bus2dut' (5#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_bus2dut.vhd:34]
+	Parameter fifo_depth bound to: 16 - type: integer 
+	Parameter fifo_uword bound to: 4 - type: integer 
+	Parameter fifo_width bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'mwfil_udfifo' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:14' bound to instance 'u_b2dfifo' of component 'mwfil_udfifo' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chifcore.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'mwfil_udfifo' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:33]
+	Parameter fifo_depth bound to: 16 - type: integer 
+	Parameter fifo_uword bound to: 4 - type: integer 
+	Parameter fifo_width bound to: 8 - type: integer 
+	Parameter DATA bound to: 8 - type: integer 
+	Parameter ADDR bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'mwfil_dpscram' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_dpscram.vhd:12' bound to instance 'u_dpscram' of component 'mwfil_dpscram' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:130]
+INFO: [Synth 8-638] synthesizing module 'mwfil_dpscram' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_dpscram.vhd:31]
+	Parameter DATA bound to: 8 - type: integer 
+	Parameter ADDR bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mwfil_dpscram' (6#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_dpscram.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'mwfil_udfifo' (7#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:33]
+	Parameter HASENABLE bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'mwfil_controller' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_controller.vhd:15' bound to instance 'u_controller' of component 'mwfil_controller' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chifcore.vhd:195]
+INFO: [Synth 8-638] synthesizing module 'mwfil_controller' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_controller.vhd:38]
+	Parameter HASENABLE bound to: 1 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element reset_d1_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_controller.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'mwfil_controller' (8#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_controller.vhd:38]
+	Parameter fifo_depth bound to: 16 - type: integer 
+	Parameter fifo_uword bound to: 4 - type: integer 
+	Parameter fifo_width bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'mwfil_udfifo' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:14' bound to instance 'u_d2bfifo' of component 'mwfil_udfifo' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chifcore.vhd:219]
+	Parameter WORDSIZE bound to: 8 - type: integer 
+	Parameter OUTWORD bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'mwfil_dut2bus' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_dut2bus.vhd:13' bound to instance 'u_dut2bus' of component 'mwfil_dut2bus' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chifcore.vhd:236]
+INFO: [Synth 8-638] synthesizing module 'mwfil_dut2bus' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_dut2bus.vhd:34]
+	Parameter WORDSIZE bound to: 8 - type: integer 
+	Parameter OUTWORD bound to: 1 - type: integer 
+WARNING: [Synth 8-3919] null assignment ignored [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_dut2bus.vhd:70]
+WARNING: [Synth 8-3919] null assignment ignored [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_dut2bus.vhd:79]
+INFO: [Synth 8-256] done synthesizing module 'mwfil_dut2bus' (9#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_dut2bus.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'mwfil_chifcore' (10#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chifcore.vhd:42]
+INFO: [Synth 8-3491] module 'fil_test_wrapper' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_wrapper.vhd:13' bound to instance 'u_dut' of component 'fil_test_wrapper' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chiftop.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'fil_test_wrapper' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_wrapper.vhd:23]
+INFO: [Synth 8-3491] module 'fil_test' declared at 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fil_test.vhd:6' bound to instance 'u_fil_test' of component 'fil_test' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_wrapper.vhd:44]
+INFO: [Synth 8-638] synthesizing module 'fil_test' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fil_test.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'fil_test' (11#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fil_test.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'fil_test_wrapper' (12#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_wrapper.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'mwfil_chiftop' (13#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_chiftop.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'fil_test_fil' (14#1) [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.vhd:27]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 425.043 ; gain = 131.945
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 425.043 ; gain = 131.945
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/dcp7/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz_0'
+Finished Parsing XDC File [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/dcp7/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz_0'
+Parsing XDC File [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/dcp9/simcycle_fifo_in_context.xdc] for cell 'u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo'
+Finished Parsing XDC File [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/dcp9/simcycle_fifo_in_context.xdc] for cell 'u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo'
+Parsing XDC File [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/dcp11/jtag_mac_fifo_in_context.xdc] for cell 'u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo'
+Finished Parsing XDC File [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/dcp11/jtag_mac_fifo_in_context.xdc] for cell 'u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo'
+Parsing XDC File [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/dcp11/jtag_mac_fifo_in_context.xdc] for cell 'u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo'
+Finished Parsing XDC File [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/dcp11/jtag_mac_fifo_in_context.xdc] for cell 'u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo'
+Parsing XDC File [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.xdc]
+WARNING: [Constraints 18-619] A clock with name 'sysclk' already exists, overwriting the previous clock with the same name. [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.xdc:1]
+WARNING: [Vivado 12-2489] -period contains time 15.151515 which will be rounded to 15.152 to ensure it is an integer multiple of 1 picosecond [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.xdc:6]
+WARNING: [Vivado 12-2489] -waveform contains time 7.575758 which will be rounded to 7.576 to ensure it is an integer multiple of 1 picosecond [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.xdc:6]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out1_clk_wiz_0'. [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.xdc:7]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.xdc:7]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out1_clk_wiz_0'. [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.xdc:8]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.xdc:8]
+Finished Parsing XDC File [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/fil_test_fil_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/fil_test_fil.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fil_test_fil_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/fil_test_fil_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 759.547 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 759.547 ; gain = 466.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 759.547 ; gain = 466.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sysclk. (constraint file  F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/dcp7/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sysclk. (constraint file  F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/.Xil/Vivado-165428-DESKTOP-BC98OQD/dcp7/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for u_clk_wiz_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for u_jtag_mac/u_post_chif_fifo/u_jtag_mac_fifo. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for u_jtag_mac/u_pre_chif_fifo/u_jtag_mac_fifo. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for u_jtag_mac/u_simcycle_fifo/u_simcycle_fifo. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 759.547 ; gain = 466.449
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'cs_reg' in module 'jtag_mac'
+WARNING: [Synth 8-6014] Unused sequential element cs_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac.v:182]
+INFO: [Synth 8-5546] ROM "user_rst_assert" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "post_chif_fifo_rd_en" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "user_rst_assert" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "post_chif_fifo_rd_en" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5544] ROM "sm_cnt" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sm_cnt" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "act_wr_cnt" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "act_wr_cnt" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "act_rd_cnt" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "act_rd_cnt" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ver_act_rd_cnt" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ver_act_rd_cnt" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ver_act_rd_len_sft" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ver_act_rd_len_sft" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ver_output_reg" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ver_output_reg" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element simrem_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_controller.vhd:72]
+WARNING: [Synth 8-6014] Unused sequential element wr_addr_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:67]
+WARNING: [Synth 8-6014] Unused sequential element rd_addr_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:67]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_bus2dut.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element cs_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac.v:182]
+WARNING: [Synth 8-6014] Unused sequential element cs_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac.v:182]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                             0000 |                  000000000000000
+                 get_cmd |                             0001 |                  000000000000010
+              get_wr_len |                             0010 |                  000000000000100
+                 get_sim |                             0110 |                  000000000001000
+                      wr |                             0111 |                  000000000010000
+              get_rd_len |                             0011 |                  000000001000000
+                get_skip |                             1000 |                  000000010000000
+                exe_skip |                             1010 |                  000000100000000
+                rdbk_len |                             1001 |                  000001000000000
+                rdbk_dat |                             1011 |                  000010000000000
+                user_rst |                             0100 |                  000000000000001
+            ver_get_skip |                             0101 |                  000100000000000
+            ver_exe_skip |                             1101 |                  001000000000000
+            ver_rdbk_len |                             1100 |                  010000000000000
+            ver_rdbk_dat |                             1110 |                  100000000000000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'cs_reg' using encoding 'sequential' in module 'jtag_mac'
+WARNING: [Synth 8-6014] Unused sequential element cs_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/jtag_mac.v:182]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 759.547 ; gain = 466.449
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 4     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 4     
+	   3 Input      4 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 5     
+	               15 Bit    Registers := 3     
+	               13 Bit    Registers := 5     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 9     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 18    
++---RAMs : 
+	              128 Bit         RAMs := 2     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 3     
+	   2 Input     15 Bit        Muxes := 2     
+	  15 Input     15 Bit        Muxes := 7     
+	   2 Input     14 Bit        Muxes := 12    
+	   2 Input     13 Bit        Muxes := 3     
+	   3 Input     13 Bit        Muxes := 1     
+	   5 Input     12 Bit        Muxes := 6     
+	   2 Input     11 Bit        Muxes := 13    
+	   2 Input     10 Bit        Muxes := 12    
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 10    
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 7     
+	   2 Input      4 Bit        Muxes := 1     
+	  38 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 15    
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module jtag_mac 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 5     
+	               15 Bit    Registers := 3     
+	               13 Bit    Registers := 5     
+	                8 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 3     
+	   2 Input     15 Bit        Muxes := 2     
+	  15 Input     15 Bit        Muxes := 7     
+	   2 Input     14 Bit        Muxes := 12    
+	   2 Input     13 Bit        Muxes := 3     
+	   3 Input     13 Bit        Muxes := 1     
+	   5 Input     12 Bit        Muxes := 6     
+	   2 Input     11 Bit        Muxes := 13    
+	   2 Input     10 Bit        Muxes := 12    
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 7     
+	   2 Input      4 Bit        Muxes := 1     
+	  38 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 1     
+Module mwfil_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mwfil_dpscram 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	              128 Bit         RAMs := 1     
+Module mwfil_udfifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
+	   3 Input      4 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module mwfil_dut2bus 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module mwfil_bus2dut 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module fil_test 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'u_mwfil_chiftop/u_mwfil_chifcore/NormalBlock.u_b2dfifo/sclr_d1_reg' into 'u_mwfil_chiftop/u_mwfil_chifcore/u_d2bfifo/sclr_d1_reg' [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:85]
+WARNING: [Synth 8-6014] Unused sequential element u_mwfil_chiftop/u_mwfil_chifcore/NormalBlock.u_b2dfifo/sclr_d1_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:85]
+WARNING: [Synth 8-6014] Unused sequential element u_mwfil_chiftop/u_mwfil_chifcore/u_controller/simrem_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_controller.vhd:72]
+WARNING: [Synth 8-6014] Unused sequential element u_mwfil_chiftop/u_mwfil_chifcore/u_d2bfifo/rd_addr_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:67]
+WARNING: [Synth 8-6014] Unused sequential element u_mwfil_chiftop/u_mwfil_chifcore/u_d2bfifo/wr_addr_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:67]
+WARNING: [Synth 8-6014] Unused sequential element u_mwfil_chiftop/u_mwfil_chifcore/NormalBlock.u_bus2dut/counter_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_bus2dut.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element u_mwfil_chiftop/u_mwfil_chifcore/NormalBlock.u_b2dfifo/rd_addr_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:67]
+WARNING: [Synth 8-6014] Unused sequential element u_mwfil_chiftop/u_mwfil_chifcore/NormalBlock.u_b2dfifo/wr_addr_reg was removed.  [F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/filsrc/mwfil_udfifo.vhd:67]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 759.547 ; gain = 466.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++-------------+--------------------------------------------------------------------------+-----------+----------------------+--------------+
+|Module Name  | RTL Object                                                               | Inference | Size (Depth x Width) | Primitives   | 
++-------------+--------------------------------------------------------------------------+-----------+----------------------+--------------+
+|fil_test_fil | u_mwfil_chiftop/u_mwfil_chifcore/u_d2bfifo/u_dpscram/mem_reg             | Implied   | 16 x 8               | RAM32M x 2   | 
+|fil_test_fil | u_mwfil_chiftop/u_mwfil_chifcore/NormalBlock.u_b2dfifo/u_dpscram/mem_reg | Implied   | 16 x 8               | RAM32M x 2   | 
++-------------+--------------------------------------------------------------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'u_clk_wiz_0/clk_out1' to pin 'u_clk_wiz_0/bbstub_clk_out1/O'
+WARNING: [Synth 8-565] redefining clock 'sysclk'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 759.547 ; gain = 466.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 785.594 ; gain = 492.496
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_act_rd_len_sft_reg[12]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_act_rd_len_sft_reg[11]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_act_rd_len_sft_reg[10]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_act_rd_len_sft_reg[9]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_act_rd_len_sft_reg[8]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_act_rd_len_sft_reg[7]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_act_rd_len_sft_reg[6]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_act_rd_len_sft_reg[5]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_act_rd_len_sft_reg[4]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_act_rd_len_sft_reg[3]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[31]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[30]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[29]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[28]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[27]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[26]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[25]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[24]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[23]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[22]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[21]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[20]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[19]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/ver_output_reg_reg[18]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/cs_d1_reg[5]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/cs_d2_reg[5]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_jtag_mac/cs_d3_reg[5]) is unused and will be removed from module fil_test_fil.
+WARNING: [Synth 8-3332] Sequential element (u_mwfil_chiftop/u_mwfil_chifcore/u_dut2bus/remword_reg[1]) is unused and will be removed from module fil_test_fil.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 798.789 ; gain = 505.691
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 798.789 ; gain = 505.691
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 798.789 ; gain = 505.691
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 798.789 ; gain = 505.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 798.789 ; gain = 505.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 798.789 ; gain = 505.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 798.789 ; gain = 505.691
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |jtag_mac_fifo |         2|
+|3     |simcycle_fifo |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+----------------------+------+
+|      |Cell                  |Count |
++------+----------------------+------+
+|1     |clk_wiz_0_bbox        |     1|
+|2     |jtag_mac_fifo_bbox    |     1|
+|3     |jtag_mac_fifo_bbox__2 |     1|
+|4     |simcycle_fifo_bbox    |     1|
+|5     |BSCANE2               |     1|
+|6     |BUFG                  |     1|
+|7     |CARRY4                |    28|
+|8     |LUT1                  |    70|
+|9     |LUT2                  |    36|
+|10    |LUT3                  |    45|
+|11    |LUT4                  |    90|
+|12    |LUT5                  |   110|
+|13    |LUT6                  |   172|
+|14    |RAM32M                |     4|
+|15    |FDRE                  |   334|
+|16    |FDSE                  |     5|
+|17    |IBUF                  |     1|
++------+----------------------+------+
+
+Report Instance Areas: 
++------+------------------------------+---------------------------------+------+
+|      |Instance                      |Module                           |Cells |
++------+------------------------------+---------------------------------+------+
+|1     |top                           |                                 |   963|
+|2     |  u_jtag_mac                  |jtag_mac                         |   675|
+|3     |    u_post_chif_fifo          |jtag_mac_fifo_wrapper__xdcDup__1 |    63|
+|4     |    u_pre_chif_fifo           |jtag_mac_fifo_wrapper            |    24|
+|5     |    u_simcycle_fifo           |simcycle_fifo_wrapper            |    21|
+|6     |  u_mwfil_chiftop             |mwfil_chiftop                    |   283|
+|7     |    u_dut                     |fil_test_wrapper                 |     8|
+|8     |      u_fil_test              |fil_test                         |     8|
+|9     |    u_mwfil_chifcore          |mwfil_chifcore                   |   275|
+|10    |      \NormalBlock.u_b2dfifo  |mwfil_udfifo                     |    64|
+|11    |        u_dpscram             |mwfil_dpscram_1                  |    26|
+|12    |      \NormalBlock.u_bus2dut  |mwfil_bus2dut                    |    27|
+|13    |      u_controller            |mwfil_controller                 |    84|
+|14    |      u_d2bfifo               |mwfil_udfifo_0                   |    73|
+|15    |        u_dpscram             |mwfil_dpscram                    |    34|
+|16    |      u_dut2bus               |mwfil_dut2bus                    |    27|
++------+------------------------------+---------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 798.789 ; gain = 505.691
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 44 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 798.789 ; gain = 171.188
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 798.789 ; gain = 505.691
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 33 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
+
+211 Infos, 59 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 798.789 ; gain = 515.395
+INFO: [Common 17-1381] The checkpoint 'F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/synth_1/fil_test_fil.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 798.789 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 28 20:32:13 2018...

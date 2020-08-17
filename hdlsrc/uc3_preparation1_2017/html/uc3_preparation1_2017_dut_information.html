@@ -1,0 +1,1157 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="rtwreport.css" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>
+High-level DUT Information Report for uc3_preparation1_2017
+</title>
+
+</head>
+<body bgcolor="#ffffff" link="0033CC" vlink="#666666">
+<script>
+<!--
+function hdlTableShrink(o,tagNameStr)
+{
+var temp = document.getElementsByName(tagNameStr);
+if (temp[0].style.display == "")
+{
+	temp[0].style.display = "none";
+	o.innerHTML = '<span style="font-family:monospace">[+]</span>';
+}
+else
+{
+	temp[0].style.display = "";
+	o.innerHTML = '<span style="font-family:monospace">[-]</span>';
+}
+}
+// -->
+</script>
+<script>
+<!--
+function hdlTableCollapseAll(o, numNtks, numComps)
+{
+	var id = "";
+	for (i = 1; i <= numNtks; i++)
+	{
+		for (j = 1; j <= numComps; j++)
+		{
+			id = "Multiply" + "_" + i + "_" + j;
+			var temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Adder" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Subtractor" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Register" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "RAM" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Multiplexer" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+		}
+	}
+	var collapsibles = document.getElementsByName('collapsible');
+	for (i = 0; i < collapsibles.length; i++)
+	{
+		collapsibles[i].innerHTML = '<span style="font-family:monospace">[+]</span>';
+	}
+}
+// -->
+</script>
+<script>
+<!--
+function hdlTableExpandAll(o, numNtks, numComps)
+{
+	var id = "";
+	for (i = 1; i <= numNtks; i++)
+	{
+		for (j = 1; j <= numComps; j++)
+		{
+			id = "Multiply" + "_" + i + "_" + j;
+			var temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Adder" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Subtractor" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Register" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "RAM" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Multiplexer" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+		}
+	}
+	var collapsibles = document.getElementsByName('collapsible');
+	for (i = 0; i < collapsibles.length; i++)
+	{
+		collapsibles[i].innerHTML = '<span style="font-family:monospace">[-]</span>';
+	}
+}
+// -->
+</script>
+<font SIZE="+2" COLOR="#000066">
+Code Interface Report for uc3_preparation1_2017
+</font>
+<h3>
+Input ports
+</h3>
+<table width="100%" border="1">
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<b>Port Name</b>
+</td>
+<td align="center" valign="top" style="border-style: none">
+<b>Datatype</b>
+</td>
+<td align="center" valign="top" style="border-style: none">
+<b>Bits</b>
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+clk
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+reset
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+clk_enable
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:1988')" name="code2model" class="code2model">
+BTN0
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:1989')" name="code2model" class="code2model">
+BTN1
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:1990')" name="code2model" class="code2model">
+BTN2
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:1991')" name="code2model" class="code2model">
+BTN3
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:1992')" name="code2model" class="code2model">
+SW0
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:1993')" name="code2model" class="code2model">
+SW1
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:1994')" name="code2model" class="code2model">
+SW2
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:1995')" name="code2model" class="code2model">
+SW3
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:1996')" name="code2model" class="code2model">
+AD6
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint16
+</td>
+<td align="center" valign="top" style="border-style: none">
+16
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:1997')" name="code2model" class="code2model">
+AD7
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint16
+</td>
+<td align="center" valign="top" style="border-style: none">
+16
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:1998')" name="code2model" class="code2model">
+AD14
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint16
+</td>
+<td align="center" valign="top" style="border-style: none">
+16
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:1999')" name="code2model" class="code2model">
+AD15
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint16
+</td>
+<td align="center" valign="top" style="border-style: none">
+16
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2000')" name="code2model" class="code2model">
+Digital_in
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint8
+</td>
+<td align="center" valign="top" style="border-style: none">
+8
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2355')" name="code2model" class="code2model">
+Tune_param_sig1
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2380')" name="code2model" class="code2model">
+Tune_param_sig2
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2381')" name="code2model" class="code2model">
+Tune_param_sig3
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2382')" name="code2model" class="code2model">
+Tune_param_sig4
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2383')" name="code2model" class="code2model">
+Tune_param_sig5
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2384')" name="code2model" class="code2model">
+Tune_param_sig6
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2385')" name="code2model" class="code2model">
+Tune_param_sig7
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2386')" name="code2model" class="code2model">
+Tune_param_sig8
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2356')" name="code2model" class="code2model">
+shared_signals_in_sig1
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2359')" name="code2model" class="code2model">
+shared_signals_in_sig2
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2360')" name="code2model" class="code2model">
+shared_signals_in_sig3
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2361')" name="code2model" class="code2model">
+shared_signals_in_sig4
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2362')" name="code2model" class="code2model">
+shared_signals_in_sig5
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2363')" name="code2model" class="code2model">
+shared_signals_in_sig6
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2364')" name="code2model" class="code2model">
+shared_signals_in_sig7
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2365')" name="code2model" class="code2model">
+shared_signals_in_sig8
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2366')" name="code2model" class="code2model">
+shared_signals_in_sig9
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2367')" name="code2model" class="code2model">
+shared_signals_in_sig10
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+
+</table>
+<h3>
+Output ports
+</h3>
+<table width="100%" border="1">
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<b>Port Name</b>
+</td>
+<td align="center" valign="top" style="border-style: none">
+<b>Datatype</b>
+</td>
+<td align="center" valign="top" style="border-style: none">
+<b>Bits</b>
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+ce_out
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2027')" name="code2model" class="code2model">
+LD0
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2028')" name="code2model" class="code2model">
+LD1
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2029')" name="code2model" class="code2model">
+LD2
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2030')" name="code2model" class="code2model">
+LD3
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+boolean
+</td>
+<td align="center" valign="top" style="border-style: none">
+1
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2031')" name="code2model" class="code2model">
+duty1
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint16
+</td>
+<td align="center" valign="top" style="border-style: none">
+16
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2032')" name="code2model" class="code2model">
+duty2
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint16
+</td>
+<td align="center" valign="top" style="border-style: none">
+16
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2033')" name="code2model" class="code2model">
+duty3
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint16
+</td>
+<td align="center" valign="top" style="border-style: none">
+16
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2034')" name="code2model" class="code2model">
+duty4
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint16
+</td>
+<td align="center" valign="top" style="border-style: none">
+16
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2035')" name="code2model" class="code2model">
+duty5
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint16
+</td>
+<td align="center" valign="top" style="border-style: none">
+16
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2036')" name="code2model" class="code2model">
+duty6
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint16
+</td>
+<td align="center" valign="top" style="border-style: none">
+16
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2037')" name="code2model" class="code2model">
+duty7
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint16
+</td>
+<td align="center" valign="top" style="border-style: none">
+16
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2038')" name="code2model" class="code2model">
+duty8
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint16
+</td>
+<td align="center" valign="top" style="border-style: none">
+16
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2039')" name="code2model" class="code2model">
+Digital_out
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+uint8
+</td>
+<td align="center" valign="top" style="border-style: none">
+8
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2357')" name="code2model" class="code2model">
+Probes_sig1
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2157')" name="code2model" class="code2model">
+Probes_sig2
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2158')" name="code2model" class="code2model">
+Probes_sig3
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2159')" name="code2model" class="code2model">
+Probes_sig4
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2160')" name="code2model" class="code2model">
+Probes_sig5
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2161')" name="code2model" class="code2model">
+Probes_sig6
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2162')" name="code2model" class="code2model">
+Probes_sig7
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2163')" name="code2model" class="code2model">
+Probes_sig8
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2358')" name="code2model" class="code2model">
+shared_signals_out_sig1
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2368')" name="code2model" class="code2model">
+shared_signals_out_sig2
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2369')" name="code2model" class="code2model">
+shared_signals_out_sig3
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2370')" name="code2model" class="code2model">
+shared_signals_out_sig4
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2371')" name="code2model" class="code2model">
+shared_signals_out_sig5
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2372')" name="code2model" class="code2model">
+shared_signals_out_sig6
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2373')" name="code2model" class="code2model">
+shared_signals_out_sig7
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2374')" name="code2model" class="code2model">
+shared_signals_out_sig8
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2375')" name="code2model" class="code2model">
+shared_signals_out_sig9
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:set_param('uc3_preparation1_2017', 'hiliteAncestors', 'none'); Simulink.ID.hilite('uc3_preparation1_2017:174:2376')" name="code2model" class="code2model">
+shared_signals_out_sig10
+</a>
+
+</td>
+<td align="center" valign="top" style="border-style: none">
+int32
+</td>
+<td align="center" valign="top" style="border-style: none">
+32
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>

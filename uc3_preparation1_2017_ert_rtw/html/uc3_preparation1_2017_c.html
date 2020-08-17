@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="./js/coder_app.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./rtwreport_utils.js"></script>
+<script type="text/javascript" src="./rtwannotate.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/coder_app.css"/>
+</head>
+<body onload="srcFileOnload();">
+<pre id="code">
+<table class="code" id="codeTbl">
+<tr name="1" id="1">
+<td><a id="l1" class='ln'>1</a></td><td><span class="ct">/*</span></td></tr>
+<tr name="2" id="2">
+<td><a id="l2" class='ln'>2</a></td><td><span class="ct"> * Academic License - for use in teaching, academic research, and meeting</span></td></tr>
+<tr name="3" id="3">
+<td><a id="l3" class='ln'>3</a></td><td><span class="ct"> * course requirements at degree granting institutions only.  Not for</span></td></tr>
+<tr name="4" id="4">
+<td><a id="l4" class='ln'>4</a></td><td><span class="ct"> * government, commercial, or other organizational use.</span></td></tr>
+<tr name="5" id="5">
+<td><a id="l5" class='ln'>5</a></td><td><span class="ct"> *</span></td></tr>
+<tr name="6" id="6">
+<td><a id="l6" class='ln'>6</a></td><td><span class="ct"> * File: uc3_preparation1_2017.c</span></td></tr>
+<tr name="7" id="7">
+<td><a id="l7" class='ln'>7</a></td><td><span class="ct"> *</span></td></tr>
+<tr name="8" id="8">
+<td><a id="l8" class='ln'>8</a></td><td><span class="ct"> * Code generated for Simulink model 'uc3_preparation1_2017'.</span></td></tr>
+<tr name="9" id="9">
+<td><a id="l9" class='ln'>9</a></td><td><span class="ct"> *</span></td></tr>
+<tr name="10" id="10">
+<td><a id="l10" class='ln'>10</a></td><td><span class="ct"> * Model version                  : 1.357</span></td></tr>
+<tr name="11" id="11">
+<td><a id="l11" class='ln'>11</a></td><td><span class="ct"> * Simulink Coder version         : 8.14 (R2018a) 06-Feb-2018</span></td></tr>
+<tr name="12" id="12">
+<td><a id="l12" class='ln'>12</a></td><td><span class="ct"> * C/C++ source code generated on : Tue Aug 28 20:40:17 2018</span></td></tr>
+<tr name="13" id="13">
+<td><a id="l13" class='ln'>13</a></td><td><span class="ct"> *</span></td></tr>
+<tr name="14" id="14">
+<td><a id="l14" class='ln'>14</a></td><td><span class="ct"> * Target selection: ert.tlc</span></td></tr>
+<tr name="15" id="15">
+<td><a id="l15" class='ln'>15</a></td><td><span class="ct"> * Embedded hardware selection: ARM Compatible-&gt;ARM Cortex</span></td></tr>
+<tr name="16" id="16">
+<td><a id="l16" class='ln'>16</a></td><td><span class="ct"> * Code generation objectives: Unspecified</span></td></tr>
+<tr name="17" id="17">
+<td><a id="l17" class='ln'>17</a></td><td><span class="ct"> * Validation result: Not run</span></td></tr>
+<tr name="18" id="18">
+<td><a id="l18" class='ln'>18</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="19" id="19">
+<td><a id="l19" class='ln'>19</a></td><td></td></tr>
+<tr name="20" id="20">
+<td><a id="l20" class='ln'>20</a></td><td><span class="pp">#include "uc3_preparation1_2017.h"</span></td></tr>
+<tr name="21" id="21">
+<td><a id="l21" class='ln'>21</a></td><td><span class="pp">#include "uc3_preparation1_2017_private.h"</span></td></tr>
+<tr name="22" id="22">
+<td><a id="l22" class='ln'>22</a></td><td></td></tr>
+<tr name="23" id="23">
+<td><a id="l23" class='ln'>23</a></td><td><span class="ct">/* Named constants for Chart: '<a class="ct blk" blk_line="23">&lt;S6&gt;/Chart</a>' */</span></td></tr>
+<tr name="24" id="24">
+<td><a id="l24" class='ln'>24</a></td><td><span class="pp">#define</span> <a id="24c9" class="tk">uc3_preparation1_2017_IN_sate2</a> ((<a id="24c42" class="tk">uint8_T</a>)1U)</td></tr>
+<tr name="25" id="25">
+<td><a id="l25" class='ln'>25</a></td><td><span class="pp">#define</span> <a id="25c9" class="tk">uc3_preparation1_2017_IN_state1</a> ((<a id="25c43" class="tk">uint8_T</a>)2U)</td></tr>
+<tr name="26" id="26">
+<td><a id="l26" class='ln'>26</a></td><td></td></tr>
+<tr name="27" id="27">
+<td><a id="l27" class='ln'>27</a></td><td><span class="ct">/* user code (top of source file) */</span></td></tr>
+<tr name="28" id="28">
+<td><a id="l28" class='ln'>28</a></td><td><span class="ct">/* System '<a class="ct blk" blk_line="28">&lt;Root&gt;</a>' */</span></td></tr>
+<tr name="29" id="29">
+<td><a id="l29" class='ln'>29</a></td><td><a id="29c1" class="tk">int32_T</a> <a id="29c9" class="tk">*</a><a id="29c10" class="tk">tune1</a> = 0x4<a id="29c21" class="tk">*</a>10;</td></tr>
+<tr name="30" id="30">
+<td><a id="l30" class='ln'>30</a></td><td><a id="30c1" class="tk">int32_T</a> <a id="30c9" class="tk">*</a><a id="30c10" class="tk">tune2</a> = 0x4<a id="30c21" class="tk">*</a>11;</td></tr>
+<tr name="31" id="31">
+<td><a id="l31" class='ln'>31</a></td><td><a id="31c1" class="tk">int32_T</a> <a id="31c9" class="tk">*</a><a id="31c10" class="tk">tune3</a> = 0x4<a id="31c21" class="tk">*</a>12;</td></tr>
+<tr name="32" id="32">
+<td><a id="l32" class='ln'>32</a></td><td><a id="32c1" class="tk">int32_T</a> <a id="32c9" class="tk">*</a><a id="32c10" class="tk">tune4</a> = 0x4<a id="32c21" class="tk">*</a>13;</td></tr>
+<tr name="33" id="33">
+<td><a id="l33" class='ln'>33</a></td><td><a id="33c1" class="tk">int32_T</a> <a id="33c9" class="tk">*</a><a id="33c10" class="tk">tune5</a> = 0x4<a id="33c21" class="tk">*</a>14;</td></tr>
+<tr name="34" id="34">
+<td><a id="l34" class='ln'>34</a></td><td><a id="34c1" class="tk">int32_T</a> <a id="34c9" class="tk">*</a><a id="34c10" class="tk">tune6</a> = 0x4<a id="34c21" class="tk">*</a>15;</td></tr>
+<tr name="35" id="35">
+<td><a id="l35" class='ln'>35</a></td><td><a id="35c1" class="tk">int32_T</a> <a id="35c9" class="tk">*</a><a id="35c10" class="tk">tune7</a> = 0x4<a id="35c21" class="tk">*</a>16;</td></tr>
+<tr name="36" id="36">
+<td><a id="l36" class='ln'>36</a></td><td><a id="36c1" class="tk">int32_T</a> <a id="36c9" class="tk">*</a><a id="36c10" class="tk">tune8</a> = 0x4<a id="36c21" class="tk">*</a>17;</td></tr>
+<tr name="37" id="37">
+<td><a id="l37" class='ln'>37</a></td><td><a id="37c1" class="tk">int32_T</a> <a id="37c9" class="tk">*</a><a id="37c10" class="tk">share_in1</a> = 0x0;</td></tr>
+<tr name="38" id="38">
+<td><a id="l38" class='ln'>38</a></td><td><a id="38c1" class="tk">int32_T</a> <a id="38c9" class="tk">*</a><a id="38c10" class="tk">share_in2</a> = 0x4<a id="38c25" class="tk">*</a>1;</td></tr>
+<tr name="39" id="39">
+<td><a id="l39" class='ln'>39</a></td><td><a id="39c1" class="tk">int32_T</a> <a id="39c9" class="tk">*</a><a id="39c10" class="tk">share_in3</a> = 0x4<a id="39c25" class="tk">*</a>2;</td></tr>
+<tr name="40" id="40">
+<td><a id="l40" class='ln'>40</a></td><td><a id="40c1" class="tk">int32_T</a> <a id="40c9" class="tk">*</a><a id="40c10" class="tk">share_in4</a> = 0x4<a id="40c25" class="tk">*</a>3;</td></tr>
+<tr name="41" id="41">
+<td><a id="l41" class='ln'>41</a></td><td><a id="41c1" class="tk">int32_T</a> <a id="41c9" class="tk">*</a><a id="41c10" class="tk">share_in5</a> = 0x4<a id="41c25" class="tk">*</a>4;</td></tr>
+<tr name="42" id="42">
+<td><a id="l42" class='ln'>42</a></td><td><a id="42c1" class="tk">int32_T</a> <a id="42c9" class="tk">*</a><a id="42c10" class="tk">share_in6</a> = 0x4<a id="42c25" class="tk">*</a>5;</td></tr>
+<tr name="43" id="43">
+<td><a id="l43" class='ln'>43</a></td><td><a id="43c1" class="tk">int32_T</a> <a id="43c9" class="tk">*</a><a id="43c10" class="tk">share_in7</a> = 0x4<a id="43c25" class="tk">*</a>6;</td></tr>
+<tr name="44" id="44">
+<td><a id="l44" class='ln'>44</a></td><td><a id="44c1" class="tk">int32_T</a> <a id="44c9" class="tk">*</a><a id="44c10" class="tk">share_in8</a> = 0x4<a id="44c25" class="tk">*</a>7;</td></tr>
+<tr name="45" id="45">
+<td><a id="l45" class='ln'>45</a></td><td><a id="45c1" class="tk">int32_T</a> <a id="45c9" class="tk">*</a><a id="45c10" class="tk">share_in9</a> = 0x4<a id="45c25" class="tk">*</a>8;</td></tr>
+<tr name="46" id="46">
+<td><a id="l46" class='ln'>46</a></td><td><a id="46c1" class="tk">int32_T</a> <a id="46c9" class="tk">*</a><a id="46c10" class="tk">share_in10</a> = 0x4<a id="46c26" class="tk">*</a>9;</td></tr>
+<tr name="47" id="47">
+<td><a id="l47" class='ln'>47</a></td><td><a id="47c1" class="tk">int32_T</a> <a id="47c9" class="tk">*</a><a id="47c10" class="tk">probe1</a> = 0x400 <a id="47c25" class="tk">+</a> 0x4<a id="47c30" class="tk">*</a>10;</td></tr>
+<tr name="48" id="48">
+<td><a id="l48" class='ln'>48</a></td><td><a id="48c1" class="tk">int32_T</a> <a id="48c9" class="tk">*</a><a id="48c10" class="tk">probe2</a> = 0x400 <a id="48c25" class="tk">+</a> 0x4<a id="48c30" class="tk">*</a>11;</td></tr>
+<tr name="49" id="49">
+<td><a id="l49" class='ln'>49</a></td><td><a id="49c1" class="tk">int32_T</a> <a id="49c9" class="tk">*</a><a id="49c10" class="tk">probe3</a> = 0x400 <a id="49c25" class="tk">+</a> 0x4<a id="49c30" class="tk">*</a>12;</td></tr>
+<tr name="50" id="50">
+<td><a id="l50" class='ln'>50</a></td><td><a id="50c1" class="tk">int32_T</a> <a id="50c9" class="tk">*</a><a id="50c10" class="tk">probe4</a> = 0x400 <a id="50c25" class="tk">+</a> 0x4<a id="50c30" class="tk">*</a>13;</td></tr>
+<tr name="51" id="51">
+<td><a id="l51" class='ln'>51</a></td><td><a id="51c1" class="tk">int32_T</a> <a id="51c9" class="tk">*</a><a id="51c10" class="tk">probe5</a> = 0x400 <a id="51c25" class="tk">+</a> 0x4<a id="51c30" class="tk">*</a>14;</td></tr>
+<tr name="52" id="52">
+<td><a id="l52" class='ln'>52</a></td><td><a id="52c1" class="tk">int32_T</a> <a id="52c9" class="tk">*</a><a id="52c10" class="tk">probe6</a> = 0x400 <a id="52c25" class="tk">+</a> 0x4<a id="52c30" class="tk">*</a>15;</td></tr>
+<tr name="53" id="53">
+<td><a id="l53" class='ln'>53</a></td><td><a id="53c1" class="tk">int32_T</a> <a id="53c9" class="tk">*</a><a id="53c10" class="tk">probe7</a> = 0x400 <a id="53c25" class="tk">+</a> 0x4<a id="53c30" class="tk">*</a>16;</td></tr>
+<tr name="54" id="54">
+<td><a id="l54" class='ln'>54</a></td><td><a id="54c1" class="tk">int32_T</a> <a id="54c9" class="tk">*</a><a id="54c10" class="tk">probe8</a> = 0x400 <a id="54c25" class="tk">+</a> 0x4<a id="54c30" class="tk">*</a>17;</td></tr>
+<tr name="55" id="55">
+<td><a id="l55" class='ln'>55</a></td><td><a id="55c1" class="tk">int32_T</a> <a id="55c9" class="tk">*</a><a id="55c10" class="tk">share_out1</a> = 0x400 <a id="55c29" class="tk">+</a> 0x4<a id="55c34" class="tk">*</a>0;</td></tr>
+<tr name="56" id="56">
+<td><a id="l56" class='ln'>56</a></td><td><a id="56c1" class="tk">int32_T</a> <a id="56c9" class="tk">*</a><a id="56c10" class="tk">share_out2</a> = 0x400 <a id="56c29" class="tk">+</a> 0x4<a id="56c34" class="tk">*</a>1;</td></tr>
+<tr name="57" id="57">
+<td><a id="l57" class='ln'>57</a></td><td><a id="57c1" class="tk">int32_T</a> <a id="57c9" class="tk">*</a><a id="57c10" class="tk">share_out3</a> = 0x400 <a id="57c29" class="tk">+</a> 0x4<a id="57c34" class="tk">*</a>2;</td></tr>
+<tr name="58" id="58">
+<td><a id="l58" class='ln'>58</a></td><td><a id="58c1" class="tk">int32_T</a> <a id="58c9" class="tk">*</a><a id="58c10" class="tk">share_out4</a> = 0x400 <a id="58c29" class="tk">+</a> 0x4<a id="58c34" class="tk">*</a>3;</td></tr>
+<tr name="59" id="59">
+<td><a id="l59" class='ln'>59</a></td><td><a id="59c1" class="tk">int32_T</a> <a id="59c9" class="tk">*</a><a id="59c10" class="tk">share_out5</a> = 0x400 <a id="59c29" class="tk">+</a> 0x4<a id="59c34" class="tk">*</a>4;</td></tr>
+<tr name="60" id="60">
+<td><a id="l60" class='ln'>60</a></td><td><a id="60c1" class="tk">int32_T</a> <a id="60c9" class="tk">*</a><a id="60c10" class="tk">share_out6</a> = 0x400 <a id="60c29" class="tk">+</a> 0x4<a id="60c34" class="tk">*</a>5;</td></tr>
+<tr name="61" id="61">
+<td><a id="l61" class='ln'>61</a></td><td><a id="61c1" class="tk">int32_T</a> <a id="61c9" class="tk">*</a><a id="61c10" class="tk">share_out7</a> = 0x400 <a id="61c29" class="tk">+</a> 0x4<a id="61c34" class="tk">*</a>6;</td></tr>
+<tr name="62" id="62">
+<td><a id="l62" class='ln'>62</a></td><td><a id="62c1" class="tk">int32_T</a> <a id="62c9" class="tk">*</a><a id="62c10" class="tk">share_out8</a> = 0x400 <a id="62c29" class="tk">+</a> 0x4<a id="62c34" class="tk">*</a>7;</td></tr>
+<tr name="63" id="63">
+<td><a id="l63" class='ln'>63</a></td><td><a id="63c1" class="tk">int32_T</a> <a id="63c9" class="tk">*</a><a id="63c10" class="tk">share_out9</a> = 0x400 <a id="63c29" class="tk">+</a> 0x4<a id="63c34" class="tk">*</a>8;</td></tr>
+<tr name="64" id="64">
+<td><a id="l64" class='ln'>64</a></td><td><a id="64c1" class="tk">int32_T</a> <a id="64c9" class="tk">*</a><a id="64c10" class="tk">share_out10</a> = 0x400 <a id="64c30" class="tk">+</a> 0x4<a id="64c35" class="tk">*</a>9;</td></tr>
+<tr name="65" id="65">
+<td><a id="l65" class='ln'>65</a></td><td><span class="kw">unsigned</span> <a id="65c10" class="tk">*</a><a id="65c11" class="tk">c_cycle_freq</a> = 0x81200000;</td></tr>
+<tr name="66" id="66">
+<td><a id="l66" class='ln'>66</a></td><td></td></tr>
+<tr name="67" id="67">
+<td><a id="l67" class='ln'>67</a></td><td><span class="ct">/* Block signals (default storage) */</span></td></tr>
+<tr name="68" id="68">
+<td><a id="l68" class='ln'>68</a></td><td><a id="68c1" class="tk">B_uc3_preparation1_2017_T</a> <a id="68c27" class="tk">uc3_preparation1_2017_B</a>;</td></tr>
+<tr name="69" id="69">
+<td><a id="l69" class='ln'>69</a></td><td></td></tr>
+<tr name="70" id="70">
+<td><a id="l70" class='ln'>70</a></td><td><span class="ct">/* Block states (default storage) */</span></td></tr>
+<tr name="71" id="71">
+<td><a id="l71" class='ln'>71</a></td><td><a id="71c1" class="tk">DW_uc3_preparation1_2017_T</a> <a id="71c28" class="tk">uc3_preparation1_2017_DW</a>;</td></tr>
+<tr name="72" id="72">
+<td><a id="l72" class='ln'>72</a></td><td></td></tr>
+<tr name="73" id="73">
+<td><a id="l73" class='ln'>73</a></td><td><span class="ct">/* Real-time model */</span></td></tr>
+<tr name="74" id="74">
+<td><a id="l74" class='ln'>74</a></td><td><a id="74c1" class="tk">RT_MODEL_uc3_preparation1_201_T</a> <a id="74c33" class="tk">uc3_preparation1_2017_M_</a>;</td></tr>
+<tr name="75" id="75">
+<td><a id="l75" class='ln'>75</a></td><td><a id="75c1" class="tk">RT_MODEL_uc3_preparation1_201_T</a> <a id="75c33" class="tk">*</a><span class="kw">const</span> <a id="75c40" class="tk">uc3_preparation1_2017_M</a> =</td></tr>
+<tr name="76" id="76">
+<td><a id="l76" class='ln'>76</a></td><td>  <a id="76c3" class="tk">&amp;</a><a id="76c4" class="tk">uc3_preparation1_2017_M_</a>;</td></tr>
+<tr name="77" id="77">
+<td><a id="l77" class='ln'>77</a></td><td><span class="kw">void</span> <a id="77c6" class="tk">mul_wide_s32</a>(<a id="77c19" class="tk">int32_T</a> <a id="77c27" class="tk">in0</a>, <a id="77c32" class="tk">int32_T</a> <a id="77c40" class="tk">in1</a>, <a id="77c45" class="tk">uint32_T</a> <a id="77c54" class="tk">*</a><a id="77c55" class="tk">ptrOutBitsHi</a>, <a id="77c69" class="tk">uint32_T</a></td></tr>
+<tr name="78" id="78">
+<td><a id="l78" class='ln'>78</a></td><td>                  <a id="78c19" class="tk">*</a><a id="78c20" class="tk">ptrOutBitsLo</a>)</td></tr>
+<tr name="79" id="79">
+<td><a id="l79" class='ln'>79</a></td><td><span class="br">{</span></td></tr>
+<tr name="80" id="80">
+<td><a id="l80" class='ln'>80</a></td><td>  <a id="80c3" class="tk">uint32_T</a> <a id="80c12" class="tk">absIn0</a>;</td></tr>
+<tr name="81" id="81">
+<td><a id="l81" class='ln'>81</a></td><td>  <a id="81c3" class="tk">uint32_T</a> <a id="81c12" class="tk">absIn1</a>;</td></tr>
+<tr name="82" id="82">
+<td><a id="l82" class='ln'>82</a></td><td>  <a id="82c3" class="tk">uint32_T</a> <a id="82c12" class="tk">in0Lo</a>;</td></tr>
+<tr name="83" id="83">
+<td><a id="l83" class='ln'>83</a></td><td>  <a id="83c3" class="tk">uint32_T</a> <a id="83c12" class="tk">in0Hi</a>;</td></tr>
+<tr name="84" id="84">
+<td><a id="l84" class='ln'>84</a></td><td>  <a id="84c3" class="tk">uint32_T</a> <a id="84c12" class="tk">in1Hi</a>;</td></tr>
+<tr name="85" id="85">
+<td><a id="l85" class='ln'>85</a></td><td>  <a id="85c3" class="tk">uint32_T</a> <a id="85c12" class="tk">productHiLo</a>;</td></tr>
+<tr name="86" id="86">
+<td><a id="l86" class='ln'>86</a></td><td>  <a id="86c3" class="tk">uint32_T</a> <a id="86c12" class="tk">productLoHi</a>;</td></tr>
+<tr name="87" id="87">
+<td><a id="l87" class='ln'>87</a></td><td>  <a id="87c3" class="tk">absIn0</a> = <a id="87c12" class="tk">in0</a> <a id="87c16" class="tk">&lt;</a> 0 <a id="87c20" class="tk">?</a> <a id="87c22" class="tk">~</a>(<a id="87c24" class="tk">uint32_T</a>)<a id="87c33" class="tk">in0</a> <a id="87c37" class="tk">+</a> 1U <a id="87c42" class="tk">:</a> (<a id="87c45" class="tk">uint32_T</a>)<a id="87c54" class="tk">in0</a>;</td></tr>
+<tr name="88" id="88">
+<td><a id="l88" class='ln'>88</a></td><td>  <a id="88c3" class="tk">absIn1</a> = <a id="88c12" class="tk">in1</a> <a id="88c16" class="tk">&lt;</a> 0 <a id="88c20" class="tk">?</a> <a id="88c22" class="tk">~</a>(<a id="88c24" class="tk">uint32_T</a>)<a id="88c33" class="tk">in1</a> <a id="88c37" class="tk">+</a> 1U <a id="88c42" class="tk">:</a> (<a id="88c45" class="tk">uint32_T</a>)<a id="88c54" class="tk">in1</a>;</td></tr>
+<tr name="89" id="89">
+<td><a id="l89" class='ln'>89</a></td><td>  <a id="89c3" class="tk">in0Hi</a> = <a id="89c11" class="tk">absIn0</a> <a id="89c18" class="tk">&gt;&gt;</a> 16U;</td></tr>
+<tr name="90" id="90">
+<td><a id="l90" class='ln'>90</a></td><td>  <a id="90c3" class="tk">in0Lo</a> = <a id="90c11" class="tk">absIn0</a> <a id="90c18" class="tk">&amp;</a> 65535U;</td></tr>
+<tr name="91" id="91">
+<td><a id="l91" class='ln'>91</a></td><td>  <a id="91c3" class="tk">in1Hi</a> = <a id="91c11" class="tk">absIn1</a> <a id="91c18" class="tk">&gt;&gt;</a> 16U;</td></tr>
+<tr name="92" id="92">
+<td><a id="l92" class='ln'>92</a></td><td>  <a id="92c3" class="tk">absIn0</a> = <a id="92c12" class="tk">absIn1</a> <a id="92c19" class="tk">&amp;</a> 65535U;</td></tr>
+<tr name="93" id="93">
+<td><a id="l93" class='ln'>93</a></td><td>  <a id="93c3" class="tk">productHiLo</a> = <a id="93c17" class="tk">in0Hi</a> <a id="93c23" class="tk">*</a> <a id="93c25" class="tk">absIn0</a>;</td></tr>
+<tr name="94" id="94">
+<td><a id="l94" class='ln'>94</a></td><td>  <a id="94c3" class="tk">productLoHi</a> = <a id="94c17" class="tk">in0Lo</a> <a id="94c23" class="tk">*</a> <a id="94c25" class="tk">in1Hi</a>;</td></tr>
+<tr name="95" id="95">
+<td><a id="l95" class='ln'>95</a></td><td>  <a id="95c3" class="tk">absIn0</a> <a id="95c10" class="tk">*=</a> <a id="95c13" class="tk">in0Lo</a>;</td></tr>
+<tr name="96" id="96">
+<td><a id="l96" class='ln'>96</a></td><td>  <a id="96c3" class="tk">absIn1</a> = 0U;</td></tr>
+<tr name="97" id="97">
+<td><a id="l97" class='ln'>97</a></td><td>  <a id="97c3" class="tk">in0Lo</a> = (<a id="97c12" class="tk">productLoHi</a> <a id="97c24" class="tk">&lt;&lt;</a> <span class="ct">/*MW:OvBitwiseOk*/</span> 16U) <a id="97c51" class="tk">+</a> <span class="ct">/*MW:OvCarryOk*/</span> <a id="97c70" class="tk">absIn0</a>;</td></tr>
+<tr name="98" id="98">
+<td><a id="l98" class='ln'>98</a></td><td>  <span class="kw">if</span> (<a id="98c7" class="tk">in0Lo</a> <a id="98c13" class="tk">&lt;</a> <a id="98c15" class="tk">absIn0</a>) <span class="br">{</span></td></tr>
+<tr name="99" id="99">
+<td><a id="l99" class='ln'>99</a></td><td>    <a id="99c5" class="tk">absIn1</a> = 1U;</td></tr>
+<tr name="100" id="100">
+<td><a id="l100" class='ln'>100</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="101" id="101">
+<td><a id="l101" class='ln'>101</a></td><td></td></tr>
+<tr name="102" id="102">
+<td><a id="l102" class='ln'>102</a></td><td>  <a id="102c3" class="tk">absIn0</a> = <a id="102c12" class="tk">in0Lo</a>;</td></tr>
+<tr name="103" id="103">
+<td><a id="l103" class='ln'>103</a></td><td>  <a id="103c3" class="tk">in0Lo</a> <a id="103c9" class="tk">+=</a> <span class="ct">/*MW:OvCarryOk*/</span> <a id="103c29" class="tk">productHiLo</a> <a id="103c41" class="tk">&lt;&lt;</a> <span class="ct">/*MW:OvBitwiseOk*/</span> 16U;</td></tr>
+<tr name="104" id="104">
+<td><a id="l104" class='ln'>104</a></td><td>  <span class="kw">if</span> (<a id="104c7" class="tk">in0Lo</a> <a id="104c13" class="tk">&lt;</a> <a id="104c15" class="tk">absIn0</a>) <span class="br">{</span></td></tr>
+<tr name="105" id="105">
+<td><a id="l105" class='ln'>105</a></td><td>    <a id="105c5" class="tk">absIn1</a><a id="105c11" class="tk">++</a>;</td></tr>
+<tr name="106" id="106">
+<td><a id="l106" class='ln'>106</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="107" id="107">
+<td><a id="l107" class='ln'>107</a></td><td></td></tr>
+<tr name="108" id="108">
+<td><a id="l108" class='ln'>108</a></td><td>  <a id="108c3" class="tk">absIn0</a> = (((<a id="108c15" class="tk">productLoHi</a> <a id="108c27" class="tk">&gt;&gt;</a> 16U) <a id="108c35" class="tk">+</a> (<a id="108c38" class="tk">productHiLo</a> <a id="108c50" class="tk">&gt;&gt;</a> 16U)) <a id="108c59" class="tk">+</a> <a id="108c61" class="tk">in0Hi</a> <a id="108c67" class="tk">*</a> <a id="108c69" class="tk">in1Hi</a>) <a id="108c76" class="tk">+</a></td></tr>
+<tr name="109" id="109">
+<td><a id="l109" class='ln'>109</a></td><td>    <a id="109c5" class="tk">absIn1</a>;</td></tr>
+<tr name="110" id="110">
+<td><a id="l110" class='ln'>110</a></td><td>  <span class="kw">if</span> (<a id="110c7" class="tk">!</a>((<a id="110c10" class="tk">in0</a> <a id="110c14" class="tk">==</a> 0) <a id="110c20" class="tk">||</a> ((<a id="110c25" class="tk">in1</a> <a id="110c29" class="tk">==</a> 0) <a id="110c35" class="tk">||</a> ((<a id="110c40" class="tk">in0</a> <a id="110c44" class="tk">&gt;</a> 0) <a id="110c49" class="tk">==</a> (<a id="110c53" class="tk">in1</a> <a id="110c57" class="tk">&gt;</a> 0))))) <span class="br">{</span></td></tr>
+<tr name="111" id="111">
+<td><a id="l111" class='ln'>111</a></td><td>    <a id="111c5" class="tk">absIn0</a> = <a id="111c14" class="tk">~</a><a id="111c15" class="tk">absIn0</a>;</td></tr>
+<tr name="112" id="112">
+<td><a id="l112" class='ln'>112</a></td><td>    <a id="112c5" class="tk">in0Lo</a> = <a id="112c13" class="tk">~</a><a id="112c14" class="tk">in0Lo</a>;</td></tr>
+<tr name="113" id="113">
+<td><a id="l113" class='ln'>113</a></td><td>    <a id="113c5" class="tk">in0Lo</a><a id="113c10" class="tk">++</a>;</td></tr>
+<tr name="114" id="114">
+<td><a id="l114" class='ln'>114</a></td><td>    <span class="kw">if</span> (<a id="114c9" class="tk">in0Lo</a> <a id="114c15" class="tk">==</a> 0U) <span class="br">{</span></td></tr>
+<tr name="115" id="115">
+<td><a id="l115" class='ln'>115</a></td><td>      <a id="115c7" class="tk">absIn0</a><a id="115c13" class="tk">++</a>;</td></tr>
+<tr name="116" id="116">
+<td><a id="l116" class='ln'>116</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="117" id="117">
+<td><a id="l117" class='ln'>117</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="118" id="118">
+<td><a id="l118" class='ln'>118</a></td><td></td></tr>
+<tr name="119" id="119">
+<td><a id="l119" class='ln'>119</a></td><td>  <a id="119c3" class="tk">*</a><a id="119c4" class="tk">ptrOutBitsHi</a> = <a id="119c19" class="tk">absIn0</a>;</td></tr>
+<tr name="120" id="120">
+<td><a id="l120" class='ln'>120</a></td><td>  <a id="120c3" class="tk">*</a><a id="120c4" class="tk">ptrOutBitsLo</a> = <a id="120c19" class="tk">in0Lo</a>;</td></tr>
+<tr name="121" id="121">
+<td><a id="l121" class='ln'>121</a></td><td><span class="br">}</span></td></tr>
+<tr name="122" id="122">
+<td><a id="l122" class='ln'>122</a></td><td></td></tr>
+<tr name="123" id="123">
+<td><a id="l123" class='ln'>123</a></td><td><a id="123c1" class="tk">int32_T</a> <a id="123c9" class="tk">mul_s32_loSR</a>(<a id="123c22" class="tk">int32_T</a> <a id="123c30" class="tk">a</a>, <a id="123c33" class="tk">int32_T</a> <a id="123c41" class="tk">b</a>, <a id="123c44" class="tk">uint32_T</a> <a id="123c53" class="tk">aShift</a>)</td></tr>
+<tr name="124" id="124">
+<td><a id="l124" class='ln'>124</a></td><td><span class="br">{</span></td></tr>
+<tr name="125" id="125">
+<td><a id="l125" class='ln'>125</a></td><td>  <a id="125c3" class="tk">uint32_T</a> <a id="125c12" class="tk">u32_chi</a>;</td></tr>
+<tr name="126" id="126">
+<td><a id="l126" class='ln'>126</a></td><td>  <a id="126c3" class="tk">uint32_T</a> <a id="126c12" class="tk">u32_clo</a>;</td></tr>
+<tr name="127" id="127">
+<td><a id="l127" class='ln'>127</a></td><td>  <a id="127c3" class="tk">mul_wide_s32</a>(<a id="127c16" class="tk">a</a>, <a id="127c19" class="tk">b</a>, <a id="127c22" class="tk">&amp;</a><a id="127c23" class="tk">u32_chi</a>, <a id="127c32" class="tk">&amp;</a><a id="127c33" class="tk">u32_clo</a>);</td></tr>
+<tr name="128" id="128">
+<td><a id="l128" class='ln'>128</a></td><td>  <a id="128c3" class="tk">u32_clo</a> = <a id="128c13" class="tk">u32_chi</a> <a id="128c21" class="tk">&lt;&lt;</a> <span class="ct">/*MW:OvBitwiseOk*/</span> (32U <a id="128c48" class="tk">-</a> <a id="128c50" class="tk">aShift</a>) <a id="128c58" class="tk">|</a> <a id="128c60" class="tk">u32_clo</a> <a id="128c68" class="tk">&gt;&gt;</a> <a id="128c71" class="tk">aShift</a>;</td></tr>
+<tr name="129" id="129">
+<td><a id="l129" class='ln'>129</a></td><td>  <span class="kw">return</span> (<a id="129c11" class="tk">int32_T</a>)<a id="129c19" class="tk">u32_clo</a>;</td></tr>
+<tr name="130" id="130">
+<td><a id="l130" class='ln'>130</a></td><td><span class="br">}</span></td></tr>
+<tr name="131" id="131">
+<td><a id="l131" class='ln'>131</a></td><td></td></tr>
+<tr name="132" id="132">
+<td><a id="l132" class='ln'>132</a></td><td><a id="132c1" class="tk">real32_T</a> <a id="132c10" class="tk">rt_powf_snf</a>(<a id="132c22" class="tk">real32_T</a> <a id="132c31" class="tk">u0</a>, <a id="132c35" class="tk">real32_T</a> <a id="132c44" class="tk">u1</a>)</td></tr>
+<tr name="133" id="133">
+<td><a id="l133" class='ln'>133</a></td><td><span class="br">{</span></td></tr>
+<tr name="134" id="134">
+<td><a id="l134" class='ln'>134</a></td><td>  <a id="134c3" class="tk">real32_T</a> <a id="134c12" class="tk">y</a>;</td></tr>
+<tr name="135" id="135">
+<td><a id="l135" class='ln'>135</a></td><td>  <a id="135c3" class="tk">real32_T</a> <a id="135c12" class="tk">tmp</a>;</td></tr>
+<tr name="136" id="136">
+<td><a id="l136" class='ln'>136</a></td><td>  <a id="136c3" class="tk">real32_T</a> <a id="136c12" class="tk">tmp_0</a>;</td></tr>
+<tr name="137" id="137">
+<td><a id="l137" class='ln'>137</a></td><td>  <span class="kw">if</span> (<a id="137c7" class="tk">rtIsNaNF</a>(<a id="137c16" class="tk">u0</a>) <a id="137c20" class="tk">||</a> <a id="137c23" class="tk">rtIsNaNF</a>(<a id="137c32" class="tk">u1</a>)) <span class="br">{</span></td></tr>
+<tr name="138" id="138">
+<td><a id="l138" class='ln'>138</a></td><td>    <a id="138c5" class="tk">y</a> = (<a id="138c10" class="tk">rtNaNF</a>);</td></tr>
+<tr name="139" id="139">
+<td><a id="l139" class='ln'>139</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="140" id="140">
+<td><a id="l140" class='ln'>140</a></td><td>    <a id="140c5" class="tk">tmp</a> = (<a id="140c12" class="tk">real32_T</a>)<a id="140c21" class="tk">fabs</a>(<a id="140c26" class="tk">u0</a>);</td></tr>
+<tr name="141" id="141">
+<td><a id="l141" class='ln'>141</a></td><td>    <a id="141c5" class="tk">tmp_0</a> = (<a id="141c14" class="tk">real32_T</a>)<a id="141c23" class="tk">fabs</a>(<a id="141c28" class="tk">u1</a>);</td></tr>
+<tr name="142" id="142">
+<td><a id="l142" class='ln'>142</a></td><td>    <span class="kw">if</span> (<a id="142c9" class="tk">rtIsInfF</a>(<a id="142c18" class="tk">u1</a>)) <span class="br">{</span></td></tr>
+<tr name="143" id="143">
+<td><a id="l143" class='ln'>143</a></td><td>      <span class="kw">if</span> (<a id="143c11" class="tk">tmp</a> <a id="143c15" class="tk">==</a> 1.0F) <span class="br">{</span></td></tr>
+<tr name="144" id="144">
+<td><a id="l144" class='ln'>144</a></td><td>        <a id="144c9" class="tk">y</a> = 1.0F;</td></tr>
+<tr name="145" id="145">
+<td><a id="l145" class='ln'>145</a></td><td>      <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> (<a id="145c18" class="tk">tmp</a> <a id="145c22" class="tk">&gt;</a> 1.0F) <span class="br">{</span></td></tr>
+<tr name="146" id="146">
+<td><a id="l146" class='ln'>146</a></td><td>        <span class="kw">if</span> (<a id="146c13" class="tk">u1</a> <a id="146c16" class="tk">&gt;</a> 0.0F) <span class="br">{</span></td></tr>
+<tr name="147" id="147">
+<td><a id="l147" class='ln'>147</a></td><td>          <a id="147c11" class="tk">y</a> = (<a id="147c16" class="tk">rtInfF</a>);</td></tr>
+<tr name="148" id="148">
+<td><a id="l148" class='ln'>148</a></td><td>        <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="149" id="149">
+<td><a id="l149" class='ln'>149</a></td><td>          <a id="149c11" class="tk">y</a> = 0.0F;</td></tr>
+<tr name="150" id="150">
+<td><a id="l150" class='ln'>150</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="151" id="151">
+<td><a id="l151" class='ln'>151</a></td><td>      <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> (<a id="151c18" class="tk">u1</a> <a id="151c21" class="tk">&gt;</a> 0.0F) <span class="br">{</span></td></tr>
+<tr name="152" id="152">
+<td><a id="l152" class='ln'>152</a></td><td>        <a id="152c9" class="tk">y</a> = 0.0F;</td></tr>
+<tr name="153" id="153">
+<td><a id="l153" class='ln'>153</a></td><td>      <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="154" id="154">
+<td><a id="l154" class='ln'>154</a></td><td>        <a id="154c9" class="tk">y</a> = (<a id="154c14" class="tk">rtInfF</a>);</td></tr>
+<tr name="155" id="155">
+<td><a id="l155" class='ln'>155</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="156" id="156">
+<td><a id="l156" class='ln'>156</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> (<a id="156c16" class="tk">tmp_0</a> <a id="156c22" class="tk">==</a> 0.0F) <span class="br">{</span></td></tr>
+<tr name="157" id="157">
+<td><a id="l157" class='ln'>157</a></td><td>      <a id="157c7" class="tk">y</a> = 1.0F;</td></tr>
+<tr name="158" id="158">
+<td><a id="l158" class='ln'>158</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> (<a id="158c16" class="tk">tmp_0</a> <a id="158c22" class="tk">==</a> 1.0F) <span class="br">{</span></td></tr>
+<tr name="159" id="159">
+<td><a id="l159" class='ln'>159</a></td><td>      <span class="kw">if</span> (<a id="159c11" class="tk">u1</a> <a id="159c14" class="tk">&gt;</a> 0.0F) <span class="br">{</span></td></tr>
+<tr name="160" id="160">
+<td><a id="l160" class='ln'>160</a></td><td>        <a id="160c9" class="tk">y</a> = <a id="160c13" class="tk">u0</a>;</td></tr>
+<tr name="161" id="161">
+<td><a id="l161" class='ln'>161</a></td><td>      <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="162" id="162">
+<td><a id="l162" class='ln'>162</a></td><td>        <a id="162c9" class="tk">y</a> = 1.0F <a id="162c18" class="tk">/</a> <a id="162c20" class="tk">u0</a>;</td></tr>
+<tr name="163" id="163">
+<td><a id="l163" class='ln'>163</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="164" id="164">
+<td><a id="l164" class='ln'>164</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> (<a id="164c16" class="tk">u1</a> <a id="164c19" class="tk">==</a> 2.0F) <span class="br">{</span></td></tr>
+<tr name="165" id="165">
+<td><a id="l165" class='ln'>165</a></td><td>      <a id="165c7" class="tk">y</a> = <a id="165c11" class="tk">u0</a> <a id="165c14" class="tk">*</a> <a id="165c16" class="tk">u0</a>;</td></tr>
+<tr name="166" id="166">
+<td><a id="l166" class='ln'>166</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> ((<a id="166c17" class="tk">u1</a> <a id="166c20" class="tk">==</a> 0.5F) <a id="166c29" class="tk">&amp;&amp;</a> (<a id="166c33" class="tk">u0</a> <a id="166c36" class="tk">&gt;=</a> 0.0F)) <span class="br">{</span></td></tr>
+<tr name="167" id="167">
+<td><a id="l167" class='ln'>167</a></td><td>      <a id="167c7" class="tk">y</a> = (<a id="167c12" class="tk">real32_T</a>)<a id="167c21" class="tk">sqrt</a>(<a id="167c26" class="tk">u0</a>);</td></tr>
+<tr name="168" id="168">
+<td><a id="l168" class='ln'>168</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> ((<a id="168c17" class="tk">u0</a> <a id="168c20" class="tk">&lt;</a> 0.0F) <a id="168c28" class="tk">&amp;&amp;</a> (<a id="168c32" class="tk">u1</a> <a id="168c35" class="tk">&gt;</a> (<a id="168c38" class="tk">real32_T</a>)<a id="168c47" class="tk">floor</a>(<a id="168c53" class="tk">u1</a>))) <span class="br">{</span></td></tr>
+<tr name="169" id="169">
+<td><a id="l169" class='ln'>169</a></td><td>      <a id="169c7" class="tk">y</a> = (<a id="169c12" class="tk">rtNaNF</a>);</td></tr>
+<tr name="170" id="170">
+<td><a id="l170" class='ln'>170</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="171" id="171">
+<td><a id="l171" class='ln'>171</a></td><td>      <a id="171c7" class="tk">y</a> = (<a id="171c12" class="tk">real32_T</a>)<a id="171c21" class="tk">pow</a>(<a id="171c25" class="tk">u0</a>, <a id="171c29" class="tk">u1</a>);</td></tr>
+<tr name="172" id="172">
+<td><a id="l172" class='ln'>172</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="173" id="173">
+<td><a id="l173" class='ln'>173</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="174" id="174">
+<td><a id="l174" class='ln'>174</a></td><td></td></tr>
+<tr name="175" id="175">
+<td><a id="l175" class='ln'>175</a></td><td>  <span class="kw">return</span> <a id="175c10" class="tk">y</a>;</td></tr>
+<tr name="176" id="176">
+<td><a id="l176" class='ln'>176</a></td><td><span class="br">}</span></td></tr>
+<tr name="177" id="177">
+<td><a id="l177" class='ln'>177</a></td><td></td></tr>
+<tr name="178" id="178">
+<td><a id="l178" class='ln'>178</a></td><td><span class="ct">/* Model step function */</span></td></tr>
+<tr name="179" id="179">
+<td><a id="l179" class='ln'>179</a></td><td><span class="kw">void</span> <a id="179c6" class="tk">uc3_preparation1_2017_step</a>(<span class="kw">void</span>)</td></tr>
+<tr name="180" id="180">
+<td><a id="l180" class='ln'>180</a></td><td><span class="br">{</span></td></tr>
+<tr name="181" id="181">
+<td><a id="l181" class='ln'>181</a></td><td>  <a id="181c3" class="tk">real32_T</a> <a id="181c12" class="tk">d_sep</a>;</td></tr>
+<tr name="182" id="182">
+<td><a id="l182" class='ln'>182</a></td><td>  <a id="182c3" class="tk">real32_T</a> <a id="182c12" class="tk">tf</a>;</td></tr>
+<tr name="183" id="183">
+<td><a id="l183" class='ln'>183</a></td><td>  <a id="183c3" class="tk">real_T</a> <a id="183c10" class="tk">i</a>;</td></tr>
+<tr name="184" id="184">
+<td><a id="l184" class='ln'>184</a></td><td>  <a id="184c3" class="tk">int32_T</a> <a id="184c11" class="tk">j</a>;</td></tr>
+<tr name="185" id="185">
+<td><a id="l185" class='ln'>185</a></td><td>  <a id="185c3" class="tk">int32_T</a> <a id="185c11" class="tk">b_k</a>;</td></tr>
+<tr name="186" id="186">
+<td><a id="l186" class='ln'>186</a></td><td>  <span class="kw">static</span> <span class="kw">const</span> <a id="186c16" class="tk">real32_T</a> <a id="186c25" class="tk">f</a>[34] = <span class="br">{</span> 1.0F, 2.0F, 6.0F, 24.0F, 120.0F, 720.0F,</td></tr>
+<tr name="187" id="187">
+<td><a id="l187" class='ln'>187</a></td><td>    5040.0F, 40320.0F, 362880.0F, 3.6288E+6F, 3.99168E+7F, 4.790016E+8F,</td></tr>
+<tr name="188" id="188">
+<td><a id="l188" class='ln'>188</a></td><td>    6.2270208E+9F, 8.71782892E+10F, 1.30767428E+12F, 2.09227885E+13F,</td></tr>
+<tr name="189" id="189">
+<td><a id="l189" class='ln'>189</a></td><td>    3.55687415E+14F, 6.40237353E+15F, 1.21645096E+17F, 2.43290202E+18F,</td></tr>
+<tr name="190" id="190">
+<td><a id="l190" class='ln'>190</a></td><td>    5.10909408E+19F, 1.12400072E+21F, 2.58520174E+22F, 6.20448455E+23F,</td></tr>
+<tr name="191" id="191">
+<td><a id="l191" class='ln'>191</a></td><td>    1.55112111E+25F, 4.032915E+26F, 1.08888704E+28F, 3.04888372E+29F,</td></tr>
+<tr name="192" id="192">
+<td><a id="l192" class='ln'>192</a></td><td>    8.84176308E+30F, 2.6525289E+32F, 8.22283969E+33F, 2.6313087E+35F,</td></tr>
+<tr name="193" id="193">
+<td><a id="l193" class='ln'>193</a></td><td>    8.68331851E+36F, 2.95232823E+38F <span class="br">}</span>;</td></tr>
+<tr name="194" id="194">
+<td><a id="l194" class='ln'>194</a></td><td></td></tr>
+<tr name="195" id="195">
+<td><a id="l195" class='ln'>195</a></td><td>  <span class="kw">static</span> <span class="kw">const</span> <a id="195c16" class="tk">int8_T</a> <a id="195c23" class="tk">cfd</a>[16] = <span class="br">{</span> 1, <a id="195c38" class="tk">-</a>1, 1, <a id="195c45" class="tk">-</a>1, 0, 1, <a id="195c55" class="tk">-</a>2, 3, 0, 0, 1, <a id="195c71" class="tk">-</a>3, 0, 0,</td></tr>
+<tr name="196" id="196">
+<td><a id="l196" class='ln'>196</a></td><td>    0, 1 <span class="br">}</span>;</td></tr>
+<tr name="197" id="197">
+<td><a id="l197" class='ln'>197</a></td><td></td></tr>
+<tr name="198" id="198">
+<td><a id="l198" class='ln'>198</a></td><td>  <a id="198c3" class="tk">boolean_T</a> <a id="198c13" class="tk">rtb_Compare_e</a>;</td></tr>
+<tr name="199" id="199">
+<td><a id="l199" class='ln'>199</a></td><td>  <a id="199c3" class="tk">real32_T</a> <a id="199c12" class="tk">rtb_Gain2</a>;</td></tr>
+<tr name="200" id="200">
+<td><a id="l200" class='ln'>200</a></td><td>  <a id="200c3" class="tk">int32_T</a> <a id="200c11" class="tk">rtb_Add1</a>;</td></tr>
+<tr name="201" id="201">
+<td><a id="l201" class='ln'>201</a></td><td>  <a id="201c3" class="tk">int32_T</a> <a id="201c11" class="tk">j_0</a>;</td></tr>
+<tr name="202" id="202">
+<td><a id="l202" class='ln'>202</a></td><td>  <a id="202c3" class="tk">real32_T</a> <a id="202c12" class="tk">rtb_Switch_idx_0</a>;</td></tr>
+<tr name="203" id="203">
+<td><a id="l203" class='ln'>203</a></td><td></td></tr>
+<tr name="204" id="204">
+<td><a id="l204" class='ln'>204</a></td><td>  <span class="ct">/* Constant: '<a class="ct blk" blk_line="204">&lt;Root&gt;/Amplitude</a>' */</span></td></tr>
+<tr name="205" id="205">
+<td><a id="l205" class='ln'>205</a></td><td>  <a id="205c3" class="tk">*</a><a id="205c4" class="tk">tune1</a> = <a id="205c12" class="tk">uc3_preparation1_2017_P</a>.<a id="205c36" class="tk">Amplitude_Value</a>;</td></tr>
+<tr name="206" id="206">
+<td><a id="l206" class='ln'>206</a></td><td></td></tr>
+<tr name="207" id="207">
+<td><a id="l207" class='ln'>207</a></td><td>  <span class="ct">/* DataTypeConversion: '<a class="ct blk" blk_line="207">&lt;S13&gt;/Data Type Conversion3</a>' incorporates:</span></td></tr>
+<tr name="208" id="208">
+<td><a id="l208" class='ln'>208</a></td><td><span class="ct">   *  Constant: '<a class="ct blk" blk_line="208">&lt;S13&gt;/Constant1</a>'</span></td></tr>
+<tr name="209" id="209">
+<td><a id="l209" class='ln'>209</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="210" id="210">
+<td><a id="l210" class='ln'>210</a></td><td>  <a id="210c3" class="tk">*</a><a id="210c4" class="tk">share_in3</a> = <a id="210c16" class="tk">uc3_preparation1_2017_P</a>.<a id="210c40" class="tk">Constant1_Value_n</a>;</td></tr>
+<tr name="211" id="211">
+<td><a id="l211" class='ln'>211</a></td><td></td></tr>
+<tr name="212" id="212">
+<td><a id="l212" class='ln'>212</a></td><td>  <span class="ct">/* DataTypeConversion: '<a class="ct blk" blk_line="212">&lt;S4&gt;/Data Type Conversion3</a>' */</span></td></tr>
+<tr name="213" id="213">
+<td><a id="l213" class='ln'>213</a></td><td>  <a id="213c3" class="tk">*</a><a id="213c4" class="tk">probe3</a> = <a id="213c13" class="tk">*</a><a id="213c14" class="tk">share_in3</a>;</td></tr>
+<tr name="214" id="214">
+<td><a id="l214" class='ln'>214</a></td><td></td></tr>
+<tr name="215" id="215">
+<td><a id="l215" class='ln'>215</a></td><td>  <span class="ct">/* DataTypeConversion: '<a class="ct blk" blk_line="215">&lt;S4&gt;/Data Type Conversion</a>' incorporates:</span></td></tr>
+<tr name="216" id="216">
+<td><a id="l216" class='ln'>216</a></td><td><span class="ct">   *  Constant: '<a class="ct blk" blk_line="216">&lt;S4&gt;/Constant</a>'</span></td></tr>
+<tr name="217" id="217">
+<td><a id="l217" class='ln'>217</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="218" id="218">
+<td><a id="l218" class='ln'>218</a></td><td>  <a id="218c3" class="tk">*</a><a id="218c4" class="tk">probe4</a> = <a id="218c13" class="tk">uc3_preparation1_2017_P</a>.<a id="218c37" class="tk">Constant_Value_p</a>;</td></tr>
+<tr name="219" id="219">
+<td><a id="l219" class='ln'>219</a></td><td></td></tr>
+<tr name="220" id="220">
+<td><a id="l220" class='ln'>220</a></td><td>  <span class="ct">/* DataTypeConversion: '<a class="ct blk" blk_line="220">&lt;S4&gt;/Data Type Conversion2</a>' */</span></td></tr>
+<tr name="221" id="221">
+<td><a id="l221" class='ln'>221</a></td><td>  <a id="221c3" class="tk">*</a><a id="221c4" class="tk">share_out1</a> = 0;</td></tr>
+<tr name="222" id="222">
+<td><a id="l222" class='ln'>222</a></td><td></td></tr>
+<tr name="223" id="223">
+<td><a id="l223" class='ln'>223</a></td><td>  <span class="ct">/* Constant: '<a class="ct blk" blk_line="223">&lt;Root&gt;/Mode</a>' */</span></td></tr>
+<tr name="224" id="224">
+<td><a id="l224" class='ln'>224</a></td><td>  <a id="224c3" class="tk">*</a><a id="224c4" class="tk">tune3</a> = <a id="224c12" class="tk">uc3_preparation1_2017_P</a>.<a id="224c36" class="tk">Mode_Value</a>;</td></tr>
+<tr name="225" id="225">
+<td><a id="l225" class='ln'>225</a></td><td></td></tr>
+<tr name="226" id="226">
+<td><a id="l226" class='ln'>226</a></td><td>  <span class="ct">/* Constant: '<a class="ct blk" blk_line="226">&lt;Root&gt;/Freq_in_Hz</a>' */</span></td></tr>
+<tr name="227" id="227">
+<td><a id="l227" class='ln'>227</a></td><td>  <a id="227c3" class="tk">*</a><a id="227c4" class="tk">tune2</a> = <a id="227c12" class="tk">uc3_preparation1_2017_P</a>.<a id="227c36" class="tk">Freq_in_Hz_Value</a>;</td></tr>
+<tr name="228" id="228">
+<td><a id="l228" class='ln'>228</a></td><td></td></tr>
+<tr name="229" id="229">
+<td><a id="l229" class='ln'>229</a></td><td>  <span class="ct">/* Constant: '<a class="ct blk" blk_line="229">&lt;Root&gt;/duty</a>' */</span></td></tr>
+<tr name="230" id="230">
+<td><a id="l230" class='ln'>230</a></td><td>  <a id="230c3" class="tk">*</a><a id="230c4" class="tk">tune4</a> = <a id="230c12" class="tk">uc3_preparation1_2017_P</a>.<a id="230c36" class="tk">duty_Value</a>;</td></tr>
+<tr name="231" id="231">
+<td><a id="l231" class='ln'>231</a></td><td></td></tr>
+<tr name="232" id="232">
+<td><a id="l232" class='ln'>232</a></td><td>  <span class="ct">/* Constant: '<a class="ct blk" blk_line="232">&lt;Root&gt;/Polynomial</a>' */</span></td></tr>
+<tr name="233" id="233">
+<td><a id="l233" class='ln'>233</a></td><td>  <a id="233c3" class="tk">*</a><a id="233c4" class="tk">tune5</a> = <a id="233c12" class="tk">uc3_preparation1_2017_P</a>.<a id="233c36" class="tk">Polynomial_Value</a>;</td></tr>
+<tr name="234" id="234">
+<td><a id="l234" class='ln'>234</a></td><td></td></tr>
+<tr name="235" id="235">
+<td><a id="l235" class='ln'>235</a></td><td>  <span class="ct">/* MATLAB Function: '<a class="ct blk" blk_line="235">&lt;S5&gt;/RT_CPU</a>' incorporates:</span></td></tr>
+<tr name="236" id="236">
+<td><a id="l236" class='ln'>236</a></td><td><span class="ct">   *  DataTypeConversion: '<a class="ct blk" blk_line="236">&lt;S4&gt;/Data Type Conversion1</a>'</span></td></tr>
+<tr name="237" id="237">
+<td><a id="l237" class='ln'>237</a></td><td><span class="ct">   *  DataTypeConversion: '<a class="ct blk" blk_line="237">&lt;S4&gt;/Data Type Conversion4</a>'</span></td></tr>
+<tr name="238" id="238">
+<td><a id="l238" class='ln'>238</a></td><td><span class="ct">   *  DataTypeConversion: '<a class="ct blk" blk_line="238">&lt;S4&gt;/Data Type Conversion5</a>'</span></td></tr>
+<tr name="239" id="239">
+<td><a id="l239" class='ln'>239</a></td><td><span class="ct">   *  DataTypeConversion: '<a class="ct blk" blk_line="239">&lt;S4&gt;/Data Type Conversion6</a>'</span></td></tr>
+<tr name="240" id="240">
+<td><a id="l240" class='ln'>240</a></td><td><span class="ct">   *  DataTypeConversion: '<a class="ct blk" blk_line="240">&lt;S4&gt;/Data Type Conversion7</a>'</span></td></tr>
+<tr name="241" id="241">
+<td><a id="l241" class='ln'>241</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="242" id="242">
+<td><a id="l242" class='ln'>242</a></td><td>  <a id="242c3" class="tk">rtb_Gain2</a> = (<a id="242c16" class="tk">real32_T</a>)<a id="242c25" class="tk">*</a><a id="242c26" class="tk">tune5</a>;</td></tr>
+<tr name="243" id="243">
+<td><a id="l243" class='ln'>243</a></td><td></td></tr>
+<tr name="244" id="244">
+<td><a id="l244" class='ln'>244</a></td><td>  <span class="ct">/* MATLAB Function 'CandHDL_c/cgenerate/Subsystem/RT_CPU': '<a class="ct blk" blk_line="244">&lt;S7&gt;:1</a>' */</span></td></tr>
+<tr name="245" id="245">
+<td><a id="l245" class='ln'>245</a></td><td>  <span class="ct">/* '<a class="ct blk" blk_line="245">&lt;S7&gt;:1:127</a>' */</span></td></tr>
+<tr name="246" id="246">
+<td><a id="l246" class='ln'>246</a></td><td>  <span class="ct">/* '<a class="ct blk" blk_line="246">&lt;S7&gt;:1:139</a>' */</span></td></tr>
+<tr name="247" id="247">
+<td><a id="l247" class='ln'>247</a></td><td>  <span class="ct">/* '<a class="ct blk" blk_line="247">&lt;S7&gt;:1:17</a>' */</span></td></tr>
+<tr name="248" id="248">
+<td><a id="l248" class='ln'>248</a></td><td>  <a id="248c3" class="tk">d_sep</a> = (<a id="248c12" class="tk">real32_T</a>)<a id="248c21" class="tk">*</a><a id="248c22" class="tk">tune4</a> <a id="248c28" class="tk">*</a> 1.28F;</td></tr>
+<tr name="249" id="249">
+<td><a id="l249" class='ln'>249</a></td><td>  <span class="kw">if</span> (<a id="249c7" class="tk">!</a><a id="249c8" class="tk">uc3_preparation1_2017_DW</a>.<a id="249c33" class="tk">cc0_not_empty</a>) <span class="br">{</span></td></tr>
+<tr name="250" id="250">
+<td><a id="l250" class='ln'>250</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="250">&lt;S7&gt;:1:19</a>' */</span></td></tr>
+<tr name="251" id="251">
+<td><a id="l251" class='ln'>251</a></td><td>    <a id="251c5" class="tk">uc3_preparation1_2017_DW</a>.<a id="251c30" class="tk">cc0_not_empty</a> = true;</td></tr>
+<tr name="252" id="252">
+<td><a id="l252" class='ln'>252</a></td><td></td></tr>
+<tr name="253" id="253">
+<td><a id="l253" class='ln'>253</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="253">&lt;S7&gt;:1:23</a>' */</span></td></tr>
+<tr name="254" id="254">
+<td><a id="l254" class='ln'>254</a></td><td>    <a id="254c5" class="tk">rtb_Gain2</a> = 2.0F;</td></tr>
+<tr name="255" id="255">
+<td><a id="l255" class='ln'>255</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="256" id="256">
+<td><a id="l256" class='ln'>256</a></td><td></td></tr>
+<tr name="257" id="257">
+<td><a id="l257" class='ln'>257</a></td><td>  <span class="ct">/* '<a class="ct blk" blk_line="257">&lt;S7&gt;:1:30</a>' */</span></td></tr>
+<tr name="258" id="258">
+<td><a id="l258" class='ln'>258</a></td><td>  <a id="258c3" class="tk">rtb_Add1</a> = 0;</td></tr>
+<tr name="259" id="259">
+<td><a id="l259" class='ln'>259</a></td><td>  <span class="kw">if</span> (<a id="259c7" class="tk">uc3_preparation1_2017_DW</a>.<a id="259c32" class="tk">i0</a> <a id="259c35" class="tk">&lt;</a> 1.0F) <span class="br">{</span></td></tr>
+<tr name="260" id="260">
+<td><a id="l260" class='ln'>260</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="260">&lt;S7&gt;:1:35</a>' */</span></td></tr>
+<tr name="261" id="261">
+<td><a id="l261" class='ln'>261</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="261">&lt;S7&gt;:1:36</a>' */</span></td></tr>
+<tr name="262" id="262">
+<td><a id="l262" class='ln'>262</a></td><td>    <a id="262c5" class="tk">uc3_preparation1_2017_DW</a>.<a id="262c30" class="tk">i0</a> = 1.0F;</td></tr>
+<tr name="263" id="263">
+<td><a id="l263" class='ln'>263</a></td><td></td></tr>
+<tr name="264" id="264">
+<td><a id="l264" class='ln'>264</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="264">&lt;S7&gt;:1:38</a>' */</span></td></tr>
+<tr name="265" id="265">
+<td><a id="l265" class='ln'>265</a></td><td>    <a id="265c5" class="tk">memset</a>(<a id="265c12" class="tk">&amp;</a><a id="265c13" class="tk">uc3_preparation1_2017_DW</a>.<a id="265c38" class="tk">cc0</a>[0], 0, 387U <a id="265c54" class="tk">*</a> <span class="kw">sizeof</span>(<a id="265c63" class="tk">real32_T</a>));</td></tr>
+<tr name="266" id="266">
+<td><a id="l266" class='ln'>266</a></td><td></td></tr>
+<tr name="267" id="267">
+<td><a id="l267" class='ln'>267</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="267">&lt;S7&gt;:1:39</a>' */</span></td></tr>
+<tr name="268" id="268">
+<td><a id="l268" class='ln'>268</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="268">&lt;S7&gt;:1:40</a>' */</span></td></tr>
+<tr name="269" id="269">
+<td><a id="l269" class='ln'>269</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="269">&lt;S7&gt;:1:41</a>' */</span></td></tr>
+<tr name="270" id="270">
+<td><a id="l270" class='ln'>270</a></td><td>    <a id="270c5" class="tk">rtb_Switch_idx_0</a> = 1.0F <a id="270c29" class="tk">/</a> (<a id="270c32" class="tk">real32_T</a>)<a id="270c41" class="tk">*</a><a id="270c42" class="tk">tune2</a>;</td></tr>
+<tr name="271" id="271">
+<td><a id="l271" class='ln'>271</a></td><td></td></tr>
+<tr name="272" id="272">
+<td><a id="l272" class='ln'>272</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="272">&lt;S7&gt;:1:43</a>' */</span></td></tr>
+<tr name="273" id="273">
+<td><a id="l273" class='ln'>273</a></td><td>    <a id="273c5" class="tk">rtb_Add1</a> = 1;</td></tr>
+<tr name="274" id="274">
+<td><a id="l274" class='ln'>274</a></td><td>    <span class="kw">switch</span> ((<a id="274c14" class="tk">int32_T</a>)(<a id="274c23" class="tk">real32_T</a>)<a id="274c32" class="tk">*</a><a id="274c33" class="tk">tune3</a>) <span class="br">{</span></td></tr>
+<tr name="275" id="275">
+<td><a id="l275" class='ln'>275</a></td><td>     <span class="kw">case</span> 0<a id="275c12" class="tk">:</a></td></tr>
+<tr name="276" id="276">
+<td><a id="l276" class='ln'>276</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="276">&lt;S7&gt;:1:54</a>' */</span></td></tr>
+<tr name="277" id="277">
+<td><a id="l277" class='ln'>277</a></td><td>      <a id="277c7" class="tk">tf</a> = 6.28318548F <a id="277c24" class="tk">*</a> (<a id="277c27" class="tk">real32_T</a>)<a id="277c36" class="tk">*</a><a id="277c37" class="tk">tune2</a>;</td></tr>
+<tr name="278" id="278">
+<td><a id="l278" class='ln'>278</a></td><td>      <a id="278c7" class="tk">uc3_preparation1_2017_B</a>.<a id="278c31" class="tk">y</a>[128] = <a id="278c40" class="tk">rtb_Switch_idx_0</a>;</td></tr>
+<tr name="279" id="279">
+<td><a id="l279" class='ln'>279</a></td><td>      <a id="279c7" class="tk">uc3_preparation1_2017_B</a>.<a id="279c31" class="tk">y</a>[0] = 0.0F;</td></tr>
+<tr name="280" id="280">
+<td><a id="l280" class='ln'>280</a></td><td>      <span class="kw">if</span> ((<a id="280c12" class="tk">rtb_Switch_idx_0</a> <a id="280c29" class="tk">&lt;</a> 0.0F) <a id="280c37" class="tk">&amp;&amp;</a> ((<a id="280c42" class="tk">real32_T</a>)<a id="280c51" class="tk">fabs</a>(<a id="280c56" class="tk">rtb_Switch_idx_0</a>) <a id="280c74" class="tk">&gt;</a></td></tr>
+<tr name="281" id="281">
+<td><a id="l281" class='ln'>281</a></td><td>           1.70141173E+38F)) <span class="br">{</span></td></tr>
+<tr name="282" id="282">
+<td><a id="l282" class='ln'>282</a></td><td>        <a id="282c9" class="tk">d_sep</a> = <a id="282c17" class="tk">rtb_Switch_idx_0</a> <a id="282c34" class="tk">/</a> 128.0F;</td></tr>
+<tr name="283" id="283">
+<td><a id="l283" class='ln'>283</a></td><td>        <span class="kw">for</span> (<a id="283c14" class="tk">b_k</a> = 0; <a id="283c23" class="tk">b_k</a> <a id="283c27" class="tk">&lt;</a> 127; <a id="283c34" class="tk">b_k</a><a id="283c37" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="284" id="284">
+<td><a id="l284" class='ln'>284</a></td><td>          <a id="284c11" class="tk">uc3_preparation1_2017_B</a>.<a id="284c35" class="tk">y</a>[<a id="284c37" class="tk">b_k</a> <a id="284c41" class="tk">+</a> 1] = (1.0F <a id="284c54" class="tk">+</a> (<a id="284c57" class="tk">real32_T</a>)<a id="284c66" class="tk">b_k</a>) <a id="284c71" class="tk">*</a> <a id="284c73" class="tk">d_sep</a>;</td></tr>
+<tr name="285" id="285">
+<td><a id="l285" class='ln'>285</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="286" id="286">
+<td><a id="l286" class='ln'>286</a></td><td>      <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="287" id="287">
+<td><a id="l287" class='ln'>287</a></td><td>        <a id="287c9" class="tk">d_sep</a> = <a id="287c17" class="tk">rtb_Switch_idx_0</a> <a id="287c34" class="tk">/</a> 128.0F;</td></tr>
+<tr name="288" id="288">
+<td><a id="l288" class='ln'>288</a></td><td>        <span class="kw">for</span> (<a id="288c14" class="tk">b_k</a> = 0; <a id="288c23" class="tk">b_k</a> <a id="288c27" class="tk">&lt;</a> 127; <a id="288c34" class="tk">b_k</a><a id="288c37" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="289" id="289">
+<td><a id="l289" class='ln'>289</a></td><td>          <a id="289c11" class="tk">uc3_preparation1_2017_B</a>.<a id="289c35" class="tk">y</a>[<a id="289c37" class="tk">b_k</a> <a id="289c41" class="tk">+</a> 1] = (1.0F <a id="289c54" class="tk">+</a> (<a id="289c57" class="tk">real32_T</a>)<a id="289c66" class="tk">b_k</a>) <a id="289c71" class="tk">*</a> <a id="289c73" class="tk">d_sep</a>;</td></tr>
+<tr name="290" id="290">
+<td><a id="l290" class='ln'>290</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="291" id="291">
+<td><a id="l291" class='ln'>291</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="292" id="292">
+<td><a id="l292" class='ln'>292</a></td><td></td></tr>
+<tr name="293" id="293">
+<td><a id="l293" class='ln'>293</a></td><td>      <span class="kw">for</span> (<a id="293c12" class="tk">b_k</a> = 0; <a id="293c21" class="tk">b_k</a> <a id="293c25" class="tk">&lt;</a> 129; <a id="293c32" class="tk">b_k</a><a id="293c35" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="294" id="294">
+<td><a id="l294" class='ln'>294</a></td><td>        <a id="294c9" class="tk">uc3_preparation1_2017_B</a>.<a id="294c33" class="tk">y</a>[<a id="294c35" class="tk">b_k</a>] = (<a id="294c43" class="tk">real32_T</a>)<a id="294c52" class="tk">sin</a>(<a id="294c56" class="tk">tf</a> <a id="294c59" class="tk">*</a></td></tr>
+<tr name="295" id="295">
+<td><a id="l295" class='ln'>295</a></td><td>          <a id="295c11" class="tk">uc3_preparation1_2017_B</a>.<a id="295c35" class="tk">y</a>[<a id="295c37" class="tk">b_k</a>]) <a id="295c43" class="tk">*</a> (<a id="295c46" class="tk">real32_T</a>)<a id="295c55" class="tk">*</a><a id="295c56" class="tk">tune1</a>;</td></tr>
+<tr name="296" id="296">
+<td><a id="l296" class='ln'>296</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="297" id="297">
+<td><a id="l297" class='ln'>297</a></td><td>      <span class="kw">break</span>;</td></tr>
+<tr name="298" id="298">
+<td><a id="l298" class='ln'>298</a></td><td></td></tr>
+<tr name="299" id="299">
+<td><a id="l299" class='ln'>299</a></td><td>     <span class="kw">case</span> 1<a id="299c12" class="tk">:</a></td></tr>
+<tr name="300" id="300">
+<td><a id="l300" class='ln'>300</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="300">&lt;S7&gt;:1:60</a>' */</span></td></tr>
+<tr name="301" id="301">
+<td><a id="l301" class='ln'>301</a></td><td>      <a id="301c7" class="tk">i</a> = 1.0;</td></tr>
+<tr name="302" id="302">
+<td><a id="l302" class='ln'>302</a></td><td></td></tr>
+<tr name="303" id="303">
+<td><a id="l303" class='ln'>303</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="303">&lt;S7&gt;:1:61</a>' */</span></td></tr>
+<tr name="304" id="304">
+<td><a id="l304" class='ln'>304</a></td><td>      <a id="304c7" class="tk">memset</a>(<a id="304c14" class="tk">&amp;</a><a id="304c15" class="tk">uc3_preparation1_2017_B</a>.<a id="304c39" class="tk">y</a>[0], 0, 129U <a id="304c53" class="tk">*</a> <span class="kw">sizeof</span>(<a id="304c62" class="tk">real32_T</a>));</td></tr>
+<tr name="305" id="305">
+<td><a id="l305" class='ln'>305</a></td><td>      <a id="305c7" class="tk">d_sep</a> = <a id="305c15" class="tk">rtb_Switch_idx_0</a> <a id="305c32" class="tk">/</a> 128.0F;</td></tr>
+<tr name="306" id="306">
+<td><a id="l306" class='ln'>306</a></td><td>      <a id="306c7" class="tk">b_k</a> = (<a id="306c14" class="tk">int32_T</a>)((<a id="306c24" class="tk">rtb_Switch_idx_0</a> <a id="306c41" class="tk">+</a> <a id="306c43" class="tk">d_sep</a>) <a id="306c50" class="tk">/</a> <a id="306c52" class="tk">d_sep</a>);</td></tr>
+<tr name="307" id="307">
+<td><a id="l307" class='ln'>307</a></td><td></td></tr>
+<tr name="308" id="308">
+<td><a id="l308" class='ln'>308</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="308">&lt;S7&gt;:1:63</a>' */</span></td></tr>
+<tr name="309" id="309">
+<td><a id="l309" class='ln'>309</a></td><td>      <span class="kw">for</span> (<a id="309c12" class="tk">j</a> = 0; <a id="309c19" class="tk">j</a> <a id="309c21" class="tk">&lt;</a> <a id="309c23" class="tk">b_k</a>; <a id="309c28" class="tk">j</a><a id="309c29" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="310" id="310">
+<td><a id="l310" class='ln'>310</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="310">&lt;S7&gt;:1:63</a>' */</span></td></tr>
+<tr name="311" id="311">
+<td><a id="l311" class='ln'>311</a></td><td>        <span class="kw">if</span> ((<a id="311c14" class="tk">real32_T</a>)<a id="311c23" class="tk">j</a> <a id="311c25" class="tk">*</a> <a id="311c27" class="tk">d_sep</a> <a id="311c33" class="tk">&lt;=</a> <a id="311c36" class="tk">rtb_Switch_idx_0</a> <a id="311c53" class="tk">*</a> (<a id="311c56" class="tk">real32_T</a>)<a id="311c65" class="tk">*</a><a id="311c66" class="tk">tune4</a>) <span class="br">{</span></td></tr>
+<tr name="312" id="312">
+<td><a id="l312" class='ln'>312</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="312">&lt;S7&gt;:1:64</a>' */</span></td></tr>
+<tr name="313" id="313">
+<td><a id="l313" class='ln'>313</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="313">&lt;S7&gt;:1:66</a>' */</span></td></tr>
+<tr name="314" id="314">
+<td><a id="l314" class='ln'>314</a></td><td>          <a id="314c11" class="tk">uc3_preparation1_2017_B</a>.<a id="314c35" class="tk">y</a>[(<a id="314c38" class="tk">int32_T</a>)<a id="314c46" class="tk">i</a> <a id="314c48" class="tk">-</a> 1] = (<a id="314c56" class="tk">real32_T</a>)<a id="314c65" class="tk">*</a><a id="314c66" class="tk">tune1</a>;</td></tr>
+<tr name="315" id="315">
+<td><a id="l315" class='ln'>315</a></td><td>        <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="316" id="316">
+<td><a id="l316" class='ln'>316</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="316">&lt;S7&gt;:1:68</a>' */</span></td></tr>
+<tr name="317" id="317">
+<td><a id="l317" class='ln'>317</a></td><td>          <a id="317c11" class="tk">uc3_preparation1_2017_B</a>.<a id="317c35" class="tk">y</a>[(<a id="317c38" class="tk">int32_T</a>)<a id="317c46" class="tk">i</a> <a id="317c48" class="tk">-</a> 1] = <a id="317c55" class="tk">-</a>(<a id="317c57" class="tk">real32_T</a>)<a id="317c66" class="tk">*</a><a id="317c67" class="tk">tune1</a>;</td></tr>
+<tr name="318" id="318">
+<td><a id="l318" class='ln'>318</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="319" id="319">
+<td><a id="l319" class='ln'>319</a></td><td></td></tr>
+<tr name="320" id="320">
+<td><a id="l320" class='ln'>320</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="320">&lt;S7&gt;:1:70</a>' */</span></td></tr>
+<tr name="321" id="321">
+<td><a id="l321" class='ln'>321</a></td><td>        <a id="321c9" class="tk">i</a><a id="321c10" class="tk">++</a>;</td></tr>
+<tr name="322" id="322">
+<td><a id="l322" class='ln'>322</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="323" id="323">
+<td><a id="l323" class='ln'>323</a></td><td>      <span class="kw">break</span>;</td></tr>
+<tr name="324" id="324">
+<td><a id="l324" class='ln'>324</a></td><td></td></tr>
+<tr name="325" id="325">
+<td><a id="l325" class='ln'>325</a></td><td>     <span class="kw">case</span> 2<a id="325c12" class="tk">:</a></td></tr>
+<tr name="326" id="326">
+<td><a id="l326" class='ln'>326</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="326">&lt;S7&gt;:1:75</a>' */</span></td></tr>
+<tr name="327" id="327">
+<td><a id="l327" class='ln'>327</a></td><td>      <a id="327c7" class="tk">i</a> = 1.0;</td></tr>
+<tr name="328" id="328">
+<td><a id="l328" class='ln'>328</a></td><td></td></tr>
+<tr name="329" id="329">
+<td><a id="l329" class='ln'>329</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="329">&lt;S7&gt;:1:76</a>' */</span></td></tr>
+<tr name="330" id="330">
+<td><a id="l330" class='ln'>330</a></td><td>      <a id="330c7" class="tk">memset</a>(<a id="330c14" class="tk">&amp;</a><a id="330c15" class="tk">uc3_preparation1_2017_B</a>.<a id="330c39" class="tk">y</a>[0], 0, 129U <a id="330c53" class="tk">*</a> <span class="kw">sizeof</span>(<a id="330c62" class="tk">real32_T</a>));</td></tr>
+<tr name="331" id="331">
+<td><a id="l331" class='ln'>331</a></td><td>      <a id="331c7" class="tk">d_sep</a> = <a id="331c15" class="tk">rtb_Switch_idx_0</a> <a id="331c32" class="tk">/</a> 128.0F;</td></tr>
+<tr name="332" id="332">
+<td><a id="l332" class='ln'>332</a></td><td>      <a id="332c7" class="tk">b_k</a> = (<a id="332c14" class="tk">int32_T</a>)((<a id="332c24" class="tk">rtb_Switch_idx_0</a> <a id="332c41" class="tk">+</a> <a id="332c43" class="tk">d_sep</a>) <a id="332c50" class="tk">/</a> <a id="332c52" class="tk">d_sep</a>);</td></tr>
+<tr name="333" id="333">
+<td><a id="l333" class='ln'>333</a></td><td></td></tr>
+<tr name="334" id="334">
+<td><a id="l334" class='ln'>334</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="334">&lt;S7&gt;:1:77</a>' */</span></td></tr>
+<tr name="335" id="335">
+<td><a id="l335" class='ln'>335</a></td><td>      <span class="kw">for</span> (<a id="335c12" class="tk">j</a> = 0; <a id="335c19" class="tk">j</a> <a id="335c21" class="tk">&lt;</a> <a id="335c23" class="tk">b_k</a>; <a id="335c28" class="tk">j</a><a id="335c29" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="336" id="336">
+<td><a id="l336" class='ln'>336</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="336">&lt;S7&gt;:1:77</a>' */</span></td></tr>
+<tr name="337" id="337">
+<td><a id="l337" class='ln'>337</a></td><td>        <span class="kw">if</span> (<a id="337c13" class="tk">i</a> <a id="337c15" class="tk">==</a> 1.0) <span class="br">{</span></td></tr>
+<tr name="338" id="338">
+<td><a id="l338" class='ln'>338</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="338">&lt;S7&gt;:1:78</a>' */</span></td></tr>
+<tr name="339" id="339">
+<td><a id="l339" class='ln'>339</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="339">&lt;S7&gt;:1:79</a>' */</span></td></tr>
+<tr name="340" id="340">
+<td><a id="l340" class='ln'>340</a></td><td>          <a id="340c11" class="tk">uc3_preparation1_2017_B</a>.<a id="340c35" class="tk">y</a>[0] = (<a id="340c43" class="tk">real32_T</a>)<a id="340c52" class="tk">*</a><a id="340c53" class="tk">tune1</a>;</td></tr>
+<tr name="341" id="341">
+<td><a id="l341" class='ln'>341</a></td><td>        <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> ((<a id="341c21" class="tk">real32_T</a>)<a id="341c30" class="tk">j</a> <a id="341c32" class="tk">*</a> <a id="341c34" class="tk">d_sep</a> <a id="341c40" class="tk">&lt;=</a> <a id="341c43" class="tk">rtb_Switch_idx_0</a> <a id="341c60" class="tk">*</a> (<a id="341c63" class="tk">real32_T</a>)<a id="341c72" class="tk">*</a><a id="341c73" class="tk">tune4</a>) <span class="br">{</span></td></tr>
+<tr name="342" id="342">
+<td><a id="l342" class='ln'>342</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="342">&lt;S7&gt;:1:81</a>' */</span></td></tr>
+<tr name="343" id="343">
+<td><a id="l343" class='ln'>343</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="343">&lt;S7&gt;:1:82</a>' */</span></td></tr>
+<tr name="344" id="344">
+<td><a id="l344" class='ln'>344</a></td><td>          <a id="344c11" class="tk">uc3_preparation1_2017_B</a>.<a id="344c35" class="tk">y</a>[(<a id="344c38" class="tk">int32_T</a>)<a id="344c46" class="tk">i</a> <a id="344c48" class="tk">-</a> 1] = (<a id="344c56" class="tk">real32_T</a>)<a id="344c65" class="tk">*</a><a id="344c66" class="tk">tune1</a> <a id="344c72" class="tk">/</a> 128.0F <a id="344c81" class="tk">*</a></td></tr>
+<tr name="345" id="345">
+<td><a id="l345" class='ln'>345</a></td><td>            2.0F <a id="345c18" class="tk">/</a> (<a id="345c21" class="tk">real32_T</a>)<a id="345c30" class="tk">*</a><a id="345c31" class="tk">tune4</a> <a id="345c37" class="tk">+</a> <a id="345c39" class="tk">uc3_preparation1_2017_B</a>.<a id="345c63" class="tk">y</a>[(<a id="345c66" class="tk">int32_T</a>)(<a id="345c75" class="tk">i</a> <a id="345c77" class="tk">-</a></td></tr>
+<tr name="346" id="346">
+<td><a id="l346" class='ln'>346</a></td><td>            1.0) <a id="346c18" class="tk">-</a> 1];</td></tr>
+<tr name="347" id="347">
+<td><a id="l347" class='ln'>347</a></td><td>        <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="348" id="348">
+<td><a id="l348" class='ln'>348</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="348">&lt;S7&gt;:1:84</a>' */</span></td></tr>
+<tr name="349" id="349">
+<td><a id="l349" class='ln'>349</a></td><td>          <a id="349c11" class="tk">uc3_preparation1_2017_B</a>.<a id="349c35" class="tk">y</a>[(<a id="349c38" class="tk">int32_T</a>)<a id="349c46" class="tk">i</a> <a id="349c48" class="tk">-</a> 1] = <a id="349c55" class="tk">uc3_preparation1_2017_B</a>.<a id="349c79" class="tk">y</a></td></tr>
+<tr name="350" id="350">
+<td><a id="l350" class='ln'>350</a></td><td>            [(<a id="350c15" class="tk">int32_T</a>)(<a id="350c24" class="tk">i</a> <a id="350c26" class="tk">-</a> 1.0) <a id="350c33" class="tk">-</a> 1] <a id="350c38" class="tk">-</a> (<a id="350c41" class="tk">real32_T</a>)<a id="350c50" class="tk">*</a><a id="350c51" class="tk">tune1</a> <a id="350c57" class="tk">/</a> 128.0F <a id="350c66" class="tk">*</a> 2.0F <a id="350c73" class="tk">/</a> (1.0F</td></tr>
+<tr name="351" id="351">
+<td><a id="l351" class='ln'>351</a></td><td>            <a id="351c13" class="tk">-</a> (<a id="351c16" class="tk">real32_T</a>)<a id="351c25" class="tk">*</a><a id="351c26" class="tk">tune4</a>);</td></tr>
+<tr name="352" id="352">
+<td><a id="l352" class='ln'>352</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="353" id="353">
+<td><a id="l353" class='ln'>353</a></td><td></td></tr>
+<tr name="354" id="354">
+<td><a id="l354" class='ln'>354</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="354">&lt;S7&gt;:1:87</a>' */</span></td></tr>
+<tr name="355" id="355">
+<td><a id="l355" class='ln'>355</a></td><td>        <a id="355c9" class="tk">i</a><a id="355c10" class="tk">++</a>;</td></tr>
+<tr name="356" id="356">
+<td><a id="l356" class='ln'>356</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="357" id="357">
+<td><a id="l357" class='ln'>357</a></td><td>      <span class="kw">break</span>;</td></tr>
+<tr name="358" id="358">
+<td><a id="l358" class='ln'>358</a></td><td></td></tr>
+<tr name="359" id="359">
+<td><a id="l359" class='ln'>359</a></td><td>     <span class="kw">case</span> 3<a id="359c12" class="tk">:</a></td></tr>
+<tr name="360" id="360">
+<td><a id="l360" class='ln'>360</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="360">&lt;S7&gt;:1:93</a>' */</span></td></tr>
+<tr name="361" id="361">
+<td><a id="l361" class='ln'>361</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="361">&lt;S7&gt;:1:95</a>' */</span></td></tr>
+<tr name="362" id="362">
+<td><a id="l362" class='ln'>362</a></td><td>      <span class="kw">for</span> (<a id="362c12" class="tk">b_k</a> = 0; <a id="362c21" class="tk">b_k</a> <a id="362c25" class="tk">&lt;</a> 128; <a id="362c32" class="tk">b_k</a><a id="362c35" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="363" id="363">
+<td><a id="l363" class='ln'>363</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="363">&lt;S7&gt;:1:95</a>' */</span></td></tr>
+<tr name="364" id="364">
+<td><a id="l364" class='ln'>364</a></td><td>        <span class="kw">if</span> (1.0 <a id="364c17" class="tk">+</a> (<a id="364c20" class="tk">real_T</a>)<a id="364c27" class="tk">b_k</a> <a id="364c31" class="tk">&lt;=</a> <a id="364c34" class="tk">d_sep</a>) <span class="br">{</span></td></tr>
+<tr name="365" id="365">
+<td><a id="l365" class='ln'>365</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="365">&lt;S7&gt;:1:96</a>' */</span></td></tr>
+<tr name="366" id="366">
+<td><a id="l366" class='ln'>366</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="366">&lt;S7&gt;:1:98</a>' */</span></td></tr>
+<tr name="367" id="367">
+<td><a id="l367" class='ln'>367</a></td><td>          <a id="367c11" class="tk">uc3_preparation1_2017_B</a>.<a id="367c35" class="tk">y</a>[<a id="367c37" class="tk">b_k</a>] = (<a id="367c45" class="tk">real32_T</a>)<a id="367c54" class="tk">*</a><a id="367c55" class="tk">tune1</a>;</td></tr>
+<tr name="368" id="368">
+<td><a id="l368" class='ln'>368</a></td><td>        <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="369" id="369">
+<td><a id="l369" class='ln'>369</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="369">&lt;S7&gt;:1:100</a>' */</span></td></tr>
+<tr name="370" id="370">
+<td><a id="l370" class='ln'>370</a></td><td>          <a id="370c11" class="tk">uc3_preparation1_2017_B</a>.<a id="370c35" class="tk">y</a>[<a id="370c37" class="tk">b_k</a>] = <a id="370c44" class="tk">-</a>(<a id="370c46" class="tk">real32_T</a>)<a id="370c55" class="tk">*</a><a id="370c56" class="tk">tune1</a>;</td></tr>
+<tr name="371" id="371">
+<td><a id="l371" class='ln'>371</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="372" id="372">
+<td><a id="l372" class='ln'>372</a></td><td></td></tr>
+<tr name="373" id="373">
+<td><a id="l373" class='ln'>373</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="373">&lt;S7&gt;:1:102</a>' */</span></td></tr>
+<tr name="374" id="374">
+<td><a id="l374" class='ln'>374</a></td><td>        <a id="374c9" class="tk">uc3_preparation1_2017_B</a>.<a id="374c33" class="tk">y</a>[<a id="374c35" class="tk">b_k</a> <a id="374c39" class="tk">+</a> 1] = (<a id="374c47" class="tk">real32_T</a>)<a id="374c56" class="tk">*</a><a id="374c57" class="tk">tune1</a>;</td></tr>
+<tr name="375" id="375">
+<td><a id="l375" class='ln'>375</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="376" id="376">
+<td><a id="l376" class='ln'>376</a></td><td>      <span class="kw">break</span>;</td></tr>
+<tr name="377" id="377">
+<td><a id="l377" class='ln'>377</a></td><td></td></tr>
+<tr name="378" id="378">
+<td><a id="l378" class='ln'>378</a></td><td>     <span class="kw">case</span> 4<a id="378c12" class="tk">:</a></td></tr>
+<tr name="379" id="379">
+<td><a id="l379" class='ln'>379</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="379">&lt;S7&gt;:1:107</a>' */</span></td></tr>
+<tr name="380" id="380">
+<td><a id="l380" class='ln'>380</a></td><td>      <a id="380c7" class="tk">memset</a>(<a id="380c14" class="tk">&amp;</a><a id="380c15" class="tk">uc3_preparation1_2017_B</a>.<a id="380c39" class="tk">y</a>[0], 0, 129U <a id="380c53" class="tk">*</a> <span class="kw">sizeof</span>(<a id="380c62" class="tk">real32_T</a>));</td></tr>
+<tr name="381" id="381">
+<td><a id="l381" class='ln'>381</a></td><td>      <a id="381c7" class="tk">i</a> = 1.0;</td></tr>
+<tr name="382" id="382">
+<td><a id="l382" class='ln'>382</a></td><td></td></tr>
+<tr name="383" id="383">
+<td><a id="l383" class='ln'>383</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="383">&lt;S7&gt;:1:108</a>' */</span></td></tr>
+<tr name="384" id="384">
+<td><a id="l384" class='ln'>384</a></td><td>      <span class="kw">for</span> (<a id="384c12" class="tk">b_k</a> = 0; <a id="384c21" class="tk">b_k</a> <a id="384c25" class="tk">&lt;</a> 128; <a id="384c32" class="tk">b_k</a><a id="384c35" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="385" id="385">
+<td><a id="l385" class='ln'>385</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="385">&lt;S7&gt;:1:108</a>' */</span></td></tr>
+<tr name="386" id="386">
+<td><a id="l386" class='ln'>386</a></td><td>        <a id="386c9" class="tk">i</a> = 1.0 <a id="386c17" class="tk">+</a> (<a id="386c20" class="tk">real_T</a>)<a id="386c27" class="tk">b_k</a>;</td></tr>
+<tr name="387" id="387">
+<td><a id="l387" class='ln'>387</a></td><td>        <span class="kw">if</span> (1.0 <a id="387c17" class="tk">+</a> (<a id="387c20" class="tk">real_T</a>)<a id="387c27" class="tk">b_k</a> <a id="387c31" class="tk">&lt;=</a> <a id="387c34" class="tk">d_sep</a>) <span class="br">{</span></td></tr>
+<tr name="388" id="388">
+<td><a id="l388" class='ln'>388</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="388">&lt;S7&gt;:1:109</a>' */</span></td></tr>
+<tr name="389" id="389">
+<td><a id="l389" class='ln'>389</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="389">&lt;S7&gt;:1:110</a>' */</span></td></tr>
+<tr name="390" id="390">
+<td><a id="l390" class='ln'>390</a></td><td>          <a id="390c11" class="tk">uc3_preparation1_2017_B</a>.<a id="390c35" class="tk">y</a>[<a id="390c37" class="tk">b_k</a>] = (<a id="390c45" class="tk">real32_T</a>)<a id="390c54" class="tk">*</a><a id="390c55" class="tk">tune1</a> <a id="390c61" class="tk">-</a> (<a id="390c64" class="tk">real32_T</a>)<a id="390c73" class="tk">*</a><a id="390c74" class="tk">tune1</a> <a id="390c80" class="tk">/</a></td></tr>
+<tr name="391" id="391">
+<td><a id="l391" class='ln'>391</a></td><td>            <a id="391c13" class="tk">d_sep</a>;</td></tr>
+<tr name="392" id="392">
+<td><a id="l392" class='ln'>392</a></td><td>        <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="393" id="393">
+<td><a id="l393" class='ln'>393</a></td><td>          <span class="ct">/* '<a class="ct blk" blk_line="393">&lt;S7&gt;:1:112</a>' */</span></td></tr>
+<tr name="394" id="394">
+<td><a id="l394" class='ln'>394</a></td><td>          <a id="394c11" class="tk">uc3_preparation1_2017_B</a>.<a id="394c35" class="tk">y</a>[<a id="394c37" class="tk">b_k</a>] = (<a id="394c45" class="tk">real32_T</a>)<a id="394c54" class="tk">*</a><a id="394c55" class="tk">tune1</a> <a id="394c61" class="tk">/</a> ((128.0F <a id="394c72" class="tk">-</a> <a id="394c74" class="tk">d_sep</a>)</td></tr>
+<tr name="395" id="395">
+<td><a id="l395" class='ln'>395</a></td><td>            <a id="395c13" class="tk">-</a> (1.0F <a id="395c21" class="tk">+</a> (<a id="395c24" class="tk">real32_T</a>)<a id="395c33" class="tk">b_k</a>)) <a id="395c39" class="tk">+</a> <a id="395c41" class="tk">-</a>(<a id="395c43" class="tk">real32_T</a>)<a id="395c52" class="tk">*</a><a id="395c53" class="tk">tune1</a>;</td></tr>
+<tr name="396" id="396">
+<td><a id="l396" class='ln'>396</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="397" id="397">
+<td><a id="l397" class='ln'>397</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="398" id="398">
+<td><a id="l398" class='ln'>398</a></td><td></td></tr>
+<tr name="399" id="399">
+<td><a id="l399" class='ln'>399</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="399">&lt;S7&gt;:1:116</a>' */</span></td></tr>
+<tr name="400" id="400">
+<td><a id="l400" class='ln'>400</a></td><td>      <a id="400c7" class="tk">uc3_preparation1_2017_B</a>.<a id="400c31" class="tk">y</a>[(<a id="400c34" class="tk">int32_T</a>)<a id="400c42" class="tk">i</a>] = (<a id="400c48" class="tk">real32_T</a>)<a id="400c57" class="tk">*</a><a id="400c58" class="tk">tune1</a>;</td></tr>
+<tr name="401" id="401">
+<td><a id="l401" class='ln'>401</a></td><td>      <span class="kw">break</span>;</td></tr>
+<tr name="402" id="402">
+<td><a id="l402" class='ln'>402</a></td><td></td></tr>
+<tr name="403" id="403">
+<td><a id="l403" class='ln'>403</a></td><td>     <span class="kw">default</span><a id="403c13" class="tk">:</a></td></tr>
+<tr name="404" id="404">
+<td><a id="l404" class='ln'>404</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="404">&lt;S7&gt;:1:120</a>' */</span></td></tr>
+<tr name="405" id="405">
+<td><a id="l405" class='ln'>405</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="405">&lt;S7&gt;:1:121</a>' */</span></td></tr>
+<tr name="406" id="406">
+<td><a id="l406" class='ln'>406</a></td><td>      <a id="406c7" class="tk">rtb_Gain2</a> = 2.0F;</td></tr>
+<tr name="407" id="407">
+<td><a id="l407" class='ln'>407</a></td><td></td></tr>
+<tr name="408" id="408">
+<td><a id="l408" class='ln'>408</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="408">&lt;S7&gt;:1:122</a>' */</span></td></tr>
+<tr name="409" id="409">
+<td><a id="l409" class='ln'>409</a></td><td>      <a id="409c7" class="tk">memset</a>(<a id="409c14" class="tk">&amp;</a><a id="409c15" class="tk">uc3_preparation1_2017_B</a>.<a id="409c39" class="tk">y</a>[0], 0, 129U <a id="409c53" class="tk">*</a> <span class="kw">sizeof</span>(<a id="409c62" class="tk">real32_T</a>));</td></tr>
+<tr name="410" id="410">
+<td><a id="l410" class='ln'>410</a></td><td>      <span class="kw">break</span>;</td></tr>
+<tr name="411" id="411">
+<td><a id="l411" class='ln'>411</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="412" id="412">
+<td><a id="l412" class='ln'>412</a></td><td></td></tr>
+<tr name="413" id="413">
+<td><a id="l413" class='ln'>413</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="413">&lt;S7&gt;:1:127</a>' */</span></td></tr>
+<tr name="414" id="414">
+<td><a id="l414" class='ln'>414</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="414">&lt;S7&gt;:1:133</a>' */</span></td></tr>
+<tr name="415" id="415">
+<td><a id="l415" class='ln'>415</a></td><td>    <a id="415c5" class="tk">memcpy</a>(<a id="415c12" class="tk">&amp;</a><a id="415c13" class="tk">uc3_preparation1_2017_B</a>.<a id="415c37" class="tk">yy</a>[0], <a id="415c44" class="tk">&amp;</a><a id="415c45" class="tk">uc3_preparation1_2017_B</a>.<a id="415c69" class="tk">y</a>[0], 129U <a id="415c80" class="tk">*</a></td></tr>
+<tr name="416" id="416">
+<td><a id="l416" class='ln'>416</a></td><td>           <span class="kw">sizeof</span>(<a id="416c19" class="tk">real32_T</a>));</td></tr>
+<tr name="417" id="417">
+<td><a id="l417" class='ln'>417</a></td><td>    <a id="417c5" class="tk">uc3_preparation1_2017_B</a>.<a id="417c29" class="tk">yy</a>[129] = <a id="417c39" class="tk">uc3_preparation1_2017_B</a>.<a id="417c63" class="tk">y</a>[1];</td></tr>
+<tr name="418" id="418">
+<td><a id="l418" class='ln'>418</a></td><td>    <a id="418c5" class="tk">uc3_preparation1_2017_B</a>.<a id="418c29" class="tk">yy</a>[130] = <a id="418c39" class="tk">uc3_preparation1_2017_B</a>.<a id="418c63" class="tk">y</a>[2];</td></tr>
+<tr name="419" id="419">
+<td><a id="l419" class='ln'>419</a></td><td>    <a id="419c5" class="tk">uc3_preparation1_2017_B</a>.<a id="419c29" class="tk">yy</a>[131] = <a id="419c39" class="tk">uc3_preparation1_2017_B</a>.<a id="419c63" class="tk">y</a>[3];</td></tr>
+<tr name="420" id="420">
+<td><a id="l420" class='ln'>420</a></td><td></td></tr>
+<tr name="421" id="421">
+<td><a id="l421" class='ln'>421</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="421">&lt;S7&gt;:1:135</a>' */</span></td></tr>
+<tr name="422" id="422">
+<td><a id="l422" class='ln'>422</a></td><td>    <span class="kw">for</span> (<a id="422c10" class="tk">b_k</a> = 0; <a id="422c19" class="tk">b_k</a> <a id="422c23" class="tk">&lt;</a> 129; <a id="422c30" class="tk">b_k</a><a id="422c33" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="423" id="423">
+<td><a id="l423" class='ln'>423</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="423">&lt;S7&gt;:1:135</a>' */</span></td></tr>
+<tr name="424" id="424">
+<td><a id="l424" class='ln'>424</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="424">&lt;S7&gt;:1:136</a>' */</span></td></tr>
+<tr name="425" id="425">
+<td><a id="l425" class='ln'>425</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="425">&lt;S7&gt;:1:137</a>' */</span></td></tr>
+<tr name="426" id="426">
+<td><a id="l426" class='ln'>426</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="426">&lt;S7&gt;:1:138</a>' */</span></td></tr>
+<tr name="427" id="427">
+<td><a id="l427" class='ln'>427</a></td><td>      <span class="kw">for</span> (<a id="427c12" class="tk">j</a> = 0; <a id="427c19" class="tk">j</a> <a id="427c21" class="tk">&lt;</a> (<a id="427c24" class="tk">int32_T</a>)(<a id="427c33" class="tk">rtb_Gain2</a> <a id="427c43" class="tk">+</a> 1.0F); <a id="427c52" class="tk">j</a><a id="427c53" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="428" id="428">
+<td><a id="l428" class='ln'>428</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="428">&lt;S7&gt;:1:138</a>' */</span></td></tr>
+<tr name="429" id="429">
+<td><a id="l429" class='ln'>429</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="429">&lt;S7&gt;:1:139</a>' */</span></td></tr>
+<tr name="430" id="430">
+<td><a id="l430" class='ln'>430</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="430">&lt;S7&gt;:1:140</a>' */</span></td></tr>
+<tr name="431" id="431">
+<td><a id="l431" class='ln'>431</a></td><td>        <a id="431c9" class="tk">tf</a> = (<a id="431c15" class="tk">real32_T</a>)<a id="431c24" class="tk">j</a>;</td></tr>
+<tr name="432" id="432">
+<td><a id="l432" class='ln'>432</a></td><td>        <span class="kw">if</span> (<a id="432c13" class="tk">!</a>((<a id="432c16" class="tk">j</a> <a id="432c18" class="tk">&lt;</a> 0.0F) <a id="432c26" class="tk">||</a> ((<a id="432c31" class="tk">real32_T</a>)<a id="432c40" class="tk">j</a> <a id="432c42" class="tk">!=</a> <a id="432c45" class="tk">j</a>))) <span class="br">{</span></td></tr>
+<tr name="433" id="433">
+<td><a id="l433" class='ln'>433</a></td><td>          <span class="kw">if</span> (<a id="433c15" class="tk">j</a> <a id="433c17" class="tk">&gt;</a> 34.0F) <span class="br">{</span></td></tr>
+<tr name="434" id="434">
+<td><a id="l434" class='ln'>434</a></td><td>            <a id="434c13" class="tk">tf</a> = (<a id="434c19" class="tk">rtInfF</a>);</td></tr>
+<tr name="435" id="435">
+<td><a id="l435" class='ln'>435</a></td><td>          <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> (<a id="435c22" class="tk">j</a> <a id="435c24" class="tk">&lt;</a> 1) <span class="br">{</span></td></tr>
+<tr name="436" id="436">
+<td><a id="l436" class='ln'>436</a></td><td>            <a id="436c13" class="tk">tf</a> = 1.0F;</td></tr>
+<tr name="437" id="437">
+<td><a id="l437" class='ln'>437</a></td><td>          <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="438" id="438">
+<td><a id="l438" class='ln'>438</a></td><td>            <a id="438c13" class="tk">tf</a> = <a id="438c18" class="tk">f</a>[<a id="438c20" class="tk">j</a> <a id="438c22" class="tk">-</a> 1];</td></tr>
+<tr name="439" id="439">
+<td><a id="l439" class='ln'>439</a></td><td>          <span class="br">}</span></td></tr>
+<tr name="440" id="440">
+<td><a id="l440" class='ln'>440</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="441" id="441">
+<td><a id="l441" class='ln'>441</a></td><td></td></tr>
+<tr name="442" id="442">
+<td><a id="l442" class='ln'>442</a></td><td>        <a id="442c9" class="tk">j_0</a> = (<a id="442c16" class="tk">int32_T</a>)((<a id="442c26" class="tk">real32_T</a>)<a id="442c35" class="tk">j</a> <a id="442c37" class="tk">+</a> 1.0F);</td></tr>
+<tr name="443" id="443">
+<td><a id="l443" class='ln'>443</a></td><td>        <a id="443c9" class="tk">uc3_preparation1_2017_DW</a>.<a id="443c34" class="tk">cc0</a>[<a id="443c38" class="tk">b_k</a> <a id="443c42" class="tk">+</a> 129 <a id="443c48" class="tk">*</a> ((<a id="443c52" class="tk">int32_T</a>)((<a id="443c62" class="tk">real32_T</a>)<a id="443c71" class="tk">j</a> <a id="443c73" class="tk">+</a> 1.0F)</td></tr>
+<tr name="444" id="444">
+<td><a id="l444" class='ln'>444</a></td><td>          <a id="444c11" class="tk">-</a> 1)] = ((((<a id="444c23" class="tk">real32_T</a>)<a id="444c32" class="tk">cfd</a>[<a id="444c36" class="tk">j_0</a> <a id="444c40" class="tk">-</a> 1] <a id="444c45" class="tk">*</a> <a id="444c47" class="tk">uc3_preparation1_2017_B</a>.<a id="444c71" class="tk">yy</a>[<a id="444c74" class="tk">b_k</a>] <a id="444c79" class="tk">+</a></td></tr>
+<tr name="445" id="445">
+<td><a id="l445" class='ln'>445</a></td><td>                     (<a id="445c23" class="tk">real32_T</a>)<a id="445c32" class="tk">cfd</a>[<a id="445c36" class="tk">j_0</a> <a id="445c40" class="tk">+</a> 3] <a id="445c45" class="tk">*</a> <a id="445c47" class="tk">uc3_preparation1_2017_B</a>.<a id="445c71" class="tk">yy</a>[<a id="445c74" class="tk">b_k</a> <a id="445c78" class="tk">+</a> 1])</td></tr>
+<tr name="446" id="446">
+<td><a id="l446" class='ln'>446</a></td><td>                    <a id="446c21" class="tk">+</a> (<a id="446c24" class="tk">real32_T</a>)<a id="446c33" class="tk">cfd</a>[<a id="446c37" class="tk">j_0</a> <a id="446c41" class="tk">+</a> 7] <a id="446c46" class="tk">*</a> <a id="446c48" class="tk">uc3_preparation1_2017_B</a>.<a id="446c72" class="tk">yy</a>[<a id="446c75" class="tk">b_k</a> <a id="446c79" class="tk">+</a></td></tr>
+<tr name="447" id="447">
+<td><a id="l447" class='ln'>447</a></td><td>                    2]) <a id="447c25" class="tk">+</a> (<a id="447c28" class="tk">real32_T</a>)<a id="447c37" class="tk">cfd</a>[<a id="447c41" class="tk">j_0</a> <a id="447c45" class="tk">+</a> 11] <a id="447c51" class="tk">*</a></td></tr>
+<tr name="448" id="448">
+<td><a id="l448" class='ln'>448</a></td><td>                   <a id="448c20" class="tk">uc3_preparation1_2017_B</a>.<a id="448c44" class="tk">yy</a>[<a id="448c47" class="tk">b_k</a> <a id="448c51" class="tk">+</a> 3]) <a id="448c57" class="tk">/</a> <a id="448c59" class="tk">rt_powf_snf</a>((<a id="448c72" class="tk">real32_T</a>)<a id="448c81" class="tk">*</a></td></tr>
+<tr name="449" id="449">
+<td><a id="l449" class='ln'>449</a></td><td>          <a id="449c11" class="tk">tune2</a> <a id="449c17" class="tk">/</a> 128.0F, (<a id="449c28" class="tk">real32_T</a>)<a id="449c37" class="tk">j</a>) <a id="449c40" class="tk">/</a> <a id="449c42" class="tk">tf</a>;</td></tr>
+<tr name="450" id="450">
+<td><a id="l450" class='ln'>450</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="451" id="451">
+<td><a id="l451" class='ln'>451</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="452" id="452">
+<td><a id="l452" class='ln'>452</a></td><td></td></tr>
+<tr name="453" id="453">
+<td><a id="l453" class='ln'>453</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="453">&lt;S7&gt;:1:145</a>' */</span></td></tr>
+<tr name="454" id="454">
+<td><a id="l454" class='ln'>454</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="454">&lt;S7&gt;:1:146</a>' */</span></td></tr>
+<tr name="455" id="455">
+<td><a id="l455" class='ln'>455</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="456" id="456">
+<td><a id="l456" class='ln'>456</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="456">&lt;S7&gt;:1:150</a>' */</span></td></tr>
+<tr name="457" id="457">
+<td><a id="l457" class='ln'>457</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="457">&lt;S7&gt;:1:151</a>' */</span></td></tr>
+<tr name="458" id="458">
+<td><a id="l458" class='ln'>458</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="459" id="459">
+<td><a id="l459" class='ln'>459</a></td><td></td></tr>
+<tr name="460" id="460">
+<td><a id="l460" class='ln'>460</a></td><td>  <span class="ct">/* Outputs for Atomic SubSystem: '<a class="ct blk" blk_line="460">&lt;S5&gt;/Counter</a>' */</span></td></tr>
+<tr name="461" id="461">
+<td><a id="l461" class='ln'>461</a></td><td>  <span class="ct">/* Chart: '<a class="ct blk" blk_line="461">&lt;S6&gt;/Chart</a>' incorporates:</span></td></tr>
+<tr name="462" id="462">
+<td><a id="l462" class='ln'>462</a></td><td><span class="ct">   *  Constant: '<a class="ct blk" blk_line="462">&lt;S11&gt;/Constant</a>'</span></td></tr>
+<tr name="463" id="463">
+<td><a id="l463" class='ln'>463</a></td><td><span class="ct">   *  Delay: '<a class="ct blk" blk_line="463">&lt;S6&gt;/Delay1</a>'</span></td></tr>
+<tr name="464" id="464">
+<td><a id="l464" class='ln'>464</a></td><td><span class="ct">   *  MATLAB Function: '<a class="ct blk" blk_line="464">&lt;S5&gt;/RT_CPU</a>'</span></td></tr>
+<tr name="465" id="465">
+<td><a id="l465" class='ln'>465</a></td><td><span class="ct">   *  RelationalOperator: '<a class="ct blk" blk_line="465">&lt;S11&gt;/Compare</a>'</span></td></tr>
+<tr name="466" id="466">
+<td><a id="l466" class='ln'>466</a></td><td><span class="ct">   *  Sum: '<a class="ct blk" blk_line="466">&lt;S6&gt;/Sum2</a>'</span></td></tr>
+<tr name="467" id="467">
+<td><a id="l467" class='ln'>467</a></td><td><span class="ct">   *  Sum: '<a class="ct blk" blk_line="467">&lt;S6&gt;/Sum3</a>'</span></td></tr>
+<tr name="468" id="468">
+<td><a id="l468" class='ln'>468</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="469" id="469">
+<td><a id="l469" class='ln'>469</a></td><td>  <span class="ct">/* Gateway: CandHDL_c/cgenerate/Subsystem/Counter/Chart */</span></td></tr>
+<tr name="470" id="470">
+<td><a id="l470" class='ln'>470</a></td><td>  <span class="ct">/* During: CandHDL_c/cgenerate/Subsystem/Counter/Chart */</span></td></tr>
+<tr name="471" id="471">
+<td><a id="l471" class='ln'>471</a></td><td>  <span class="kw">if</span> (<a id="471c7" class="tk">uc3_preparation1_2017_DW</a>.<a id="471c32" class="tk">is_c1_uc3_preparation1_2017</a> <a id="471c60" class="tk">==</a></td></tr>
+<tr name="472" id="472">
+<td><a id="l472" class='ln'>472</a></td><td>      <a id="472c7" class="tk">uc3_preparation1_2017_IN_sate2</a>) <span class="br">{</span></td></tr>
+<tr name="473" id="473">
+<td><a id="l473" class='ln'>473</a></td><td>    <span class="ct">/* During 'sate2': '<a class="ct blk" blk_line="473">&lt;S10&gt;:43</a>' */</span></td></tr>
+<tr name="474" id="474">
+<td><a id="l474" class='ln'>474</a></td><td>    <span class="kw">if</span> ((<a id="474c10" class="tk">real32_T</a>)((<a id="474c21" class="tk">real32_T</a>)<a id="474c30" class="tk">rtb_Add1</a> <a id="474c39" class="tk">+</a> <a id="474c41" class="tk">uc3_preparation1_2017_B</a>.<a id="474c65" class="tk">counter</a> <a id="474c73" class="tk">!=</a></td></tr>
+<tr name="475" id="475">
+<td><a id="l475" class='ln'>475</a></td><td>                   <a id="475c20" class="tk">uc3_preparation1_2017_P</a>.<a id="475c44" class="tk">Constant_Value</a>) <a id="475c60" class="tk">+</a></td></tr>
+<tr name="476" id="476">
+<td><a id="l476" class='ln'>476</a></td><td>        <a id="476c9" class="tk">uc3_preparation1_2017_B</a>.<a id="476c33" class="tk">counter</a> <a id="476c41" class="tk">==</a> 1.0F) <span class="br">{</span></td></tr>
+<tr name="477" id="477">
+<td><a id="l477" class='ln'>477</a></td><td>      <span class="ct">/* Transition: '<a class="ct blk" blk_line="477">&lt;S10&gt;:45</a>' */</span></td></tr>
+<tr name="478" id="478">
+<td><a id="l478" class='ln'>478</a></td><td>      <a id="478c7" class="tk">uc3_preparation1_2017_DW</a>.<a id="478c32" class="tk">is_c1_uc3_preparation1_2017</a> =</td></tr>
+<tr name="479" id="479">
+<td><a id="l479" class='ln'>479</a></td><td>        <a id="479c9" class="tk">uc3_preparation1_2017_IN_state1</a>;</td></tr>
+<tr name="480" id="480">
+<td><a id="l480" class='ln'>480</a></td><td></td></tr>
+<tr name="481" id="481">
+<td><a id="l481" class='ln'>481</a></td><td>      <span class="ct">/* Entry 'state1': '<a class="ct blk" blk_line="481">&lt;S10&gt;:41</a>' */</span></td></tr>
+<tr name="482" id="482">
+<td><a id="l482" class='ln'>482</a></td><td>      <a id="482c7" class="tk">uc3_preparation1_2017_B</a>.<a id="482c31" class="tk">counter</a> = 0.0F;</td></tr>
+<tr name="483" id="483">
+<td><a id="l483" class='ln'>483</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="484" id="484">
+<td><a id="l484" class='ln'>484</a></td><td>      <a id="484c7" class="tk">uc3_preparation1_2017_B</a>.<a id="484c31" class="tk">counter</a> = 0.0F;</td></tr>
+<tr name="485" id="485">
+<td><a id="l485" class='ln'>485</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="486" id="486">
+<td><a id="l486" class='ln'>486</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="487" id="487">
+<td><a id="l487" class='ln'>487</a></td><td>    <span class="ct">/* During 'state1': '<a class="ct blk" blk_line="487">&lt;S10&gt;:41</a>' */</span></td></tr>
+<tr name="488" id="488">
+<td><a id="l488" class='ln'>488</a></td><td>    <span class="kw">if</span> (<a id="488c9" class="tk">uc3_preparation1_2017_B</a>.<a id="488c33" class="tk">counter</a> <a id="488c41" class="tk">&gt;</a> 128.0F) <span class="br">{</span></td></tr>
+<tr name="489" id="489">
+<td><a id="l489" class='ln'>489</a></td><td>      <span class="ct">/* Transition: '<a class="ct blk" blk_line="489">&lt;S10&gt;:44</a>' */</span></td></tr>
+<tr name="490" id="490">
+<td><a id="l490" class='ln'>490</a></td><td>      <a id="490c7" class="tk">uc3_preparation1_2017_DW</a>.<a id="490c32" class="tk">is_c1_uc3_preparation1_2017</a> =</td></tr>
+<tr name="491" id="491">
+<td><a id="l491" class='ln'>491</a></td><td>        <a id="491c9" class="tk">uc3_preparation1_2017_IN_sate2</a>;</td></tr>
+<tr name="492" id="492">
+<td><a id="l492" class='ln'>492</a></td><td></td></tr>
+<tr name="493" id="493">
+<td><a id="l493" class='ln'>493</a></td><td>      <span class="ct">/* Entry 'sate2': '<a class="ct blk" blk_line="493">&lt;S10&gt;:43</a>' */</span></td></tr>
+<tr name="494" id="494">
+<td><a id="l494" class='ln'>494</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="495" id="495">
+<td><a id="l495" class='ln'>495</a></td><td>      <a id="495c7" class="tk">uc3_preparation1_2017_B</a>.<a id="495c31" class="tk">counter</a><a id="495c38" class="tk">++</a>;</td></tr>
+<tr name="496" id="496">
+<td><a id="l496" class='ln'>496</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="497" id="497">
+<td><a id="l497" class='ln'>497</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="498" id="498">
+<td><a id="l498" class='ln'>498</a></td><td></td></tr>
+<tr name="499" id="499">
+<td><a id="l499" class='ln'>499</a></td><td>  <span class="ct">/* End of Chart: '<a class="ct blk" blk_line="499">&lt;S6&gt;/Chart</a>' */</span></td></tr>
+<tr name="500" id="500">
+<td><a id="l500" class='ln'>500</a></td><td></td></tr>
+<tr name="501" id="501">
+<td><a id="l501" class='ln'>501</a></td><td>  <span class="ct">/* RelationalOperator: '<a class="ct blk" blk_line="501">&lt;S12&gt;/Compare</a>' incorporates:</span></td></tr>
+<tr name="502" id="502">
+<td><a id="l502" class='ln'>502</a></td><td><span class="ct">   *  Constant: '<a class="ct blk" blk_line="502">&lt;S12&gt;/Constant</a>'</span></td></tr>
+<tr name="503" id="503">
+<td><a id="l503" class='ln'>503</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="504" id="504">
+<td><a id="l504" class='ln'>504</a></td><td>  <a id="504c3" class="tk">rtb_Compare_e</a> = (<a id="504c20" class="tk">uc3_preparation1_2017_B</a>.<a id="504c44" class="tk">counter</a> <a id="504c52" class="tk">!=</a></td></tr>
+<tr name="505" id="505">
+<td><a id="l505" class='ln'>505</a></td><td>                   <a id="505c20" class="tk">uc3_preparation1_2017_P</a>.<a id="505c44" class="tk">Constant_Value_l</a>);</td></tr>
+<tr name="506" id="506">
+<td><a id="l506" class='ln'>506</a></td><td></td></tr>
+<tr name="507" id="507">
+<td><a id="l507" class='ln'>507</a></td><td>  <span class="ct">/* End of Outputs for SubSystem: '<a class="ct blk" blk_line="507">&lt;S5&gt;/Counter</a>' */</span></td></tr>
+<tr name="508" id="508">
+<td><a id="l508" class='ln'>508</a></td><td></td></tr>
+<tr name="509" id="509">
+<td><a id="l509" class='ln'>509</a></td><td>  <span class="ct">/* DataTypeConversion: '<a class="ct blk" blk_line="509">&lt;S5&gt;/Data Type Conversion2</a>' */</span></td></tr>
+<tr name="510" id="510">
+<td><a id="l510" class='ln'>510</a></td><td>  <a id="510c3" class="tk">*</a><a id="510c4" class="tk">share_out5</a> = <a id="510c17" class="tk">rtb_Compare_e</a>;</td></tr>
+<tr name="511" id="511">
+<td><a id="l511" class='ln'>511</a></td><td></td></tr>
+<tr name="512" id="512">
+<td><a id="l512" class='ln'>512</a></td><td>  <span class="ct">/* DataTypeConversion: '<a class="ct blk" blk_line="512">&lt;S5&gt;/Data Type Conversion4</a>' */</span></td></tr>
+<tr name="513" id="513">
+<td><a id="l513" class='ln'>513</a></td><td>  <a id="513c3" class="tk">rtb_Switch_idx_0</a> = (<a id="513c23" class="tk">real32_T</a>)<a id="513c32" class="tk">floor</a>(<a id="513c38" class="tk">uc3_preparation1_2017_B</a>.<a id="513c62" class="tk">counter</a>);</td></tr>
+<tr name="514" id="514">
+<td><a id="l514" class='ln'>514</a></td><td>  <span class="kw">if</span> (<a id="514c7" class="tk">rtIsNaNF</a>(<a id="514c16" class="tk">rtb_Switch_idx_0</a>) <a id="514c34" class="tk">||</a> <a id="514c37" class="tk">rtIsInfF</a>(<a id="514c46" class="tk">rtb_Switch_idx_0</a>)) <span class="br">{</span></td></tr>
+<tr name="515" id="515">
+<td><a id="l515" class='ln'>515</a></td><td>    <a id="515c5" class="tk">rtb_Switch_idx_0</a> = 0.0F;</td></tr>
+<tr name="516" id="516">
+<td><a id="l516" class='ln'>516</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="517" id="517">
+<td><a id="l517" class='ln'>517</a></td><td>    <a id="517c5" class="tk">rtb_Switch_idx_0</a> = (<a id="517c25" class="tk">real32_T</a>)<a id="517c34" class="tk">fmod</a>(<a id="517c39" class="tk">rtb_Switch_idx_0</a>, 4.294967296E+9);</td></tr>
+<tr name="518" id="518">
+<td><a id="l518" class='ln'>518</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="519" id="519">
+<td><a id="l519" class='ln'>519</a></td><td></td></tr>
+<tr name="520" id="520">
+<td><a id="l520" class='ln'>520</a></td><td>  <a id="520c3" class="tk">*</a><a id="520c4" class="tk">share_out8</a> = <a id="520c17" class="tk">rtb_Switch_idx_0</a> <a id="520c34" class="tk">&lt;</a> 0.0F <a id="520c41" class="tk">?</a> <a id="520c43" class="tk">-</a>(<a id="520c45" class="tk">int32_T</a>)(<a id="520c54" class="tk">uint32_T</a>)<a id="520c63" class="tk">-</a><a id="520c64" class="tk">rtb_Switch_idx_0</a> <a id="520c81" class="tk">:</a></td></tr>
+<tr name="521" id="521">
+<td><a id="l521" class='ln'>521</a></td><td>    (<a id="521c6" class="tk">int32_T</a>)(<a id="521c15" class="tk">uint32_T</a>)<a id="521c24" class="tk">rtb_Switch_idx_0</a>;</td></tr>
+<tr name="522" id="522">
+<td><a id="l522" class='ln'>522</a></td><td></td></tr>
+<tr name="523" id="523">
+<td><a id="l523" class='ln'>523</a></td><td>  <span class="ct">/* End of DataTypeConversion: '<a class="ct blk" blk_line="523">&lt;S5&gt;/Data Type Conversion4</a>' */</span></td></tr>
+<tr name="524" id="524">
+<td><a id="l524" class='ln'>524</a></td><td></td></tr>
+<tr name="525" id="525">
+<td><a id="l525" class='ln'>525</a></td><td>  <span class="ct">/* DataTypeConversion: '<a class="ct blk" blk_line="525">&lt;S8&gt;/Data Type Conversion1</a>' incorporates:</span></td></tr>
+<tr name="526" id="526">
+<td><a id="l526" class='ln'>526</a></td><td><span class="ct">   *  DataTypeConversion: '<a class="ct blk" blk_line="526">&lt;S4&gt;/Data Type Conversion5</a>'</span></td></tr>
+<tr name="527" id="527">
+<td><a id="l527" class='ln'>527</a></td><td><span class="ct">   *  Gain: '<a class="ct blk" blk_line="527">&lt;S8&gt;/Gain</a>'</span></td></tr>
+<tr name="528" id="528">
+<td><a id="l528" class='ln'>528</a></td><td><span class="ct">   *  Math: '<a class="ct blk" blk_line="528">&lt;S8&gt;/Math Function2</a>'</span></td></tr>
+<tr name="529" id="529">
+<td><a id="l529" class='ln'>529</a></td><td><span class="ct">   *</span></td></tr>
+<tr name="530" id="530">
+<td><a id="l530" class='ln'>530</a></td><td><span class="ct">   * About '<a class="ct blk" blk_line="530">&lt;S8&gt;/Math Function2</a>':</span></td></tr>
+<tr name="531" id="531">
+<td><a id="l531" class='ln'>531</a></td><td><span class="ct">   *  Operator: reciprocal</span></td></tr>
+<tr name="532" id="532">
+<td><a id="l532" class='ln'>532</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="533" id="533">
+<td><a id="l533" class='ln'>533</a></td><td>  <a id="533c3" class="tk">rtb_Switch_idx_0</a> = (<a id="533c23" class="tk">real32_T</a>)<a id="533c32" class="tk">floor</a>(1.0F <a id="533c43" class="tk">/</a> (<a id="533c46" class="tk">real32_T</a>)<a id="533c55" class="tk">*</a><a id="533c56" class="tk">tune2</a> <a id="533c62" class="tk">*</a></td></tr>
+<tr name="534" id="534">
+<td><a id="l534" class='ln'>534</a></td><td>    <a id="534c5" class="tk">uc3_preparation1_2017_P</a>.<a id="534c29" class="tk">Gain_Gain_a</a>);</td></tr>
+<tr name="535" id="535">
+<td><a id="l535" class='ln'>535</a></td><td>  <span class="kw">if</span> (<a id="535c7" class="tk">rtIsNaNF</a>(<a id="535c16" class="tk">rtb_Switch_idx_0</a>) <a id="535c34" class="tk">||</a> <a id="535c37" class="tk">rtIsInfF</a>(<a id="535c46" class="tk">rtb_Switch_idx_0</a>)) <span class="br">{</span></td></tr>
+<tr name="536" id="536">
+<td><a id="l536" class='ln'>536</a></td><td>    <a id="536c5" class="tk">rtb_Switch_idx_0</a> = 0.0F;</td></tr>
+<tr name="537" id="537">
+<td><a id="l537" class='ln'>537</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="538" id="538">
+<td><a id="l538" class='ln'>538</a></td><td>    <a id="538c5" class="tk">rtb_Switch_idx_0</a> = (<a id="538c25" class="tk">real32_T</a>)<a id="538c34" class="tk">fmod</a>(<a id="538c39" class="tk">rtb_Switch_idx_0</a>, 4.294967296E+9);</td></tr>
+<tr name="539" id="539">
+<td><a id="l539" class='ln'>539</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="540" id="540">
+<td><a id="l540" class='ln'>540</a></td><td></td></tr>
+<tr name="541" id="541">
+<td><a id="l541" class='ln'>541</a></td><td>  <a id="541c3" class="tk">*</a><a id="541c4" class="tk">share_out7</a> = <a id="541c17" class="tk">rtb_Switch_idx_0</a> <a id="541c34" class="tk">&lt;</a> 0.0F <a id="541c41" class="tk">?</a> <a id="541c43" class="tk">-</a>(<a id="541c45" class="tk">int32_T</a>)(<a id="541c54" class="tk">uint32_T</a>)<a id="541c63" class="tk">-</a><a id="541c64" class="tk">rtb_Switch_idx_0</a> <a id="541c81" class="tk">:</a></td></tr>
+<tr name="542" id="542">
+<td><a id="l542" class='ln'>542</a></td><td>    (<a id="542c6" class="tk">int32_T</a>)(<a id="542c15" class="tk">uint32_T</a>)<a id="542c24" class="tk">rtb_Switch_idx_0</a>;</td></tr>
+<tr name="543" id="543">
+<td><a id="l543" class='ln'>543</a></td><td></td></tr>
+<tr name="544" id="544">
+<td><a id="l544" class='ln'>544</a></td><td>  <span class="ct">/* End of DataTypeConversion: '<a class="ct blk" blk_line="544">&lt;S8&gt;/Data Type Conversion1</a>' */</span></td></tr>
+<tr name="545" id="545">
+<td><a id="l545" class='ln'>545</a></td><td></td></tr>
+<tr name="546" id="546">
+<td><a id="l546" class='ln'>546</a></td><td>  <span class="ct">/* Math: '<a class="ct blk" blk_line="546">&lt;S8&gt;/Math Function1</a>' incorporates:</span></td></tr>
+<tr name="547" id="547">
+<td><a id="l547" class='ln'>547</a></td><td><span class="ct">   *  Constant: '<a class="ct blk" blk_line="547">&lt;S8&gt;/cte2</a>'</span></td></tr>
+<tr name="548" id="548">
+<td><a id="l548" class='ln'>548</a></td><td><span class="ct">   *  Constant: '<a class="ct blk" blk_line="548">&lt;S8&gt;/n</a>'</span></td></tr>
+<tr name="549" id="549">
+<td><a id="l549" class='ln'>549</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="550" id="550">
+<td><a id="l550" class='ln'>550</a></td><td>  <span class="kw">if</span> ((<a id="550c8" class="tk">uc3_preparation1_2017_P</a>.<a id="550c32" class="tk">cte2_Value</a> <a id="550c43" class="tk">&lt;</a> 0.0F) <a id="550c51" class="tk">&amp;&amp;</a></td></tr>
+<tr name="551" id="551">
+<td><a id="l551" class='ln'>551</a></td><td>      (<a id="551c8" class="tk">uc3_preparation1_2017_P</a>.<a id="551c32" class="tk">n_Value</a> <a id="551c40" class="tk">&gt;</a> (<a id="551c43" class="tk">real32_T</a>)<a id="551c52" class="tk">floor</a></td></tr>
+<tr name="552" id="552">
+<td><a id="l552" class='ln'>552</a></td><td>       (<a id="552c9" class="tk">uc3_preparation1_2017_P</a>.<a id="552c33" class="tk">n_Value</a>))) <span class="br">{</span></td></tr>
+<tr name="553" id="553">
+<td><a id="l553" class='ln'>553</a></td><td>    <a id="553c5" class="tk">rtb_Switch_idx_0</a> = <a id="553c24" class="tk">-</a><a id="553c25" class="tk">rt_powf_snf</a>(<a id="553c37" class="tk">-</a><a id="553c38" class="tk">uc3_preparation1_2017_P</a>.<a id="553c62" class="tk">cte2_Value</a>,</td></tr>
+<tr name="554" id="554">
+<td><a id="l554" class='ln'>554</a></td><td>      <a id="554c7" class="tk">uc3_preparation1_2017_P</a>.<a id="554c31" class="tk">n_Value</a>);</td></tr>
+<tr name="555" id="555">
+<td><a id="l555" class='ln'>555</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="556" id="556">
+<td><a id="l556" class='ln'>556</a></td><td>    <a id="556c5" class="tk">rtb_Switch_idx_0</a> = <a id="556c24" class="tk">rt_powf_snf</a>(<a id="556c36" class="tk">uc3_preparation1_2017_P</a>.<a id="556c60" class="tk">cte2_Value</a>,</td></tr>
+<tr name="557" id="557">
+<td><a id="l557" class='ln'>557</a></td><td>      <a id="557c7" class="tk">uc3_preparation1_2017_P</a>.<a id="557c31" class="tk">n_Value</a>);</td></tr>
+<tr name="558" id="558">
+<td><a id="l558" class='ln'>558</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="559" id="559">
+<td><a id="l559" class='ln'>559</a></td><td></td></tr>
+<tr name="560" id="560">
+<td><a id="l560" class='ln'>560</a></td><td>  <span class="ct">/* End of Math: '<a class="ct blk" blk_line="560">&lt;S8&gt;/Math Function1</a>' */</span></td></tr>
+<tr name="561" id="561">
+<td><a id="l561" class='ln'>561</a></td><td></td></tr>
+<tr name="562" id="562">
+<td><a id="l562" class='ln'>562</a></td><td>  <span class="ct">/* DataTypeConversion: '<a class="ct blk" blk_line="562">&lt;S8&gt;/Data Type Conversion2</a>' incorporates:</span></td></tr>
+<tr name="563" id="563">
+<td><a id="l563" class='ln'>563</a></td><td><span class="ct">   *  Constant: '<a class="ct blk" blk_line="563">&lt;S5&gt;/f_clk</a>'</span></td></tr>
+<tr name="564" id="564">
+<td><a id="l564" class='ln'>564</a></td><td><span class="ct">   *  DataTypeConversion: '<a class="ct blk" blk_line="564">&lt;S4&gt;/Data Type Conversion5</a>'</span></td></tr>
+<tr name="565" id="565">
+<td><a id="l565" class='ln'>565</a></td><td><span class="ct">   *  Gain: '<a class="ct blk" blk_line="565">&lt;S8&gt;/Gain1</a>'</span></td></tr>
+<tr name="566" id="566">
+<td><a id="l566" class='ln'>566</a></td><td><span class="ct">   *  Product: '<a class="ct blk" blk_line="566">&lt;S8&gt;/f_in_fclk</a>'</span></td></tr>
+<tr name="567" id="567">
+<td><a id="l567" class='ln'>567</a></td><td><span class="ct">   *  Product: '<a class="ct blk" blk_line="567">&lt;S8&gt;/f_in_fclk1</a>'</span></td></tr>
+<tr name="568" id="568">
+<td><a id="l568" class='ln'>568</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="569" id="569">
+<td><a id="l569" class='ln'>569</a></td><td>  <a id="569c3" class="tk">rtb_Switch_idx_0</a> = (<a id="569c23" class="tk">real32_T</a>)<a id="569c32" class="tk">floor</a>((<a id="569c39" class="tk">real32_T</a>)<a id="569c48" class="tk">*</a><a id="569c49" class="tk">tune2</a> <a id="569c55" class="tk">/</a> (<a id="569c58" class="tk">real32_T</a>)</td></tr>
+<tr name="570" id="570">
+<td><a id="l570" class='ln'>570</a></td><td>    <a id="570c5" class="tk">uc3_preparation1_2017_P</a>.<a id="570c29" class="tk">f_clk_Value</a> <a id="570c41" class="tk">*</a> <a id="570c43" class="tk">rtb_Switch_idx_0</a> <a id="570c60" class="tk">*</a></td></tr>
+<tr name="571" id="571">
+<td><a id="l571" class='ln'>571</a></td><td>    <a id="571c5" class="tk">uc3_preparation1_2017_P</a>.<a id="571c29" class="tk">Gain1_Gain_m</a>);</td></tr>
+<tr name="572" id="572">
+<td><a id="l572" class='ln'>572</a></td><td>  <span class="kw">if</span> (<a id="572c7" class="tk">rtIsNaNF</a>(<a id="572c16" class="tk">rtb_Switch_idx_0</a>) <a id="572c34" class="tk">||</a> <a id="572c37" class="tk">rtIsInfF</a>(<a id="572c46" class="tk">rtb_Switch_idx_0</a>)) <span class="br">{</span></td></tr>
+<tr name="573" id="573">
+<td><a id="l573" class='ln'>573</a></td><td>    <a id="573c5" class="tk">rtb_Switch_idx_0</a> = 0.0F;</td></tr>
+<tr name="574" id="574">
+<td><a id="l574" class='ln'>574</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="575" id="575">
+<td><a id="l575" class='ln'>575</a></td><td>    <a id="575c5" class="tk">rtb_Switch_idx_0</a> = (<a id="575c25" class="tk">real32_T</a>)<a id="575c34" class="tk">fmod</a>(<a id="575c39" class="tk">rtb_Switch_idx_0</a>, 4.294967296E+9);</td></tr>
+<tr name="576" id="576">
+<td><a id="l576" class='ln'>576</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="577" id="577">
+<td><a id="l577" class='ln'>577</a></td><td></td></tr>
+<tr name="578" id="578">
+<td><a id="l578" class='ln'>578</a></td><td>  <a id="578c3" class="tk">*</a><a id="578c4" class="tk">share_out6</a> = <a id="578c17" class="tk">rtb_Switch_idx_0</a> <a id="578c34" class="tk">&lt;</a> 0.0F <a id="578c41" class="tk">?</a> <a id="578c43" class="tk">-</a>(<a id="578c45" class="tk">int32_T</a>)(<a id="578c54" class="tk">uint32_T</a>)<a id="578c63" class="tk">-</a><a id="578c64" class="tk">rtb_Switch_idx_0</a> <a id="578c81" class="tk">:</a></td></tr>
+<tr name="579" id="579">
+<td><a id="l579" class='ln'>579</a></td><td>    (<a id="579c6" class="tk">int32_T</a>)(<a id="579c15" class="tk">uint32_T</a>)<a id="579c24" class="tk">rtb_Switch_idx_0</a>;</td></tr>
+<tr name="580" id="580">
+<td><a id="l580" class='ln'>580</a></td><td></td></tr>
+<tr name="581" id="581">
+<td><a id="l581" class='ln'>581</a></td><td>  <span class="ct">/* End of DataTypeConversion: '<a class="ct blk" blk_line="581">&lt;S8&gt;/Data Type Conversion2</a>' */</span></td></tr>
+<tr name="582" id="582">
+<td><a id="l582" class='ln'>582</a></td><td></td></tr>
+<tr name="583" id="583">
+<td><a id="l583" class='ln'>583</a></td><td>  <span class="ct">/* Outputs for Atomic SubSystem: '<a class="ct blk" blk_line="583">&lt;S5&gt;/selectror</a>' */</span></td></tr>
+<tr name="584" id="584">
+<td><a id="l584" class='ln'>584</a></td><td>  <span class="ct">/* Switch: '<a class="ct blk" blk_line="584">&lt;S9&gt;/Switch</a>' incorporates:</span></td></tr>
+<tr name="585" id="585">
+<td><a id="l585" class='ln'>585</a></td><td><span class="ct">   *  Constant: '<a class="ct blk" blk_line="585">&lt;S9&gt;/Constant</a>'</span></td></tr>
+<tr name="586" id="586">
+<td><a id="l586" class='ln'>586</a></td><td><span class="ct">   *  Constant: '<a class="ct blk" blk_line="586">&lt;S9&gt;/Constant1</a>'</span></td></tr>
+<tr name="587" id="587">
+<td><a id="l587" class='ln'>587</a></td><td><span class="ct">   *  MATLAB Function: '<a class="ct blk" blk_line="587">&lt;S5&gt;/RT_CPU</a>'</span></td></tr>
+<tr name="588" id="588">
+<td><a id="l588" class='ln'>588</a></td><td><span class="ct">   *  Selector: '<a class="ct blk" blk_line="588">&lt;S9&gt;/Selector</a>'</span></td></tr>
+<tr name="589" id="589">
+<td><a id="l589" class='ln'>589</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="590" id="590">
+<td><a id="l590" class='ln'>590</a></td><td>  <span class="kw">if</span> (<a id="590c7" class="tk">rtb_Compare_e</a>) <span class="br">{</span></td></tr>
+<tr name="591" id="591">
+<td><a id="l591" class='ln'>591</a></td><td>    <span class="ct">/* Selector: '<a class="ct blk" blk_line="591">&lt;S9&gt;/Selector</a>' incorporates:</span></td></tr>
+<tr name="592" id="592">
+<td><a id="l592" class='ln'>592</a></td><td><span class="ct">     *  Bias: '<a class="ct blk" blk_line="592">&lt;S9&gt;/Bias</a>'</span></td></tr>
+<tr name="593" id="593">
+<td><a id="l593" class='ln'>593</a></td><td><span class="ct">     */</span></td></tr>
+<tr name="594" id="594">
+<td><a id="l594" class='ln'>594</a></td><td>    <a id="594c5" class="tk">rtb_Add1</a> = (<a id="594c17" class="tk">int32_T</a>)(<a id="594c26" class="tk">uc3_preparation1_2017_B</a>.<a id="594c50" class="tk">counter</a> <a id="594c58" class="tk">+</a></td></tr>
+<tr name="595" id="595">
+<td><a id="l595" class='ln'>595</a></td><td>                         <a id="595c26" class="tk">uc3_preparation1_2017_P</a>.<a id="595c50" class="tk">Bias_Bias</a>);</td></tr>
+<tr name="596" id="596">
+<td><a id="l596" class='ln'>596</a></td><td>    <a id="596c5" class="tk">rtb_Switch_idx_0</a> = <a id="596c24" class="tk">uc3_preparation1_2017_DW</a>.<a id="596c49" class="tk">cc0</a>[129 <a id="596c57" class="tk">*</a> (<a id="596c60" class="tk">int32_T</a>)</td></tr>
+<tr name="597" id="597">
+<td><a id="l597" class='ln'>597</a></td><td>      <a id="597c7" class="tk">uc3_preparation1_2017_P</a>.<a id="597c31" class="tk">Constant_Value_k</a>[0] <a id="597c51" class="tk">+</a> <a id="597c53" class="tk">rtb_Add1</a>];</td></tr>
+<tr name="598" id="598">
+<td><a id="l598" class='ln'>598</a></td><td>    <a id="598c5" class="tk">rtb_Gain2</a> = <a id="598c17" class="tk">uc3_preparation1_2017_DW</a>.<a id="598c42" class="tk">cc0</a>[129 <a id="598c50" class="tk">*</a> (<a id="598c53" class="tk">int32_T</a>)</td></tr>
+<tr name="599" id="599">
+<td><a id="l599" class='ln'>599</a></td><td>      <a id="599c7" class="tk">uc3_preparation1_2017_P</a>.<a id="599c31" class="tk">Constant_Value_k</a>[1] <a id="599c51" class="tk">+</a> <a id="599c53" class="tk">rtb_Add1</a>];</td></tr>
+<tr name="600" id="600">
+<td><a id="l600" class='ln'>600</a></td><td>    <a id="600c5" class="tk">d_sep</a> = <a id="600c13" class="tk">uc3_preparation1_2017_DW</a>.<a id="600c38" class="tk">cc0</a>[129 <a id="600c46" class="tk">*</a> (<a id="600c49" class="tk">int32_T</a>)</td></tr>
+<tr name="601" id="601">
+<td><a id="l601" class='ln'>601</a></td><td>      <a id="601c7" class="tk">uc3_preparation1_2017_P</a>.<a id="601c31" class="tk">Constant_Value_k</a>[2] <a id="601c51" class="tk">+</a> <a id="601c53" class="tk">rtb_Add1</a>];</td></tr>
+<tr name="602" id="602">
+<td><a id="l602" class='ln'>602</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="603" id="603">
+<td><a id="l603" class='ln'>603</a></td><td>    <a id="603c5" class="tk">rtb_Switch_idx_0</a> = <a id="603c24" class="tk">uc3_preparation1_2017_P</a>.<a id="603c48" class="tk">Constant1_Value_d</a>;</td></tr>
+<tr name="604" id="604">
+<td><a id="l604" class='ln'>604</a></td><td>    <a id="604c5" class="tk">rtb_Gain2</a> = <a id="604c17" class="tk">uc3_preparation1_2017_P</a>.<a id="604c41" class="tk">Constant1_Value_d</a>;</td></tr>
+<tr name="605" id="605">
+<td><a id="l605" class='ln'>605</a></td><td>    <a id="605c5" class="tk">d_sep</a> = <a id="605c13" class="tk">uc3_preparation1_2017_P</a>.<a id="605c37" class="tk">Constant1_Value_d</a>;</td></tr>
+<tr name="606" id="606">
+<td><a id="l606" class='ln'>606</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="607" id="607">
+<td><a id="l607" class='ln'>607</a></td><td></td></tr>
+<tr name="608" id="608">
+<td><a id="l608" class='ln'>608</a></td><td>  <span class="ct">/* End of Switch: '<a class="ct blk" blk_line="608">&lt;S9&gt;/Switch</a>' */</span></td></tr>
+<tr name="609" id="609">
+<td><a id="l609" class='ln'>609</a></td><td></td></tr>
+<tr name="610" id="610">
+<td><a id="l610" class='ln'>610</a></td><td>  <span class="ct">/* DataTypeConversion: '<a class="ct blk" blk_line="610">&lt;S9&gt;/Data Type Conversion</a>' incorporates:</span></td></tr>
+<tr name="611" id="611">
+<td><a id="l611" class='ln'>611</a></td><td><span class="ct">   *  Gain: '<a class="ct blk" blk_line="611">&lt;S9&gt;/Gain</a>'</span></td></tr>
+<tr name="612" id="612">
+<td><a id="l612" class='ln'>612</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="613" id="613">
+<td><a id="l613" class='ln'>613</a></td><td>  <a id="613c3" class="tk">rtb_Switch_idx_0</a> = (<a id="613c23" class="tk">real32_T</a>)<a id="613c32" class="tk">floor</a>(<a id="613c38" class="tk">uc3_preparation1_2017_P</a>.<a id="613c62" class="tk">Gain_Gain_b</a> <a id="613c74" class="tk">*</a></td></tr>
+<tr name="614" id="614">
+<td><a id="l614" class='ln'>614</a></td><td>    <a id="614c5" class="tk">rtb_Switch_idx_0</a>);</td></tr>
+<tr name="615" id="615">
+<td><a id="l615" class='ln'>615</a></td><td>  <span class="kw">if</span> (<a id="615c7" class="tk">rtIsNaNF</a>(<a id="615c16" class="tk">rtb_Switch_idx_0</a>) <a id="615c34" class="tk">||</a> <a id="615c37" class="tk">rtIsInfF</a>(<a id="615c46" class="tk">rtb_Switch_idx_0</a>)) <span class="br">{</span></td></tr>
+<tr name="616" id="616">
+<td><a id="l616" class='ln'>616</a></td><td>    <a id="616c5" class="tk">rtb_Switch_idx_0</a> = 0.0F;</td></tr>
+<tr name="617" id="617">
+<td><a id="l617" class='ln'>617</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="618" id="618">
+<td><a id="l618" class='ln'>618</a></td><td>    <a id="618c5" class="tk">rtb_Switch_idx_0</a> = (<a id="618c25" class="tk">real32_T</a>)<a id="618c34" class="tk">fmod</a>(<a id="618c39" class="tk">rtb_Switch_idx_0</a>, 4.294967296E+9);</td></tr>
+<tr name="619" id="619">
+<td><a id="l619" class='ln'>619</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="620" id="620">
+<td><a id="l620" class='ln'>620</a></td><td></td></tr>
+<tr name="621" id="621">
+<td><a id="l621" class='ln'>621</a></td><td>  <a id="621c3" class="tk">*</a><a id="621c4" class="tk">share_out2</a> = <a id="621c17" class="tk">rtb_Switch_idx_0</a> <a id="621c34" class="tk">&lt;</a> 0.0F <a id="621c41" class="tk">?</a> <a id="621c43" class="tk">-</a>(<a id="621c45" class="tk">int32_T</a>)(<a id="621c54" class="tk">uint32_T</a>)<a id="621c63" class="tk">-</a><a id="621c64" class="tk">rtb_Switch_idx_0</a> <a id="621c81" class="tk">:</a></td></tr>
+<tr name="622" id="622">
+<td><a id="l622" class='ln'>622</a></td><td>    (<a id="622c6" class="tk">int32_T</a>)(<a id="622c15" class="tk">uint32_T</a>)<a id="622c24" class="tk">rtb_Switch_idx_0</a>;</td></tr>
+<tr name="623" id="623">
+<td><a id="l623" class='ln'>623</a></td><td></td></tr>
+<tr name="624" id="624">
+<td><a id="l624" class='ln'>624</a></td><td>  <span class="ct">/* End of DataTypeConversion: '<a class="ct blk" blk_line="624">&lt;S9&gt;/Data Type Conversion</a>' */</span></td></tr>
+<tr name="625" id="625">
+<td><a id="l625" class='ln'>625</a></td><td></td></tr>
+<tr name="626" id="626">
+<td><a id="l626" class='ln'>626</a></td><td>  <span class="ct">/* DataTypeConversion: '<a class="ct blk" blk_line="626">&lt;S9&gt;/Data Type Conversion1</a>' incorporates:</span></td></tr>
+<tr name="627" id="627">
+<td><a id="l627" class='ln'>627</a></td><td><span class="ct">   *  Gain: '<a class="ct blk" blk_line="627">&lt;S9&gt;/Gain1</a>'</span></td></tr>
+<tr name="628" id="628">
+<td><a id="l628" class='ln'>628</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="629" id="629">
+<td><a id="l629" class='ln'>629</a></td><td>  <a id="629c3" class="tk">rtb_Switch_idx_0</a> = (<a id="629c23" class="tk">real32_T</a>)<a id="629c32" class="tk">floor</a>(<a id="629c38" class="tk">uc3_preparation1_2017_P</a>.<a id="629c62" class="tk">Gain1_Gain</a> <a id="629c73" class="tk">*</a></td></tr>
+<tr name="630" id="630">
+<td><a id="l630" class='ln'>630</a></td><td>    <a id="630c5" class="tk">rtb_Gain2</a>);</td></tr>
+<tr name="631" id="631">
+<td><a id="l631" class='ln'>631</a></td><td>  <span class="kw">if</span> (<a id="631c7" class="tk">rtIsNaNF</a>(<a id="631c16" class="tk">rtb_Switch_idx_0</a>) <a id="631c34" class="tk">||</a> <a id="631c37" class="tk">rtIsInfF</a>(<a id="631c46" class="tk">rtb_Switch_idx_0</a>)) <span class="br">{</span></td></tr>
+<tr name="632" id="632">
+<td><a id="l632" class='ln'>632</a></td><td>    <a id="632c5" class="tk">rtb_Switch_idx_0</a> = 0.0F;</td></tr>
+<tr name="633" id="633">
+<td><a id="l633" class='ln'>633</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="634" id="634">
+<td><a id="l634" class='ln'>634</a></td><td>    <a id="634c5" class="tk">rtb_Switch_idx_0</a> = (<a id="634c25" class="tk">real32_T</a>)<a id="634c34" class="tk">fmod</a>(<a id="634c39" class="tk">rtb_Switch_idx_0</a>, 4.294967296E+9);</td></tr>
+<tr name="635" id="635">
+<td><a id="l635" class='ln'>635</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="636" id="636">
+<td><a id="l636" class='ln'>636</a></td><td></td></tr>
+<tr name="637" id="637">
+<td><a id="l637" class='ln'>637</a></td><td>  <a id="637c3" class="tk">*</a><a id="637c4" class="tk">share_out3</a> = <a id="637c17" class="tk">rtb_Switch_idx_0</a> <a id="637c34" class="tk">&lt;</a> 0.0F <a id="637c41" class="tk">?</a> <a id="637c43" class="tk">-</a>(<a id="637c45" class="tk">int32_T</a>)(<a id="637c54" class="tk">uint32_T</a>)<a id="637c63" class="tk">-</a><a id="637c64" class="tk">rtb_Switch_idx_0</a> <a id="637c81" class="tk">:</a></td></tr>
+<tr name="638" id="638">
+<td><a id="l638" class='ln'>638</a></td><td>    (<a id="638c6" class="tk">int32_T</a>)(<a id="638c15" class="tk">uint32_T</a>)<a id="638c24" class="tk">rtb_Switch_idx_0</a>;</td></tr>
+<tr name="639" id="639">
+<td><a id="l639" class='ln'>639</a></td><td></td></tr>
+<tr name="640" id="640">
+<td><a id="l640" class='ln'>640</a></td><td>  <span class="ct">/* End of DataTypeConversion: '<a class="ct blk" blk_line="640">&lt;S9&gt;/Data Type Conversion1</a>' */</span></td></tr>
+<tr name="641" id="641">
+<td><a id="l641" class='ln'>641</a></td><td></td></tr>
+<tr name="642" id="642">
+<td><a id="l642" class='ln'>642</a></td><td>  <span class="ct">/* DataTypeConversion: '<a class="ct blk" blk_line="642">&lt;S9&gt;/Data Type Conversion2</a>' incorporates:</span></td></tr>
+<tr name="643" id="643">
+<td><a id="l643" class='ln'>643</a></td><td><span class="ct">   *  Gain: '<a class="ct blk" blk_line="643">&lt;S9&gt;/Gain2</a>'</span></td></tr>
+<tr name="644" id="644">
+<td><a id="l644" class='ln'>644</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="645" id="645">
+<td><a id="l645" class='ln'>645</a></td><td>  <a id="645c3" class="tk">rtb_Switch_idx_0</a> = (<a id="645c23" class="tk">real32_T</a>)<a id="645c32" class="tk">floor</a>(<a id="645c38" class="tk">uc3_preparation1_2017_P</a>.<a id="645c62" class="tk">Gain2_Gain</a> <a id="645c73" class="tk">*</a> <a id="645c75" class="tk">d_sep</a>);</td></tr>
+<tr name="646" id="646">
+<td><a id="l646" class='ln'>646</a></td><td>  <span class="kw">if</span> (<a id="646c7" class="tk">rtIsNaNF</a>(<a id="646c16" class="tk">rtb_Switch_idx_0</a>) <a id="646c34" class="tk">||</a> <a id="646c37" class="tk">rtIsInfF</a>(<a id="646c46" class="tk">rtb_Switch_idx_0</a>)) <span class="br">{</span></td></tr>
+<tr name="647" id="647">
+<td><a id="l647" class='ln'>647</a></td><td>    <a id="647c5" class="tk">rtb_Switch_idx_0</a> = 0.0F;</td></tr>
+<tr name="648" id="648">
+<td><a id="l648" class='ln'>648</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="649" id="649">
+<td><a id="l649" class='ln'>649</a></td><td>    <a id="649c5" class="tk">rtb_Switch_idx_0</a> = (<a id="649c25" class="tk">real32_T</a>)<a id="649c34" class="tk">fmod</a>(<a id="649c39" class="tk">rtb_Switch_idx_0</a>, 4.294967296E+9);</td></tr>
+<tr name="650" id="650">
+<td><a id="l650" class='ln'>650</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="651" id="651">
+<td><a id="l651" class='ln'>651</a></td><td></td></tr>
+<tr name="652" id="652">
+<td><a id="l652" class='ln'>652</a></td><td>  <a id="652c3" class="tk">*</a><a id="652c4" class="tk">share_out4</a> = <a id="652c17" class="tk">rtb_Switch_idx_0</a> <a id="652c34" class="tk">&lt;</a> 0.0F <a id="652c41" class="tk">?</a> <a id="652c43" class="tk">-</a>(<a id="652c45" class="tk">int32_T</a>)(<a id="652c54" class="tk">uint32_T</a>)<a id="652c63" class="tk">-</a><a id="652c64" class="tk">rtb_Switch_idx_0</a> <a id="652c81" class="tk">:</a></td></tr>
+<tr name="653" id="653">
+<td><a id="l653" class='ln'>653</a></td><td>    (<a id="653c6" class="tk">int32_T</a>)(<a id="653c15" class="tk">uint32_T</a>)<a id="653c24" class="tk">rtb_Switch_idx_0</a>;</td></tr>
+<tr name="654" id="654">
+<td><a id="l654" class='ln'>654</a></td><td></td></tr>
+<tr name="655" id="655">
+<td><a id="l655" class='ln'>655</a></td><td>  <span class="ct">/* End of DataTypeConversion: '<a class="ct blk" blk_line="655">&lt;S9&gt;/Data Type Conversion2</a>' */</span></td></tr>
+<tr name="656" id="656">
+<td><a id="l656" class='ln'>656</a></td><td>  <span class="ct">/* End of Outputs for SubSystem: '<a class="ct blk" blk_line="656">&lt;S5&gt;/selectror</a>' */</span></td></tr>
+<tr name="657" id="657">
+<td><a id="l657" class='ln'>657</a></td><td></td></tr>
+<tr name="658" id="658">
+<td><a id="l658" class='ln'>658</a></td><td>  <span class="ct">/* Sum: '<a class="ct blk" blk_line="658">&lt;S21&gt;/Add1</a>' incorporates:</span></td></tr>
+<tr name="659" id="659">
+<td><a id="l659" class='ln'>659</a></td><td><span class="ct">   *  Gain: '<a class="ct blk" blk_line="659">&lt;S16&gt;/Gain</a>'</span></td></tr>
+<tr name="660" id="660">
+<td><a id="l660" class='ln'>660</a></td><td><span class="ct">   *  UnitDelay: '<a class="ct blk" blk_line="660">&lt;S21&gt;/Unit Delay1</a>'</span></td></tr>
+<tr name="661" id="661">
+<td><a id="l661" class='ln'>661</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="662" id="662">
+<td><a id="l662" class='ln'>662</a></td><td>  <a id="662c3" class="tk">rtb_Add1</a> = <a id="662c14" class="tk">mul_s32_loSR</a>(<a id="662c27" class="tk">uc3_preparation1_2017_P</a>.<a id="662c51" class="tk">Gain_Gain</a>, <a id="662c62" class="tk">*</a><a id="662c63" class="tk">share_out6</a>, 31U) <a id="662c80" class="tk">+</a></td></tr>
+<tr name="663" id="663">
+<td><a id="l663" class='ln'>663</a></td><td>    <a id="663c5" class="tk">uc3_preparation1_2017_DW</a>.<a id="663c30" class="tk">UnitDelay1_DSTATE</a>;</td></tr>
+<tr name="664" id="664">
+<td><a id="l664" class='ln'>664</a></td><td></td></tr>
+<tr name="665" id="665">
+<td><a id="l665" class='ln'>665</a></td><td>  <span class="ct">/* Switch: '<a class="ct blk" blk_line="665">&lt;S21&gt;/Switch</a>' incorporates:</span></td></tr>
+<tr name="666" id="666">
+<td><a id="l666" class='ln'>666</a></td><td><span class="ct">   *  Constant: '<a class="ct blk" blk_line="666">&lt;S21&gt;/Constant3</a>'</span></td></tr>
+<tr name="667" id="667">
+<td><a id="l667" class='ln'>667</a></td><td><span class="ct">   *  RelationalOperator: '<a class="ct blk" blk_line="667">&lt;S21&gt;/Relational Operator</a>'</span></td></tr>
+<tr name="668" id="668">
+<td><a id="l668" class='ln'>668</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="669" id="669">
+<td><a id="l669" class='ln'>669</a></td><td>  <span class="ct">/* MATLAB Function 'Logic and Bit Operations/Bit Slice/bit_slice': '<a class="ct blk" blk_line="669">&lt;S29&gt;:1</a>' */</span></td></tr>
+<tr name="670" id="670">
+<td><a id="l670" class='ln'>670</a></td><td>  <span class="ct">/* '<a class="ct blk" blk_line="670">&lt;S29&gt;:1:4</a>' */</span></td></tr>
+<tr name="671" id="671">
+<td><a id="l671" class='ln'>671</a></td><td>  <span class="ct">/* MATLAB Function 'Bit Concat2/bit_concat': '<a class="ct blk" blk_line="671">&lt;S18&gt;:1</a>' */</span></td></tr>
+<tr name="672" id="672">
+<td><a id="l672" class='ln'>672</a></td><td>  <span class="ct">/* '<a class="ct blk" blk_line="672">&lt;S18&gt;:1:4</a>' */</span></td></tr>
+<tr name="673" id="673">
+<td><a id="l673" class='ln'>673</a></td><td>  <span class="ct">/* MATLAB Function 'Logic and Bit Operations/Bit Slice/bit_slice': '<a class="ct blk" blk_line="673">&lt;S19&gt;:1</a>' */</span></td></tr>
+<tr name="674" id="674">
+<td><a id="l674" class='ln'>674</a></td><td>  <span class="ct">/* '<a class="ct blk" blk_line="674">&lt;S19&gt;:1:4</a>' */</span></td></tr>
+<tr name="675" id="675">
+<td><a id="l675" class='ln'>675</a></td><td>  <span class="kw">if</span> (((<a id="675c9" class="tk">rtb_Add1</a> <a id="675c18" class="tk">&gt;=</a> <a id="675c21" class="tk">uc3_preparation1_2017_P</a>.<a id="675c45" class="tk">Constant3_Value</a>) <a id="675c62" class="tk">&lt;&lt;</a> 19) <a id="675c69" class="tk">&gt;=</a></td></tr>
+<tr name="676" id="676">
+<td><a id="l676" class='ln'>676</a></td><td>      <a id="676c7" class="tk">uc3_preparation1_2017_P</a>.<a id="676c31" class="tk">Switch_Threshold</a>) <span class="br">{</span></td></tr>
+<tr name="677" id="677">
+<td><a id="l677" class='ln'>677</a></td><td>    <span class="ct">/* Update for UnitDelay: '<a class="ct blk" blk_line="677">&lt;S21&gt;/Unit Delay1</a>' incorporates:</span></td></tr>
+<tr name="678" id="678">
+<td><a id="l678" class='ln'>678</a></td><td><span class="ct">     *  Constant: '<a class="ct blk" blk_line="678">&lt;S21&gt;/Constant1</a>'</span></td></tr>
+<tr name="679" id="679">
+<td><a id="l679" class='ln'>679</a></td><td><span class="ct">     */</span></td></tr>
+<tr name="680" id="680">
+<td><a id="l680" class='ln'>680</a></td><td>    <a id="680c5" class="tk">uc3_preparation1_2017_DW</a>.<a id="680c30" class="tk">UnitDelay1_DSTATE</a> =</td></tr>
+<tr name="681" id="681">
+<td><a id="l681" class='ln'>681</a></td><td>      <a id="681c7" class="tk">uc3_preparation1_2017_P</a>.<a id="681c31" class="tk">Constant1_Value</a>;</td></tr>
+<tr name="682" id="682">
+<td><a id="l682" class='ln'>682</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="683" id="683">
+<td><a id="l683" class='ln'>683</a></td><td>    <span class="ct">/* Update for UnitDelay: '<a class="ct blk" blk_line="683">&lt;S21&gt;/Unit Delay1</a>' */</span></td></tr>
+<tr name="684" id="684">
+<td><a id="l684" class='ln'>684</a></td><td>    <a id="684c5" class="tk">uc3_preparation1_2017_DW</a>.<a id="684c30" class="tk">UnitDelay1_DSTATE</a> = <a id="684c50" class="tk">rtb_Add1</a>;</td></tr>
+<tr name="685" id="685">
+<td><a id="l685" class='ln'>685</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="686" id="686">
+<td><a id="l686" class='ln'>686</a></td><td></td></tr>
+<tr name="687" id="687">
+<td><a id="l687" class='ln'>687</a></td><td>  <span class="ct">/* End of Switch: '<a class="ct blk" blk_line="687">&lt;S21&gt;/Switch</a>' */</span></td></tr>
+<tr name="688" id="688">
+<td><a id="l688" class='ln'>688</a></td><td><span class="br">}</span></td></tr>
+<tr name="689" id="689">
+<td><a id="l689" class='ln'>689</a></td><td></td></tr>
+<tr name="690" id="690">
+<td><a id="l690" class='ln'>690</a></td><td><span class="ct">/* Model initialize function */</span></td></tr>
+<tr name="691" id="691">
+<td><a id="l691" class='ln'>691</a></td><td><span class="kw">void</span> <a id="691c6" class="tk">uc3_preparation1_2017_initialize</a>(<span class="kw">void</span>)</td></tr>
+<tr name="692" id="692">
+<td><a id="l692" class='ln'>692</a></td><td><span class="br">{</span></td></tr>
+<tr name="693" id="693">
+<td><a id="l693" class='ln'>693</a></td><td>  <span class="ct">/* Registration code */</span></td></tr>
+<tr name="694" id="694">
+<td><a id="l694" class='ln'>694</a></td><td></td></tr>
+<tr name="695" id="695">
+<td><a id="l695" class='ln'>695</a></td><td>  <span class="ct">/* initialize non-finites */</span></td></tr>
+<tr name="696" id="696">
+<td><a id="l696" class='ln'>696</a></td><td>  <a id="696c3" class="tk">rt_InitInfAndNaN</a>(<span class="kw">sizeof</span>(<a id="696c27" class="tk">real_T</a>));</td></tr>
+<tr name="697" id="697">
+<td><a id="l697" class='ln'>697</a></td><td></td></tr>
+<tr name="698" id="698">
+<td><a id="l698" class='ln'>698</a></td><td>  <span class="ct">/* initialize error status */</span></td></tr>
+<tr name="699" id="699">
+<td><a id="l699" class='ln'>699</a></td><td>  <a id="699c3" class="tk">rtmSetErrorStatus</a>(<a id="699c21" class="tk">uc3_preparation1_2017_M</a>, (<a id="699c47" class="tk">NULL</a>));</td></tr>
+<tr name="700" id="700">
+<td><a id="l700" class='ln'>700</a></td><td></td></tr>
+<tr name="701" id="701">
+<td><a id="l701" class='ln'>701</a></td><td>  <span class="ct">/* block I/O */</span></td></tr>
+<tr name="702" id="702">
+<td><a id="l702" class='ln'>702</a></td><td>  (<span class="kw">void</span>) <a id="702c10" class="tk">memset</a>(((<span class="kw">void</span> <a id="702c24" class="tk">*</a>) <a id="702c27" class="tk">&amp;</a><a id="702c28" class="tk">uc3_preparation1_2017_B</a>), 0,</td></tr>
+<tr name="703" id="703">
+<td><a id="l703" class='ln'>703</a></td><td>                <span class="kw">sizeof</span>(<a id="703c24" class="tk">B_uc3_preparation1_2017_T</a>));</td></tr>
+<tr name="704" id="704">
+<td><a id="l704" class='ln'>704</a></td><td></td></tr>
+<tr name="705" id="705">
+<td><a id="l705" class='ln'>705</a></td><td>  <span class="ct">/* states (dwork) */</span></td></tr>
+<tr name="706" id="706">
+<td><a id="l706" class='ln'>706</a></td><td>  (<span class="kw">void</span>) <a id="706c10" class="tk">memset</a>((<span class="kw">void</span> <a id="706c23" class="tk">*</a>)<a id="706c25" class="tk">&amp;</a><a id="706c26" class="tk">uc3_preparation1_2017_DW</a>, 0,</td></tr>
+<tr name="707" id="707">
+<td><a id="l707" class='ln'>707</a></td><td>                <span class="kw">sizeof</span>(<a id="707c24" class="tk">DW_uc3_preparation1_2017_T</a>));</td></tr>
+<tr name="708" id="708">
+<td><a id="l708" class='ln'>708</a></td><td></td></tr>
+<tr name="709" id="709">
+<td><a id="l709" class='ln'>709</a></td><td>  <span class="br">{</span></td></tr>
+<tr name="710" id="710">
+<td><a id="l710" class='ln'>710</a></td><td>    <span class="ct">/* user code (Initialize function Header) */</span></td></tr>
+<tr name="711" id="711">
+<td><a id="l711" class='ln'>711</a></td><td></td></tr>
+<tr name="712" id="712">
+<td><a id="l712" class='ln'>712</a></td><td>    <span class="ct">/* System '<a class="ct blk" blk_line="712">&lt;Root&gt;</a>' */</span></td></tr>
+<tr name="713" id="713">
+<td><a id="l713" class='ln'>713</a></td><td>    <a id="713c5" class="tk">*</a><a id="713c6" class="tk">c_cycle_freq</a> = 1000;</td></tr>
+<tr name="714" id="714">
+<td><a id="l714" class='ln'>714</a></td><td></td></tr>
+<tr name="715" id="715">
+<td><a id="l715" class='ln'>715</a></td><td>    <span class="ct">/* InitializeConditions for UnitDelay: '<a class="ct blk" blk_line="715">&lt;S21&gt;/Unit Delay1</a>' */</span></td></tr>
+<tr name="716" id="716">
+<td><a id="l716" class='ln'>716</a></td><td>    <a id="716c5" class="tk">uc3_preparation1_2017_DW</a>.<a id="716c30" class="tk">UnitDelay1_DSTATE</a> =</td></tr>
+<tr name="717" id="717">
+<td><a id="l717" class='ln'>717</a></td><td>      <a id="717c7" class="tk">uc3_preparation1_2017_P</a>.<a id="717c31" class="tk">UnitDelay1_InitialCondition</a>;</td></tr>
+<tr name="718" id="718">
+<td><a id="l718" class='ln'>718</a></td><td></td></tr>
+<tr name="719" id="719">
+<td><a id="l719" class='ln'>719</a></td><td>    <span class="ct">/* SystemInitialize for MATLAB Function: '<a class="ct blk" blk_line="719">&lt;S5&gt;/RT_CPU</a>' */</span></td></tr>
+<tr name="720" id="720">
+<td><a id="l720" class='ln'>720</a></td><td>    <a id="720c5" class="tk">uc3_preparation1_2017_DW</a>.<a id="720c30" class="tk">cc0_not_empty</a> = false;</td></tr>
+<tr name="721" id="721">
+<td><a id="l721" class='ln'>721</a></td><td>    <a id="721c5" class="tk">memset</a>(<a id="721c12" class="tk">&amp;</a><a id="721c13" class="tk">uc3_preparation1_2017_DW</a>.<a id="721c38" class="tk">cc0</a>[0], 0, 387U <a id="721c54" class="tk">*</a> <span class="kw">sizeof</span>(<a id="721c63" class="tk">real32_T</a>));</td></tr>
+<tr name="722" id="722">
+<td><a id="l722" class='ln'>722</a></td><td>    <a id="722c5" class="tk">uc3_preparation1_2017_DW</a>.<a id="722c30" class="tk">i0</a> = 0.0F;</td></tr>
+<tr name="723" id="723">
+<td><a id="l723" class='ln'>723</a></td><td></td></tr>
+<tr name="724" id="724">
+<td><a id="l724" class='ln'>724</a></td><td>    <span class="ct">/* SystemInitialize for Atomic SubSystem: '<a class="ct blk" blk_line="724">&lt;S5&gt;/Counter</a>' */</span></td></tr>
+<tr name="725" id="725">
+<td><a id="l725" class='ln'>725</a></td><td>    <span class="ct">/* Chart: '<a class="ct blk" blk_line="725">&lt;S6&gt;/Chart</a>' */</span></td></tr>
+<tr name="726" id="726">
+<td><a id="l726" class='ln'>726</a></td><td>    <span class="ct">/* Entry: CandHDL_c/cgenerate/Subsystem/Counter/Chart */</span></td></tr>
+<tr name="727" id="727">
+<td><a id="l727" class='ln'>727</a></td><td>    <span class="ct">/* Entry Internal: CandHDL_c/cgenerate/Subsystem/Counter/Chart */</span></td></tr>
+<tr name="728" id="728">
+<td><a id="l728" class='ln'>728</a></td><td>    <span class="ct">/* Transition: '<a class="ct blk" blk_line="728">&lt;S10&gt;:42</a>' */</span></td></tr>
+<tr name="729" id="729">
+<td><a id="l729" class='ln'>729</a></td><td>    <a id="729c5" class="tk">uc3_preparation1_2017_DW</a>.<a id="729c30" class="tk">is_c1_uc3_preparation1_2017</a> =</td></tr>
+<tr name="730" id="730">
+<td><a id="l730" class='ln'>730</a></td><td>      <a id="730c7" class="tk">uc3_preparation1_2017_IN_state1</a>;</td></tr>
+<tr name="731" id="731">
+<td><a id="l731" class='ln'>731</a></td><td></td></tr>
+<tr name="732" id="732">
+<td><a id="l732" class='ln'>732</a></td><td>    <span class="ct">/* Entry 'state1': '<a class="ct blk" blk_line="732">&lt;S10&gt;:41</a>' */</span></td></tr>
+<tr name="733" id="733">
+<td><a id="l733" class='ln'>733</a></td><td>    <a id="733c5" class="tk">uc3_preparation1_2017_B</a>.<a id="733c29" class="tk">counter</a> = 0.0F;</td></tr>
+<tr name="734" id="734">
+<td><a id="l734" class='ln'>734</a></td><td></td></tr>
+<tr name="735" id="735">
+<td><a id="l735" class='ln'>735</a></td><td>    <span class="ct">/* End of SystemInitialize for SubSystem: '<a class="ct blk" blk_line="735">&lt;S5&gt;/Counter</a>' */</span></td></tr>
+<tr name="736" id="736">
+<td><a id="l736" class='ln'>736</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="737" id="737">
+<td><a id="l737" class='ln'>737</a></td><td></td></tr>
+<tr name="738" id="738">
+<td><a id="l738" class='ln'>738</a></td><td>  <span class="br">{</span></td></tr>
+<tr name="739" id="739">
+<td><a id="l739" class='ln'>739</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="740" id="740">
+<td><a id="l740" class='ln'>740</a></td><td><span class="br">}</span></td></tr>
+<tr name="741" id="741">
+<td><a id="l741" class='ln'>741</a></td><td></td></tr>
+<tr name="742" id="742">
+<td><a id="l742" class='ln'>742</a></td><td><span class="ct">/* Model terminate function */</span></td></tr>
+<tr name="743" id="743">
+<td><a id="l743" class='ln'>743</a></td><td><span class="kw">void</span> <a id="743c6" class="tk">uc3_preparation1_2017_terminate</a>(<span class="kw">void</span>)</td></tr>
+<tr name="744" id="744">
+<td><a id="l744" class='ln'>744</a></td><td><span class="br">{</span></td></tr>
+<tr name="745" id="745">
+<td><a id="l745" class='ln'>745</a></td><td>  <span class="ct">/* (no terminate code required) */</span></td></tr>
+<tr name="746" id="746">
+<td><a id="l746" class='ln'>746</a></td><td><span class="br">}</span></td></tr>
+<tr name="747" id="747">
+<td><a id="l747" class='ln'>747</a></td><td></td></tr>
+<tr name="748" id="748">
+<td><a id="l748" class='ln'>748</a></td><td><span class="ct">/*</span></td></tr>
+<tr name="749" id="749">
+<td><a id="l749" class='ln'>749</a></td><td><span class="ct"> * File trailer for generated code.</span></td></tr>
+<tr name="750" id="750">
+<td><a id="l750" class='ln'>750</a></td><td><span class="ct"> *</span></td></tr>
+<tr name="751" id="751">
+<td><a id="l751" class='ln'>751</a></td><td><span class="ct"> * [EOF]</span></td></tr>
+<tr name="752" id="752">
+<td><a id="l752" class='ln'>752</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="753" id="753">
+<td><a id="l753" class='ln'>753</a></td><td></td></tr>
+</table>
+</pre>
+</body>
+</html>

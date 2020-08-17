@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="./js/coder_app.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./rtwreport_utils.js"></script>
+<script type="text/javascript" src="./rtwannotate.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/coder_app.css"/>
+</head>
+<body onload="srcFileOnload();">
+<pre id="code">
+<table class="code" id="codeTbl">
+<tr name="1" id="1">
+<td><a id="l1" class='ln'>1</a></td><td><span class="ct">/*</span></td></tr>
+<tr name="2" id="2">
+<td><a id="l2" class='ln'>2</a></td><td><span class="ct"> * Academic License - for use in teaching, academic research, and meeting</span></td></tr>
+<tr name="3" id="3">
+<td><a id="l3" class='ln'>3</a></td><td><span class="ct"> * course requirements at degree granting institutions only.  Not for</span></td></tr>
+<tr name="4" id="4">
+<td><a id="l4" class='ln'>4</a></td><td><span class="ct"> * government, commercial, or other organizational use.</span></td></tr>
+<tr name="5" id="5">
+<td><a id="l5" class='ln'>5</a></td><td><span class="ct"> *</span></td></tr>
+<tr name="6" id="6">
+<td><a id="l6" class='ln'>6</a></td><td><span class="ct"> * File: RT_CPU.c</span></td></tr>
+<tr name="7" id="7">
+<td><a id="l7" class='ln'>7</a></td><td><span class="ct"> *</span></td></tr>
+<tr name="8" id="8">
+<td><a id="l8" class='ln'>8</a></td><td><span class="ct"> * Code generated for Simulink model 'RT_CPU'.</span></td></tr>
+<tr name="9" id="9">
+<td><a id="l9" class='ln'>9</a></td><td><span class="ct"> *</span></td></tr>
+<tr name="10" id="10">
+<td><a id="l10" class='ln'>10</a></td><td><span class="ct"> * Model version                  : 1.454</span></td></tr>
+<tr name="11" id="11">
+<td><a id="l11" class='ln'>11</a></td><td><span class="ct"> * Simulink Coder version         : 8.14 (R2018a) 06-Feb-2018</span></td></tr>
+<tr name="12" id="12">
+<td><a id="l12" class='ln'>12</a></td><td><span class="ct"> * C/C++ source code generated on : Mon Aug 27 22:08:45 2018</span></td></tr>
+<tr name="13" id="13">
+<td><a id="l13" class='ln'>13</a></td><td><span class="ct"> *</span></td></tr>
+<tr name="14" id="14">
+<td><a id="l14" class='ln'>14</a></td><td><span class="ct"> * Target selection: ert.tlc</span></td></tr>
+<tr name="15" id="15">
+<td><a id="l15" class='ln'>15</a></td><td><span class="ct"> * Embedded hardware selection: Intel-&gt;x86-64 (Windows64)</span></td></tr>
+<tr name="16" id="16">
+<td><a id="l16" class='ln'>16</a></td><td><span class="ct"> * Code generation objectives:</span></td></tr>
+<tr name="17" id="17">
+<td><a id="l17" class='ln'>17</a></td><td><span class="ct"> *    1. Execution efficiency</span></td></tr>
+<tr name="18" id="18">
+<td><a id="l18" class='ln'>18</a></td><td><span class="ct"> *    2. RAM efficiency</span></td></tr>
+<tr name="19" id="19">
+<td><a id="l19" class='ln'>19</a></td><td><span class="ct"> * Validation result: Not run</span></td></tr>
+<tr name="20" id="20">
+<td><a id="l20" class='ln'>20</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="21" id="21">
+<td><a id="l21" class='ln'>21</a></td><td></td></tr>
+<tr name="22" id="22">
+<td><a id="l22" class='ln'>22</a></td><td><span class="pp">#include "RT_CPU.h"</span></td></tr>
+<tr name="23" id="23">
+<td><a id="l23" class='ln'>23</a></td><td><span class="pp">#define</span> <a id="23c9" class="tk">NumBitsPerChar</a>                 8U</td></tr>
+<tr name="24" id="24">
+<td><a id="l24" class='ln'>24</a></td><td></td></tr>
+<tr name="25" id="25">
+<td><a id="l25" class='ln'>25</a></td><td><span class="ct">/* Block signals and states (default storage) */</span></td></tr>
+<tr name="26" id="26">
+<td><a id="l26" class='ln'>26</a></td><td><a id="26c1" class="tk">DW</a> <a id="26c4" class="tk">rtDW</a>;</td></tr>
+<tr name="27" id="27">
+<td><a id="l27" class='ln'>27</a></td><td></td></tr>
+<tr name="28" id="28">
+<td><a id="l28" class='ln'>28</a></td><td><span class="ct">/* External inputs (root inport signals with default storage) */</span></td></tr>
+<tr name="29" id="29">
+<td><a id="l29" class='ln'>29</a></td><td><a id="29c1" class="tk">ExtU</a> <a id="29c6" class="tk">rtU</a>;</td></tr>
+<tr name="30" id="30">
+<td><a id="l30" class='ln'>30</a></td><td></td></tr>
+<tr name="31" id="31">
+<td><a id="l31" class='ln'>31</a></td><td><span class="ct">/* External outputs (root outports fed by signals with default storage) */</span></td></tr>
+<tr name="32" id="32">
+<td><a id="l32" class='ln'>32</a></td><td><a id="32c1" class="tk">ExtY</a> <a id="32c6" class="tk">rtY</a>;</td></tr>
+<tr name="33" id="33">
+<td><a id="l33" class='ln'>33</a></td><td></td></tr>
+<tr name="34" id="34">
+<td><a id="l34" class='ln'>34</a></td><td><span class="ct">/* External output sizes (root outports fed by signals with variable sizes) */</span></td></tr>
+<tr name="35" id="35">
+<td><a id="l35" class='ln'>35</a></td><td><a id="35c1" class="tk">ExtYSize</a> <a id="35c10" class="tk">rtYSize</a>;</td></tr>
+<tr name="36" id="36">
+<td><a id="l36" class='ln'>36</a></td><td></td></tr>
+<tr name="37" id="37">
+<td><a id="l37" class='ln'>37</a></td><td><span class="ct">/* Real-time model */</span></td></tr>
+<tr name="38" id="38">
+<td><a id="l38" class='ln'>38</a></td><td><a id="38c1" class="tk">RT_MODEL</a> <a id="38c10" class="tk">rtM_</a>;</td></tr>
+<tr name="39" id="39">
+<td><a id="l39" class='ln'>39</a></td><td><a id="39c1" class="tk">RT_MODEL</a> <a id="39c10" class="tk">*</a><span class="kw">const</span> <a id="39c17" class="tk">rtM</a> = <a id="39c23" class="tk">&amp;</a><a id="39c24" class="tk">rtM_</a>;</td></tr>
+<tr name="40" id="40">
+<td><a id="l40" class='ln'>40</a></td><td><span class="kw">extern</span> <a id="40c8" class="tk">real32_T</a> <a id="40c17" class="tk">rt_powf_snf</a>(<a id="40c29" class="tk">real32_T</a> <a id="40c38" class="tk">u0</a>, <a id="40c42" class="tk">real32_T</a> <a id="40c51" class="tk">u1</a>);</td></tr>
+<tr name="41" id="41">
+<td><a id="l41" class='ln'>41</a></td><td></td></tr>
+<tr name="42" id="42">
+<td><a id="l42" class='ln'>42</a></td><td><span class="ct">/* Forward declaration for local functions */</span></td></tr>
+<tr name="43" id="43">
+<td><a id="l43" class='ln'>43</a></td><td><span class="kw">static</span> <span class="kw">void</span> <a id="43c13" class="tk">linspace</a>(<a id="43c22" class="tk">real32_T</a> <a id="43c31" class="tk">n1</a>, <a id="43c35" class="tk">real_T</a> <a id="43c42" class="tk">y_data</a>[], <a id="43c52" class="tk">int32_T</a> <a id="43c60" class="tk">y_size</a>[2]);</td></tr>
+<tr name="44" id="44">
+<td><a id="l44" class='ln'>44</a></td><td><span class="kw">static</span> <span class="kw">void</span> <a id="44c13" class="tk">sin_h</a>(<a id="44c19" class="tk">real32_T</a> <a id="44c28" class="tk">x_data</a>[], <a id="44c38" class="tk">int32_T</a> <a id="44c46" class="tk">x_size</a>[2]);</td></tr>
+<tr name="45" id="45">
+<td><a id="l45" class='ln'>45</a></td><td><span class="kw">static</span> <span class="kw">void</span> <a id="45c13" class="tk">factorial</a>(<a id="45c23" class="tk">real32_T</a> <a id="45c32" class="tk">*</a><a id="45c33" class="tk">n</a>);</td></tr>
+<tr name="46" id="46">
+<td><a id="l46" class='ln'>46</a></td><td><span class="kw">extern</span> <a id="46c8" class="tk">real_T</a> <a id="46c15" class="tk">rtGetInf</a>(<span class="kw">void</span>);</td></tr>
+<tr name="47" id="47">
+<td><a id="l47" class='ln'>47</a></td><td><span class="kw">extern</span> <a id="47c8" class="tk">real32_T</a> <a id="47c17" class="tk">rtGetInfF</a>(<span class="kw">void</span>);</td></tr>
+<tr name="48" id="48">
+<td><a id="l48" class='ln'>48</a></td><td><span class="kw">extern</span> <a id="48c8" class="tk">real_T</a> <a id="48c15" class="tk">rtGetMinusInf</a>(<span class="kw">void</span>);</td></tr>
+<tr name="49" id="49">
+<td><a id="l49" class='ln'>49</a></td><td><span class="kw">extern</span> <a id="49c8" class="tk">real32_T</a> <a id="49c17" class="tk">rtGetMinusInfF</a>(<span class="kw">void</span>);</td></tr>
+<tr name="50" id="50">
+<td><a id="l50" class='ln'>50</a></td><td><span class="kw">extern</span> <a id="50c8" class="tk">real_T</a> <a id="50c15" class="tk">rtGetNaN</a>(<span class="kw">void</span>);</td></tr>
+<tr name="51" id="51">
+<td><a id="l51" class='ln'>51</a></td><td><span class="kw">extern</span> <a id="51c8" class="tk">real32_T</a> <a id="51c17" class="tk">rtGetNaNF</a>(<span class="kw">void</span>);</td></tr>
+<tr name="52" id="52">
+<td><a id="l52" class='ln'>52</a></td><td><span class="kw">extern</span> <a id="52c8" class="tk">real_T</a> <a id="52c15" class="tk">rtInf</a>;</td></tr>
+<tr name="53" id="53">
+<td><a id="l53" class='ln'>53</a></td><td><span class="kw">extern</span> <a id="53c8" class="tk">real_T</a> <a id="53c15" class="tk">rtMinusInf</a>;</td></tr>
+<tr name="54" id="54">
+<td><a id="l54" class='ln'>54</a></td><td><span class="kw">extern</span> <a id="54c8" class="tk">real_T</a> <a id="54c15" class="tk">rtNaN</a>;</td></tr>
+<tr name="55" id="55">
+<td><a id="l55" class='ln'>55</a></td><td><span class="kw">extern</span> <a id="55c8" class="tk">real32_T</a> <a id="55c17" class="tk">rtInfF</a>;</td></tr>
+<tr name="56" id="56">
+<td><a id="l56" class='ln'>56</a></td><td><span class="kw">extern</span> <a id="56c8" class="tk">real32_T</a> <a id="56c17" class="tk">rtMinusInfF</a>;</td></tr>
+<tr name="57" id="57">
+<td><a id="l57" class='ln'>57</a></td><td><span class="kw">extern</span> <a id="57c8" class="tk">real32_T</a> <a id="57c17" class="tk">rtNaNF</a>;</td></tr>
+<tr name="58" id="58">
+<td><a id="l58" class='ln'>58</a></td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="58c13" class="tk">rt_InitInfAndNaN</a>(<a id="58c30" class="tk">size_t</a> <a id="58c37" class="tk">realSize</a>);</td></tr>
+<tr name="59" id="59">
+<td><a id="l59" class='ln'>59</a></td><td><span class="kw">extern</span> <a id="59c8" class="tk">boolean_T</a> <a id="59c18" class="tk">rtIsInf</a>(<a id="59c26" class="tk">real_T</a> <a id="59c33" class="tk">value</a>);</td></tr>
+<tr name="60" id="60">
+<td><a id="l60" class='ln'>60</a></td><td><span class="kw">extern</span> <a id="60c8" class="tk">boolean_T</a> <a id="60c18" class="tk">rtIsInfF</a>(<a id="60c27" class="tk">real32_T</a> <a id="60c36" class="tk">value</a>);</td></tr>
+<tr name="61" id="61">
+<td><a id="l61" class='ln'>61</a></td><td><span class="kw">extern</span> <a id="61c8" class="tk">boolean_T</a> <a id="61c18" class="tk">rtIsNaN</a>(<a id="61c26" class="tk">real_T</a> <a id="61c33" class="tk">value</a>);</td></tr>
+<tr name="62" id="62">
+<td><a id="l62" class='ln'>62</a></td><td><span class="kw">extern</span> <a id="62c8" class="tk">boolean_T</a> <a id="62c18" class="tk">rtIsNaNF</a>(<a id="62c27" class="tk">real32_T</a> <a id="62c36" class="tk">value</a>);</td></tr>
+<tr name="63" id="63">
+<td><a id="l63" class='ln'>63</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <span class="br">{</span></td></tr>
+<tr name="64" id="64">
+<td><a id="l64" class='ln'>64</a></td><td>  <span class="kw">struct</span> <span class="br">{</span></td></tr>
+<tr name="65" id="65">
+<td><a id="l65" class='ln'>65</a></td><td>    <a id="65c5" class="tk">uint32_T</a> <a id="65c14" class="tk">wordH</a>;</td></tr>
+<tr name="66" id="66">
+<td><a id="l66" class='ln'>66</a></td><td>    <a id="66c5" class="tk">uint32_T</a> <a id="66c14" class="tk">wordL</a>;</td></tr>
+<tr name="67" id="67">
+<td><a id="l67" class='ln'>67</a></td><td>  <span class="br">}</span> <a id="67c5" class="tk">words</a>;</td></tr>
+<tr name="68" id="68">
+<td><a id="l68" class='ln'>68</a></td><td><span class="br">}</span> <a id="68c3" class="tk">BigEndianIEEEDouble</a>;</td></tr>
+<tr name="69" id="69">
+<td><a id="l69" class='ln'>69</a></td><td></td></tr>
+<tr name="70" id="70">
+<td><a id="l70" class='ln'>70</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <span class="br">{</span></td></tr>
+<tr name="71" id="71">
+<td><a id="l71" class='ln'>71</a></td><td>  <span class="kw">struct</span> <span class="br">{</span></td></tr>
+<tr name="72" id="72">
+<td><a id="l72" class='ln'>72</a></td><td>    <a id="72c5" class="tk">uint32_T</a> <a id="72c14" class="tk">wordL</a>;</td></tr>
+<tr name="73" id="73">
+<td><a id="l73" class='ln'>73</a></td><td>    <a id="73c5" class="tk">uint32_T</a> <a id="73c14" class="tk">wordH</a>;</td></tr>
+<tr name="74" id="74">
+<td><a id="l74" class='ln'>74</a></td><td>  <span class="br">}</span> <a id="74c5" class="tk">words</a>;</td></tr>
+<tr name="75" id="75">
+<td><a id="l75" class='ln'>75</a></td><td><span class="br">}</span> <a id="75c3" class="tk">LittleEndianIEEEDouble</a>;</td></tr>
+<tr name="76" id="76">
+<td><a id="l76" class='ln'>76</a></td><td></td></tr>
+<tr name="77" id="77">
+<td><a id="l77" class='ln'>77</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <span class="br">{</span></td></tr>
+<tr name="78" id="78">
+<td><a id="l78" class='ln'>78</a></td><td>  <span class="kw">union</span> <span class="br">{</span></td></tr>
+<tr name="79" id="79">
+<td><a id="l79" class='ln'>79</a></td><td>    <a id="79c5" class="tk">real32_T</a> <a id="79c14" class="tk">wordLreal</a>;</td></tr>
+<tr name="80" id="80">
+<td><a id="l80" class='ln'>80</a></td><td>    <a id="80c5" class="tk">uint32_T</a> <a id="80c14" class="tk">wordLuint</a>;</td></tr>
+<tr name="81" id="81">
+<td><a id="l81" class='ln'>81</a></td><td>  <span class="br">}</span> <a id="81c5" class="tk">wordL</a>;</td></tr>
+<tr name="82" id="82">
+<td><a id="l82" class='ln'>82</a></td><td><span class="br">}</span> <a id="82c3" class="tk">IEEESingle</a>;</td></tr>
+<tr name="83" id="83">
+<td><a id="l83" class='ln'>83</a></td><td></td></tr>
+<tr name="84" id="84">
+<td><a id="l84" class='ln'>84</a></td><td><a id="84c1" class="tk">real_T</a> <a id="84c8" class="tk">rtInf</a>;</td></tr>
+<tr name="85" id="85">
+<td><a id="l85" class='ln'>85</a></td><td><a id="85c1" class="tk">real_T</a> <a id="85c8" class="tk">rtMinusInf</a>;</td></tr>
+<tr name="86" id="86">
+<td><a id="l86" class='ln'>86</a></td><td><a id="86c1" class="tk">real_T</a> <a id="86c8" class="tk">rtNaN</a>;</td></tr>
+<tr name="87" id="87">
+<td><a id="l87" class='ln'>87</a></td><td><a id="87c1" class="tk">real32_T</a> <a id="87c10" class="tk">rtInfF</a>;</td></tr>
+<tr name="88" id="88">
+<td><a id="l88" class='ln'>88</a></td><td><a id="88c1" class="tk">real32_T</a> <a id="88c10" class="tk">rtMinusInfF</a>;</td></tr>
+<tr name="89" id="89">
+<td><a id="l89" class='ln'>89</a></td><td><a id="89c1" class="tk">real32_T</a> <a id="89c10" class="tk">rtNaNF</a>;</td></tr>
+<tr name="90" id="90">
+<td><a id="l90" class='ln'>90</a></td><td></td></tr>
+<tr name="91" id="91">
+<td><a id="l91" class='ln'>91</a></td><td><span class="ct">/*</span></td></tr>
+<tr name="92" id="92">
+<td><a id="l92" class='ln'>92</a></td><td><span class="ct"> * Initialize rtInf needed by the generated code.</span></td></tr>
+<tr name="93" id="93">
+<td><a id="l93" class='ln'>93</a></td><td><span class="ct"> * Inf is initialized as non-signaling. Assumes IEEE.</span></td></tr>
+<tr name="94" id="94">
+<td><a id="l94" class='ln'>94</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="95" id="95">
+<td><a id="l95" class='ln'>95</a></td><td><a id="95c1" class="tk">real_T</a> <a id="95c8" class="tk">rtGetInf</a>(<span class="kw">void</span>)</td></tr>
+<tr name="96" id="96">
+<td><a id="l96" class='ln'>96</a></td><td><span class="br">{</span></td></tr>
+<tr name="97" id="97">
+<td><a id="l97" class='ln'>97</a></td><td>  <a id="97c3" class="tk">size_t</a> <a id="97c10" class="tk">bitsPerReal</a> = <span class="kw">sizeof</span>(<a id="97c31" class="tk">real_T</a>) <a id="97c39" class="tk">*</a> (<a id="97c42" class="tk">NumBitsPerChar</a>);</td></tr>
+<tr name="98" id="98">
+<td><a id="l98" class='ln'>98</a></td><td>  <a id="98c3" class="tk">real_T</a> <a id="98c10" class="tk">inf</a> = 0.0;</td></tr>
+<tr name="99" id="99">
+<td><a id="l99" class='ln'>99</a></td><td>  <span class="kw">if</span> (<a id="99c7" class="tk">bitsPerReal</a> <a id="99c19" class="tk">==</a> 32U) <span class="br">{</span></td></tr>
+<tr name="100" id="100">
+<td><a id="l100" class='ln'>100</a></td><td>    <a id="100c5" class="tk">inf</a> = <a id="100c11" class="tk">rtGetInfF</a>();</td></tr>
+<tr name="101" id="101">
+<td><a id="l101" class='ln'>101</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="102" id="102">
+<td><a id="l102" class='ln'>102</a></td><td>    <span class="kw">union</span> <span class="br">{</span></td></tr>
+<tr name="103" id="103">
+<td><a id="l103" class='ln'>103</a></td><td>      <a id="103c7" class="tk">LittleEndianIEEEDouble</a> <a id="103c30" class="tk">bitVal</a>;</td></tr>
+<tr name="104" id="104">
+<td><a id="l104" class='ln'>104</a></td><td>      <a id="104c7" class="tk">real_T</a> <a id="104c14" class="tk">fltVal</a>;</td></tr>
+<tr name="105" id="105">
+<td><a id="l105" class='ln'>105</a></td><td>    <span class="br">}</span> <a id="105c7" class="tk">tmpVal</a>;</td></tr>
+<tr name="106" id="106">
+<td><a id="l106" class='ln'>106</a></td><td></td></tr>
+<tr name="107" id="107">
+<td><a id="l107" class='ln'>107</a></td><td>    <a id="107c5" class="tk">tmpVal</a>.<a id="107c12" class="tk">bitVal</a>.<a id="107c19" class="tk">words</a>.<a id="107c25" class="tk">wordH</a> = 0x7FF00000U;</td></tr>
+<tr name="108" id="108">
+<td><a id="l108" class='ln'>108</a></td><td>    <a id="108c5" class="tk">tmpVal</a>.<a id="108c12" class="tk">bitVal</a>.<a id="108c19" class="tk">words</a>.<a id="108c25" class="tk">wordL</a> = 0x00000000U;</td></tr>
+<tr name="109" id="109">
+<td><a id="l109" class='ln'>109</a></td><td>    <a id="109c5" class="tk">inf</a> = <a id="109c11" class="tk">tmpVal</a>.<a id="109c18" class="tk">fltVal</a>;</td></tr>
+<tr name="110" id="110">
+<td><a id="l110" class='ln'>110</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="111" id="111">
+<td><a id="l111" class='ln'>111</a></td><td></td></tr>
+<tr name="112" id="112">
+<td><a id="l112" class='ln'>112</a></td><td>  <span class="kw">return</span> <a id="112c10" class="tk">inf</a>;</td></tr>
+<tr name="113" id="113">
+<td><a id="l113" class='ln'>113</a></td><td><span class="br">}</span></td></tr>
+<tr name="114" id="114">
+<td><a id="l114" class='ln'>114</a></td><td></td></tr>
+<tr name="115" id="115">
+<td><a id="l115" class='ln'>115</a></td><td><span class="ct">/*</span></td></tr>
+<tr name="116" id="116">
+<td><a id="l116" class='ln'>116</a></td><td><span class="ct"> * Initialize rtInfF needed by the generated code.</span></td></tr>
+<tr name="117" id="117">
+<td><a id="l117" class='ln'>117</a></td><td><span class="ct"> * Inf is initialized as non-signaling. Assumes IEEE.</span></td></tr>
+<tr name="118" id="118">
+<td><a id="l118" class='ln'>118</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="119" id="119">
+<td><a id="l119" class='ln'>119</a></td><td><a id="119c1" class="tk">real32_T</a> <a id="119c10" class="tk">rtGetInfF</a>(<span class="kw">void</span>)</td></tr>
+<tr name="120" id="120">
+<td><a id="l120" class='ln'>120</a></td><td><span class="br">{</span></td></tr>
+<tr name="121" id="121">
+<td><a id="l121" class='ln'>121</a></td><td>  <a id="121c3" class="tk">IEEESingle</a> <a id="121c14" class="tk">infF</a>;</td></tr>
+<tr name="122" id="122">
+<td><a id="l122" class='ln'>122</a></td><td>  <a id="122c3" class="tk">infF</a>.<a id="122c8" class="tk">wordL</a>.<a id="122c14" class="tk">wordLuint</a> = 0x7F800000U;</td></tr>
+<tr name="123" id="123">
+<td><a id="l123" class='ln'>123</a></td><td>  <span class="kw">return</span> <a id="123c10" class="tk">infF</a>.<a id="123c15" class="tk">wordL</a>.<a id="123c21" class="tk">wordLreal</a>;</td></tr>
+<tr name="124" id="124">
+<td><a id="l124" class='ln'>124</a></td><td><span class="br">}</span></td></tr>
+<tr name="125" id="125">
+<td><a id="l125" class='ln'>125</a></td><td></td></tr>
+<tr name="126" id="126">
+<td><a id="l126" class='ln'>126</a></td><td><span class="ct">/*</span></td></tr>
+<tr name="127" id="127">
+<td><a id="l127" class='ln'>127</a></td><td><span class="ct"> * Initialize rtMinusInf needed by the generated code.</span></td></tr>
+<tr name="128" id="128">
+<td><a id="l128" class='ln'>128</a></td><td><span class="ct"> * Inf is initialized as non-signaling. Assumes IEEE.</span></td></tr>
+<tr name="129" id="129">
+<td><a id="l129" class='ln'>129</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="130" id="130">
+<td><a id="l130" class='ln'>130</a></td><td><a id="130c1" class="tk">real_T</a> <a id="130c8" class="tk">rtGetMinusInf</a>(<span class="kw">void</span>)</td></tr>
+<tr name="131" id="131">
+<td><a id="l131" class='ln'>131</a></td><td><span class="br">{</span></td></tr>
+<tr name="132" id="132">
+<td><a id="l132" class='ln'>132</a></td><td>  <a id="132c3" class="tk">size_t</a> <a id="132c10" class="tk">bitsPerReal</a> = <span class="kw">sizeof</span>(<a id="132c31" class="tk">real_T</a>) <a id="132c39" class="tk">*</a> (<a id="132c42" class="tk">NumBitsPerChar</a>);</td></tr>
+<tr name="133" id="133">
+<td><a id="l133" class='ln'>133</a></td><td>  <a id="133c3" class="tk">real_T</a> <a id="133c10" class="tk">minf</a> = 0.0;</td></tr>
+<tr name="134" id="134">
+<td><a id="l134" class='ln'>134</a></td><td>  <span class="kw">if</span> (<a id="134c7" class="tk">bitsPerReal</a> <a id="134c19" class="tk">==</a> 32U) <span class="br">{</span></td></tr>
+<tr name="135" id="135">
+<td><a id="l135" class='ln'>135</a></td><td>    <a id="135c5" class="tk">minf</a> = <a id="135c12" class="tk">rtGetMinusInfF</a>();</td></tr>
+<tr name="136" id="136">
+<td><a id="l136" class='ln'>136</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="137" id="137">
+<td><a id="l137" class='ln'>137</a></td><td>    <span class="kw">union</span> <span class="br">{</span></td></tr>
+<tr name="138" id="138">
+<td><a id="l138" class='ln'>138</a></td><td>      <a id="138c7" class="tk">LittleEndianIEEEDouble</a> <a id="138c30" class="tk">bitVal</a>;</td></tr>
+<tr name="139" id="139">
+<td><a id="l139" class='ln'>139</a></td><td>      <a id="139c7" class="tk">real_T</a> <a id="139c14" class="tk">fltVal</a>;</td></tr>
+<tr name="140" id="140">
+<td><a id="l140" class='ln'>140</a></td><td>    <span class="br">}</span> <a id="140c7" class="tk">tmpVal</a>;</td></tr>
+<tr name="141" id="141">
+<td><a id="l141" class='ln'>141</a></td><td></td></tr>
+<tr name="142" id="142">
+<td><a id="l142" class='ln'>142</a></td><td>    <a id="142c5" class="tk">tmpVal</a>.<a id="142c12" class="tk">bitVal</a>.<a id="142c19" class="tk">words</a>.<a id="142c25" class="tk">wordH</a> = 0xFFF00000U;</td></tr>
+<tr name="143" id="143">
+<td><a id="l143" class='ln'>143</a></td><td>    <a id="143c5" class="tk">tmpVal</a>.<a id="143c12" class="tk">bitVal</a>.<a id="143c19" class="tk">words</a>.<a id="143c25" class="tk">wordL</a> = 0x00000000U;</td></tr>
+<tr name="144" id="144">
+<td><a id="l144" class='ln'>144</a></td><td>    <a id="144c5" class="tk">minf</a> = <a id="144c12" class="tk">tmpVal</a>.<a id="144c19" class="tk">fltVal</a>;</td></tr>
+<tr name="145" id="145">
+<td><a id="l145" class='ln'>145</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="146" id="146">
+<td><a id="l146" class='ln'>146</a></td><td></td></tr>
+<tr name="147" id="147">
+<td><a id="l147" class='ln'>147</a></td><td>  <span class="kw">return</span> <a id="147c10" class="tk">minf</a>;</td></tr>
+<tr name="148" id="148">
+<td><a id="l148" class='ln'>148</a></td><td><span class="br">}</span></td></tr>
+<tr name="149" id="149">
+<td><a id="l149" class='ln'>149</a></td><td></td></tr>
+<tr name="150" id="150">
+<td><a id="l150" class='ln'>150</a></td><td><span class="ct">/*</span></td></tr>
+<tr name="151" id="151">
+<td><a id="l151" class='ln'>151</a></td><td><span class="ct"> * Initialize rtMinusInfF needed by the generated code.</span></td></tr>
+<tr name="152" id="152">
+<td><a id="l152" class='ln'>152</a></td><td><span class="ct"> * Inf is initialized as non-signaling. Assumes IEEE.</span></td></tr>
+<tr name="153" id="153">
+<td><a id="l153" class='ln'>153</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="154" id="154">
+<td><a id="l154" class='ln'>154</a></td><td><a id="154c1" class="tk">real32_T</a> <a id="154c10" class="tk">rtGetMinusInfF</a>(<span class="kw">void</span>)</td></tr>
+<tr name="155" id="155">
+<td><a id="l155" class='ln'>155</a></td><td><span class="br">{</span></td></tr>
+<tr name="156" id="156">
+<td><a id="l156" class='ln'>156</a></td><td>  <a id="156c3" class="tk">IEEESingle</a> <a id="156c14" class="tk">minfF</a>;</td></tr>
+<tr name="157" id="157">
+<td><a id="l157" class='ln'>157</a></td><td>  <a id="157c3" class="tk">minfF</a>.<a id="157c9" class="tk">wordL</a>.<a id="157c15" class="tk">wordLuint</a> = 0xFF800000U;</td></tr>
+<tr name="158" id="158">
+<td><a id="l158" class='ln'>158</a></td><td>  <span class="kw">return</span> <a id="158c10" class="tk">minfF</a>.<a id="158c16" class="tk">wordL</a>.<a id="158c22" class="tk">wordLreal</a>;</td></tr>
+<tr name="159" id="159">
+<td><a id="l159" class='ln'>159</a></td><td><span class="br">}</span></td></tr>
+<tr name="160" id="160">
+<td><a id="l160" class='ln'>160</a></td><td></td></tr>
+<tr name="161" id="161">
+<td><a id="l161" class='ln'>161</a></td><td><span class="ct">/*</span></td></tr>
+<tr name="162" id="162">
+<td><a id="l162" class='ln'>162</a></td><td><span class="ct"> * Initialize rtNaN needed by the generated code.</span></td></tr>
+<tr name="163" id="163">
+<td><a id="l163" class='ln'>163</a></td><td><span class="ct"> * NaN is initialized as non-signaling. Assumes IEEE.</span></td></tr>
+<tr name="164" id="164">
+<td><a id="l164" class='ln'>164</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="165" id="165">
+<td><a id="l165" class='ln'>165</a></td><td><a id="165c1" class="tk">real_T</a> <a id="165c8" class="tk">rtGetNaN</a>(<span class="kw">void</span>)</td></tr>
+<tr name="166" id="166">
+<td><a id="l166" class='ln'>166</a></td><td><span class="br">{</span></td></tr>
+<tr name="167" id="167">
+<td><a id="l167" class='ln'>167</a></td><td>  <a id="167c3" class="tk">size_t</a> <a id="167c10" class="tk">bitsPerReal</a> = <span class="kw">sizeof</span>(<a id="167c31" class="tk">real_T</a>) <a id="167c39" class="tk">*</a> (<a id="167c42" class="tk">NumBitsPerChar</a>);</td></tr>
+<tr name="168" id="168">
+<td><a id="l168" class='ln'>168</a></td><td>  <a id="168c3" class="tk">real_T</a> <a id="168c10" class="tk">nan</a> = 0.0;</td></tr>
+<tr name="169" id="169">
+<td><a id="l169" class='ln'>169</a></td><td>  <span class="kw">if</span> (<a id="169c7" class="tk">bitsPerReal</a> <a id="169c19" class="tk">==</a> 32U) <span class="br">{</span></td></tr>
+<tr name="170" id="170">
+<td><a id="l170" class='ln'>170</a></td><td>    <a id="170c5" class="tk">nan</a> = <a id="170c11" class="tk">rtGetNaNF</a>();</td></tr>
+<tr name="171" id="171">
+<td><a id="l171" class='ln'>171</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="172" id="172">
+<td><a id="l172" class='ln'>172</a></td><td>    <span class="kw">union</span> <span class="br">{</span></td></tr>
+<tr name="173" id="173">
+<td><a id="l173" class='ln'>173</a></td><td>      <a id="173c7" class="tk">LittleEndianIEEEDouble</a> <a id="173c30" class="tk">bitVal</a>;</td></tr>
+<tr name="174" id="174">
+<td><a id="l174" class='ln'>174</a></td><td>      <a id="174c7" class="tk">real_T</a> <a id="174c14" class="tk">fltVal</a>;</td></tr>
+<tr name="175" id="175">
+<td><a id="l175" class='ln'>175</a></td><td>    <span class="br">}</span> <a id="175c7" class="tk">tmpVal</a>;</td></tr>
+<tr name="176" id="176">
+<td><a id="l176" class='ln'>176</a></td><td></td></tr>
+<tr name="177" id="177">
+<td><a id="l177" class='ln'>177</a></td><td>    <a id="177c5" class="tk">tmpVal</a>.<a id="177c12" class="tk">bitVal</a>.<a id="177c19" class="tk">words</a>.<a id="177c25" class="tk">wordH</a> = 0xFFF80000U;</td></tr>
+<tr name="178" id="178">
+<td><a id="l178" class='ln'>178</a></td><td>    <a id="178c5" class="tk">tmpVal</a>.<a id="178c12" class="tk">bitVal</a>.<a id="178c19" class="tk">words</a>.<a id="178c25" class="tk">wordL</a> = 0x00000000U;</td></tr>
+<tr name="179" id="179">
+<td><a id="l179" class='ln'>179</a></td><td>    <a id="179c5" class="tk">nan</a> = <a id="179c11" class="tk">tmpVal</a>.<a id="179c18" class="tk">fltVal</a>;</td></tr>
+<tr name="180" id="180">
+<td><a id="l180" class='ln'>180</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="181" id="181">
+<td><a id="l181" class='ln'>181</a></td><td></td></tr>
+<tr name="182" id="182">
+<td><a id="l182" class='ln'>182</a></td><td>  <span class="kw">return</span> <a id="182c10" class="tk">nan</a>;</td></tr>
+<tr name="183" id="183">
+<td><a id="l183" class='ln'>183</a></td><td><span class="br">}</span></td></tr>
+<tr name="184" id="184">
+<td><a id="l184" class='ln'>184</a></td><td></td></tr>
+<tr name="185" id="185">
+<td><a id="l185" class='ln'>185</a></td><td><span class="ct">/*</span></td></tr>
+<tr name="186" id="186">
+<td><a id="l186" class='ln'>186</a></td><td><span class="ct"> * Initialize rtNaNF needed by the generated code.</span></td></tr>
+<tr name="187" id="187">
+<td><a id="l187" class='ln'>187</a></td><td><span class="ct"> * NaN is initialized as non-signaling. Assumes IEEE.</span></td></tr>
+<tr name="188" id="188">
+<td><a id="l188" class='ln'>188</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="189" id="189">
+<td><a id="l189" class='ln'>189</a></td><td><a id="189c1" class="tk">real32_T</a> <a id="189c10" class="tk">rtGetNaNF</a>(<span class="kw">void</span>)</td></tr>
+<tr name="190" id="190">
+<td><a id="l190" class='ln'>190</a></td><td><span class="br">{</span></td></tr>
+<tr name="191" id="191">
+<td><a id="l191" class='ln'>191</a></td><td>  <a id="191c3" class="tk">IEEESingle</a> <a id="191c14" class="tk">nanF</a> = <span class="br">{</span> <span class="br">{</span> 0 <span class="br">}</span> <span class="br">}</span>;</td></tr>
+<tr name="192" id="192">
+<td><a id="l192" class='ln'>192</a></td><td></td></tr>
+<tr name="193" id="193">
+<td><a id="l193" class='ln'>193</a></td><td>  <a id="193c3" class="tk">nanF</a>.<a id="193c8" class="tk">wordL</a>.<a id="193c14" class="tk">wordLuint</a> = 0xFFC00000U;</td></tr>
+<tr name="194" id="194">
+<td><a id="l194" class='ln'>194</a></td><td>  <span class="kw">return</span> <a id="194c10" class="tk">nanF</a>.<a id="194c15" class="tk">wordL</a>.<a id="194c21" class="tk">wordLreal</a>;</td></tr>
+<tr name="195" id="195">
+<td><a id="l195" class='ln'>195</a></td><td><span class="br">}</span></td></tr>
+<tr name="196" id="196">
+<td><a id="l196" class='ln'>196</a></td><td></td></tr>
+<tr name="197" id="197">
+<td><a id="l197" class='ln'>197</a></td><td><span class="ct">/*</span></td></tr>
+<tr name="198" id="198">
+<td><a id="l198" class='ln'>198</a></td><td><span class="ct"> * Initialize the rtInf, rtMinusInf, and rtNaN needed by the</span></td></tr>
+<tr name="199" id="199">
+<td><a id="l199" class='ln'>199</a></td><td><span class="ct"> * generated code. NaN is initialized as non-signaling. Assumes IEEE.</span></td></tr>
+<tr name="200" id="200">
+<td><a id="l200" class='ln'>200</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="201" id="201">
+<td><a id="l201" class='ln'>201</a></td><td><span class="kw">void</span> <a id="201c6" class="tk">rt_InitInfAndNaN</a>(<a id="201c23" class="tk">size_t</a> <a id="201c30" class="tk">realSize</a>)</td></tr>
+<tr name="202" id="202">
+<td><a id="l202" class='ln'>202</a></td><td><span class="br">{</span></td></tr>
+<tr name="203" id="203">
+<td><a id="l203" class='ln'>203</a></td><td>  (<span class="kw">void</span>) (<a id="203c11" class="tk">realSize</a>);</td></tr>
+<tr name="204" id="204">
+<td><a id="l204" class='ln'>204</a></td><td>  <a id="204c3" class="tk">rtNaN</a> = <a id="204c11" class="tk">rtGetNaN</a>();</td></tr>
+<tr name="205" id="205">
+<td><a id="l205" class='ln'>205</a></td><td>  <a id="205c3" class="tk">rtNaNF</a> = <a id="205c12" class="tk">rtGetNaNF</a>();</td></tr>
+<tr name="206" id="206">
+<td><a id="l206" class='ln'>206</a></td><td>  <a id="206c3" class="tk">rtInf</a> = <a id="206c11" class="tk">rtGetInf</a>();</td></tr>
+<tr name="207" id="207">
+<td><a id="l207" class='ln'>207</a></td><td>  <a id="207c3" class="tk">rtInfF</a> = <a id="207c12" class="tk">rtGetInfF</a>();</td></tr>
+<tr name="208" id="208">
+<td><a id="l208" class='ln'>208</a></td><td>  <a id="208c3" class="tk">rtMinusInf</a> = <a id="208c16" class="tk">rtGetMinusInf</a>();</td></tr>
+<tr name="209" id="209">
+<td><a id="l209" class='ln'>209</a></td><td>  <a id="209c3" class="tk">rtMinusInfF</a> = <a id="209c17" class="tk">rtGetMinusInfF</a>();</td></tr>
+<tr name="210" id="210">
+<td><a id="l210" class='ln'>210</a></td><td><span class="br">}</span></td></tr>
+<tr name="211" id="211">
+<td><a id="l211" class='ln'>211</a></td><td></td></tr>
+<tr name="212" id="212">
+<td><a id="l212" class='ln'>212</a></td><td><span class="ct">/* Test if value is infinite */</span></td></tr>
+<tr name="213" id="213">
+<td><a id="l213" class='ln'>213</a></td><td><a id="213c1" class="tk">boolean_T</a> <a id="213c11" class="tk">rtIsInf</a>(<a id="213c19" class="tk">real_T</a> <a id="213c26" class="tk">value</a>)</td></tr>
+<tr name="214" id="214">
+<td><a id="l214" class='ln'>214</a></td><td><span class="br">{</span></td></tr>
+<tr name="215" id="215">
+<td><a id="l215" class='ln'>215</a></td><td>  <span class="kw">return</span> (<a id="215c11" class="tk">boolean_T</a>)((<a id="215c23" class="tk">value</a><a id="215c28" class="tk">==</a><a id="215c30" class="tk">rtInf</a> <a id="215c36" class="tk">||</a> <a id="215c39" class="tk">value</a><a id="215c44" class="tk">==</a><a id="215c46" class="tk">rtMinusInf</a>) <a id="215c58" class="tk">?</a> 1U <a id="215c63" class="tk">:</a> 0U);</td></tr>
+<tr name="216" id="216">
+<td><a id="l216" class='ln'>216</a></td><td><span class="br">}</span></td></tr>
+<tr name="217" id="217">
+<td><a id="l217" class='ln'>217</a></td><td></td></tr>
+<tr name="218" id="218">
+<td><a id="l218" class='ln'>218</a></td><td><span class="ct">/* Test if single-precision value is infinite */</span></td></tr>
+<tr name="219" id="219">
+<td><a id="l219" class='ln'>219</a></td><td><a id="219c1" class="tk">boolean_T</a> <a id="219c11" class="tk">rtIsInfF</a>(<a id="219c20" class="tk">real32_T</a> <a id="219c29" class="tk">value</a>)</td></tr>
+<tr name="220" id="220">
+<td><a id="l220" class='ln'>220</a></td><td><span class="br">{</span></td></tr>
+<tr name="221" id="221">
+<td><a id="l221" class='ln'>221</a></td><td>  <span class="kw">return</span> (<a id="221c11" class="tk">boolean_T</a>)(((<a id="221c24" class="tk">value</a>)<a id="221c30" class="tk">==</a><a id="221c32" class="tk">rtInfF</a> <a id="221c39" class="tk">||</a> (<a id="221c43" class="tk">value</a>)<a id="221c49" class="tk">==</a><a id="221c51" class="tk">rtMinusInfF</a>) <a id="221c64" class="tk">?</a> 1U <a id="221c69" class="tk">:</a> 0U);</td></tr>
+<tr name="222" id="222">
+<td><a id="l222" class='ln'>222</a></td><td><span class="br">}</span></td></tr>
+<tr name="223" id="223">
+<td><a id="l223" class='ln'>223</a></td><td></td></tr>
+<tr name="224" id="224">
+<td><a id="l224" class='ln'>224</a></td><td><span class="ct">/* Test if value is not a number */</span></td></tr>
+<tr name="225" id="225">
+<td><a id="l225" class='ln'>225</a></td><td><a id="225c1" class="tk">boolean_T</a> <a id="225c11" class="tk">rtIsNaN</a>(<a id="225c19" class="tk">real_T</a> <a id="225c26" class="tk">value</a>)</td></tr>
+<tr name="226" id="226">
+<td><a id="l226" class='ln'>226</a></td><td><span class="br">{</span></td></tr>
+<tr name="227" id="227">
+<td><a id="l227" class='ln'>227</a></td><td>  <span class="kw">return</span> (<a id="227c11" class="tk">boolean_T</a>)((<a id="227c23" class="tk">value</a><a id="227c28" class="tk">!=</a><a id="227c30" class="tk">value</a>) <a id="227c37" class="tk">?</a> 1U <a id="227c42" class="tk">:</a> 0U);</td></tr>
+<tr name="228" id="228">
+<td><a id="l228" class='ln'>228</a></td><td><span class="br">}</span></td></tr>
+<tr name="229" id="229">
+<td><a id="l229" class='ln'>229</a></td><td></td></tr>
+<tr name="230" id="230">
+<td><a id="l230" class='ln'>230</a></td><td><span class="ct">/* Test if single-precision value is not a number */</span></td></tr>
+<tr name="231" id="231">
+<td><a id="l231" class='ln'>231</a></td><td><a id="231c1" class="tk">boolean_T</a> <a id="231c11" class="tk">rtIsNaNF</a>(<a id="231c20" class="tk">real32_T</a> <a id="231c29" class="tk">value</a>)</td></tr>
+<tr name="232" id="232">
+<td><a id="l232" class='ln'>232</a></td><td><span class="br">{</span></td></tr>
+<tr name="233" id="233">
+<td><a id="l233" class='ln'>233</a></td><td>  <span class="kw">return</span> (<a id="233c11" class="tk">boolean_T</a>)(((<a id="233c24" class="tk">value</a><a id="233c29" class="tk">!=</a><a id="233c31" class="tk">value</a>) <a id="233c38" class="tk">?</a> 1U <a id="233c43" class="tk">:</a> 0U));</td></tr>
+<tr name="234" id="234">
+<td><a id="l234" class='ln'>234</a></td><td><span class="br">}</span></td></tr>
+<tr name="235" id="235">
+<td><a id="l235" class='ln'>235</a></td><td></td></tr>
+<tr name="236" id="236">
+<td><a id="l236" class='ln'>236</a></td><td><span class="ct">/* Function for MATLAB Function: '<a class="ct blk" blk_line="236">&lt;Root&gt;/RT_CPU</a>' */</span></td></tr>
+<tr name="237" id="237">
+<td><a id="l237" class='ln'>237</a></td><td><span class="kw">static</span> <span class="kw">void</span> <a id="237c13" class="tk">linspace</a>(<a id="237c22" class="tk">real32_T</a> <a id="237c31" class="tk">n1</a>, <a id="237c35" class="tk">real_T</a> <a id="237c42" class="tk">y_data</a>[], <a id="237c52" class="tk">int32_T</a> <a id="237c60" class="tk">y_size</a>[2])</td></tr>
+<tr name="238" id="238">
+<td><a id="l238" class='ln'>238</a></td><td><span class="br">{</span></td></tr>
+<tr name="239" id="239">
+<td><a id="l239" class='ln'>239</a></td><td>  <a id="239c3" class="tk">real_T</a> <a id="239c10" class="tk">delta1</a>;</td></tr>
+<tr name="240" id="240">
+<td><a id="l240" class='ln'>240</a></td><td>  <a id="240c3" class="tk">int32_T</a> <a id="240c11" class="tk">k</a>;</td></tr>
+<tr name="241" id="241">
+<td><a id="l241" class='ln'>241</a></td><td>  <span class="kw">if</span> (<a id="241c7" class="tk">n1</a> <a id="241c10" class="tk">&lt;</a> 0.0F) <span class="br">{</span></td></tr>
+<tr name="242" id="242">
+<td><a id="l242" class='ln'>242</a></td><td>    <a id="242c5" class="tk">n1</a> = 0.0F;</td></tr>
+<tr name="243" id="243">
+<td><a id="l243" class='ln'>243</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="244" id="244">
+<td><a id="l244" class='ln'>244</a></td><td></td></tr>
+<tr name="245" id="245">
+<td><a id="l245" class='ln'>245</a></td><td>  <a id="245c3" class="tk">y_size</a>[0] = 1;</td></tr>
+<tr name="246" id="246">
+<td><a id="l246" class='ln'>246</a></td><td>  <a id="246c3" class="tk">y_size</a>[1] = (<a id="246c16" class="tk">int32_T</a>)(<a id="246c25" class="tk">real32_T</a>)<a id="246c34" class="tk">floor</a>(<a id="246c40" class="tk">n1</a>);</td></tr>
+<tr name="247" id="247">
+<td><a id="l247" class='ln'>247</a></td><td>  <span class="kw">if</span> (<a id="247c7" class="tk">y_size</a>[1] <a id="247c17" class="tk">&gt;=</a> 1) <span class="br">{</span></td></tr>
+<tr name="248" id="248">
+<td><a id="l248" class='ln'>248</a></td><td>    <a id="248c5" class="tk">y_data</a>[<a id="248c12" class="tk">y_size</a>[1] <a id="248c22" class="tk">-</a> 1] = 1.0;</td></tr>
+<tr name="249" id="249">
+<td><a id="l249" class='ln'>249</a></td><td>    <span class="kw">if</span> (<a id="249c9" class="tk">y_size</a>[1] <a id="249c19" class="tk">&gt;=</a> 2) <span class="br">{</span></td></tr>
+<tr name="250" id="250">
+<td><a id="l250" class='ln'>250</a></td><td>      <a id="250c7" class="tk">y_data</a>[0] = 0.0;</td></tr>
+<tr name="251" id="251">
+<td><a id="l251" class='ln'>251</a></td><td>      <span class="kw">if</span> (<a id="251c11" class="tk">y_size</a>[1] <a id="251c21" class="tk">&gt;=</a> 3) <span class="br">{</span></td></tr>
+<tr name="252" id="252">
+<td><a id="l252" class='ln'>252</a></td><td>        <a id="252c9" class="tk">delta1</a> = 1.0 <a id="252c22" class="tk">/</a> ((<a id="252c26" class="tk">real_T</a>)<a id="252c33" class="tk">y_size</a>[1] <a id="252c43" class="tk">-</a> 1.0);</td></tr>
+<tr name="253" id="253">
+<td><a id="l253" class='ln'>253</a></td><td>        <span class="kw">for</span> (<a id="253c14" class="tk">k</a> = 0; <a id="253c21" class="tk">k</a> <a id="253c23" class="tk">&lt;=</a> <a id="253c26" class="tk">y_size</a>[1] <a id="253c36" class="tk">-</a> 3; <a id="253c41" class="tk">k</a><a id="253c42" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="254" id="254">
+<td><a id="l254" class='ln'>254</a></td><td>          <a id="254c11" class="tk">y_data</a>[<a id="254c18" class="tk">k</a> <a id="254c20" class="tk">+</a> 1] = (1.0 <a id="254c32" class="tk">+</a> (<a id="254c35" class="tk">real_T</a>)<a id="254c42" class="tk">k</a>) <a id="254c45" class="tk">*</a> <a id="254c47" class="tk">delta1</a>;</td></tr>
+<tr name="255" id="255">
+<td><a id="l255" class='ln'>255</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="256" id="256">
+<td><a id="l256" class='ln'>256</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="257" id="257">
+<td><a id="l257" class='ln'>257</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="258" id="258">
+<td><a id="l258" class='ln'>258</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="259" id="259">
+<td><a id="l259" class='ln'>259</a></td><td><span class="br">}</span></td></tr>
+<tr name="260" id="260">
+<td><a id="l260" class='ln'>260</a></td><td></td></tr>
+<tr name="261" id="261">
+<td><a id="l261" class='ln'>261</a></td><td><span class="ct">/* Function for MATLAB Function: '<a class="ct blk" blk_line="261">&lt;Root&gt;/RT_CPU</a>' */</span></td></tr>
+<tr name="262" id="262">
+<td><a id="l262" class='ln'>262</a></td><td><span class="kw">static</span> <span class="kw">void</span> <a id="262c13" class="tk">sin_h</a>(<a id="262c19" class="tk">real32_T</a> <a id="262c28" class="tk">x_data</a>[], <a id="262c38" class="tk">int32_T</a> <a id="262c46" class="tk">x_size</a>[2])</td></tr>
+<tr name="263" id="263">
+<td><a id="l263" class='ln'>263</a></td><td><span class="br">{</span></td></tr>
+<tr name="264" id="264">
+<td><a id="l264" class='ln'>264</a></td><td>  <a id="264c3" class="tk">int32_T</a> <a id="264c11" class="tk">k</a>;</td></tr>
+<tr name="265" id="265">
+<td><a id="l265" class='ln'>265</a></td><td>  <span class="kw">for</span> (<a id="265c8" class="tk">k</a> = 0; <a id="265c15" class="tk">k</a> <a id="265c17" class="tk">&lt;</a> <a id="265c19" class="tk">x_size</a>[1]; <a id="265c30" class="tk">k</a><a id="265c31" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="266" id="266">
+<td><a id="l266" class='ln'>266</a></td><td>    <a id="266c5" class="tk">x_data</a>[<a id="266c12" class="tk">k</a>] = (<a id="266c18" class="tk">real32_T</a>)<a id="266c27" class="tk">sin</a>(<a id="266c31" class="tk">x_data</a>[<a id="266c38" class="tk">k</a>]);</td></tr>
+<tr name="267" id="267">
+<td><a id="l267" class='ln'>267</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="268" id="268">
+<td><a id="l268" class='ln'>268</a></td><td><span class="br">}</span></td></tr>
+<tr name="269" id="269">
+<td><a id="l269" class='ln'>269</a></td><td></td></tr>
+<tr name="270" id="270">
+<td><a id="l270" class='ln'>270</a></td><td><span class="ct">/* Function for MATLAB Function: '<a class="ct blk" blk_line="270">&lt;Root&gt;/RT_CPU</a>' */</span></td></tr>
+<tr name="271" id="271">
+<td><a id="l271" class='ln'>271</a></td><td><span class="kw">static</span> <span class="kw">void</span> <a id="271c13" class="tk">factorial</a>(<a id="271c23" class="tk">real32_T</a> <a id="271c32" class="tk">*</a><a id="271c33" class="tk">n</a>)</td></tr>
+<tr name="272" id="272">
+<td><a id="l272" class='ln'>272</a></td><td><span class="br">{</span></td></tr>
+<tr name="273" id="273">
+<td><a id="l273" class='ln'>273</a></td><td>  <span class="kw">static</span> <span class="kw">const</span> <a id="273c16" class="tk">real32_T</a> <a id="273c25" class="tk">b</a>[34] = <span class="br">{</span> 1.0F, 2.0F, 6.0F, 24.0F, 120.0F, 720.0F,</td></tr>
+<tr name="274" id="274">
+<td><a id="l274" class='ln'>274</a></td><td>    5040.0F, 40320.0F, 362880.0F, 3.6288E+6F, 3.99168E+7F, 4.790016E+8F,</td></tr>
+<tr name="275" id="275">
+<td><a id="l275" class='ln'>275</a></td><td>    6.2270208E+9F, 8.71782892E+10F, 1.30767428E+12F, 2.09227885E+13F,</td></tr>
+<tr name="276" id="276">
+<td><a id="l276" class='ln'>276</a></td><td>    3.55687415E+14F, 6.40237353E+15F, 1.21645096E+17F, 2.43290202E+18F,</td></tr>
+<tr name="277" id="277">
+<td><a id="l277" class='ln'>277</a></td><td>    5.10909408E+19F, 1.12400072E+21F, 2.58520174E+22F, 6.20448455E+23F,</td></tr>
+<tr name="278" id="278">
+<td><a id="l278" class='ln'>278</a></td><td>    1.55112111E+25F, 4.032915E+26F, 1.08888704E+28F, 3.04888372E+29F,</td></tr>
+<tr name="279" id="279">
+<td><a id="l279" class='ln'>279</a></td><td>    8.84176308E+30F, 2.6525289E+32F, 8.22283969E+33F, 2.6313087E+35F,</td></tr>
+<tr name="280" id="280">
+<td><a id="l280" class='ln'>280</a></td><td>    8.68331851E+36F, 2.95232823E+38F <span class="br">}</span>;</td></tr>
+<tr name="281" id="281">
+<td><a id="l281" class='ln'>281</a></td><td></td></tr>
+<tr name="282" id="282">
+<td><a id="l282" class='ln'>282</a></td><td>  <span class="kw">if</span> (<a id="282c7" class="tk">!</a>((<a id="282c10" class="tk">real32_T</a>)<a id="282c19" class="tk">floor</a>(<a id="282c25" class="tk">*</a><a id="282c26" class="tk">n</a>) <a id="282c29" class="tk">!=</a> <a id="282c32" class="tk">*</a><a id="282c33" class="tk">n</a>)) <span class="br">{</span></td></tr>
+<tr name="283" id="283">
+<td><a id="l283" class='ln'>283</a></td><td>    <span class="kw">if</span> (<a id="283c9" class="tk">*</a><a id="283c10" class="tk">n</a> <a id="283c12" class="tk">&gt;</a> 34.0F) <span class="br">{</span></td></tr>
+<tr name="284" id="284">
+<td><a id="l284" class='ln'>284</a></td><td>      <a id="284c7" class="tk">*</a><a id="284c8" class="tk">n</a> = (<a id="284c13" class="tk">rtInfF</a>);</td></tr>
+<tr name="285" id="285">
+<td><a id="l285" class='ln'>285</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> (<a id="285c16" class="tk">*</a><a id="285c17" class="tk">n</a> <a id="285c19" class="tk">&lt;</a> 1.0F) <span class="br">{</span></td></tr>
+<tr name="286" id="286">
+<td><a id="l286" class='ln'>286</a></td><td>      <a id="286c7" class="tk">*</a><a id="286c8" class="tk">n</a> = 1.0F;</td></tr>
+<tr name="287" id="287">
+<td><a id="l287" class='ln'>287</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="288" id="288">
+<td><a id="l288" class='ln'>288</a></td><td>      <a id="288c7" class="tk">*</a><a id="288c8" class="tk">n</a> = <a id="288c12" class="tk">b</a>[(<a id="288c15" class="tk">int32_T</a>)<a id="288c23" class="tk">*</a><a id="288c24" class="tk">n</a> <a id="288c26" class="tk">-</a> 1];</td></tr>
+<tr name="289" id="289">
+<td><a id="l289" class='ln'>289</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="290" id="290">
+<td><a id="l290" class='ln'>290</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="291" id="291">
+<td><a id="l291" class='ln'>291</a></td><td><span class="br">}</span></td></tr>
+<tr name="292" id="292">
+<td><a id="l292" class='ln'>292</a></td><td></td></tr>
+<tr name="293" id="293">
+<td><a id="l293" class='ln'>293</a></td><td><a id="293c1" class="tk">real32_T</a> <a id="293c10" class="tk">rt_powf_snf</a>(<a id="293c22" class="tk">real32_T</a> <a id="293c31" class="tk">u0</a>, <a id="293c35" class="tk">real32_T</a> <a id="293c44" class="tk">u1</a>)</td></tr>
+<tr name="294" id="294">
+<td><a id="l294" class='ln'>294</a></td><td><span class="br">{</span></td></tr>
+<tr name="295" id="295">
+<td><a id="l295" class='ln'>295</a></td><td>  <a id="295c3" class="tk">real32_T</a> <a id="295c12" class="tk">y</a>;</td></tr>
+<tr name="296" id="296">
+<td><a id="l296" class='ln'>296</a></td><td>  <a id="296c3" class="tk">real32_T</a> <a id="296c12" class="tk">tmp</a>;</td></tr>
+<tr name="297" id="297">
+<td><a id="l297" class='ln'>297</a></td><td>  <a id="297c3" class="tk">real32_T</a> <a id="297c12" class="tk">tmp_0</a>;</td></tr>
+<tr name="298" id="298">
+<td><a id="l298" class='ln'>298</a></td><td>  <span class="kw">if</span> (<a id="298c7" class="tk">rtIsNaNF</a>(<a id="298c16" class="tk">u0</a>) <a id="298c20" class="tk">||</a> <a id="298c23" class="tk">rtIsNaNF</a>(<a id="298c32" class="tk">u1</a>)) <span class="br">{</span></td></tr>
+<tr name="299" id="299">
+<td><a id="l299" class='ln'>299</a></td><td>    <a id="299c5" class="tk">y</a> = (<a id="299c10" class="tk">rtNaNF</a>);</td></tr>
+<tr name="300" id="300">
+<td><a id="l300" class='ln'>300</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="301" id="301">
+<td><a id="l301" class='ln'>301</a></td><td>    <a id="301c5" class="tk">tmp</a> = (<a id="301c12" class="tk">real32_T</a>)<a id="301c21" class="tk">fabs</a>(<a id="301c26" class="tk">u0</a>);</td></tr>
+<tr name="302" id="302">
+<td><a id="l302" class='ln'>302</a></td><td>    <a id="302c5" class="tk">tmp_0</a> = (<a id="302c14" class="tk">real32_T</a>)<a id="302c23" class="tk">fabs</a>(<a id="302c28" class="tk">u1</a>);</td></tr>
+<tr name="303" id="303">
+<td><a id="l303" class='ln'>303</a></td><td>    <span class="kw">if</span> (<a id="303c9" class="tk">rtIsInfF</a>(<a id="303c18" class="tk">u1</a>)) <span class="br">{</span></td></tr>
+<tr name="304" id="304">
+<td><a id="l304" class='ln'>304</a></td><td>      <span class="kw">if</span> (<a id="304c11" class="tk">tmp</a> <a id="304c15" class="tk">==</a> 1.0F) <span class="br">{</span></td></tr>
+<tr name="305" id="305">
+<td><a id="l305" class='ln'>305</a></td><td>        <a id="305c9" class="tk">y</a> = 1.0F;</td></tr>
+<tr name="306" id="306">
+<td><a id="l306" class='ln'>306</a></td><td>      <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> (<a id="306c18" class="tk">tmp</a> <a id="306c22" class="tk">&gt;</a> 1.0F) <span class="br">{</span></td></tr>
+<tr name="307" id="307">
+<td><a id="l307" class='ln'>307</a></td><td>        <span class="kw">if</span> (<a id="307c13" class="tk">u1</a> <a id="307c16" class="tk">&gt;</a> 0.0F) <span class="br">{</span></td></tr>
+<tr name="308" id="308">
+<td><a id="l308" class='ln'>308</a></td><td>          <a id="308c11" class="tk">y</a> = (<a id="308c16" class="tk">rtInfF</a>);</td></tr>
+<tr name="309" id="309">
+<td><a id="l309" class='ln'>309</a></td><td>        <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="310" id="310">
+<td><a id="l310" class='ln'>310</a></td><td>          <a id="310c11" class="tk">y</a> = 0.0F;</td></tr>
+<tr name="311" id="311">
+<td><a id="l311" class='ln'>311</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="312" id="312">
+<td><a id="l312" class='ln'>312</a></td><td>      <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> (<a id="312c18" class="tk">u1</a> <a id="312c21" class="tk">&gt;</a> 0.0F) <span class="br">{</span></td></tr>
+<tr name="313" id="313">
+<td><a id="l313" class='ln'>313</a></td><td>        <a id="313c9" class="tk">y</a> = 0.0F;</td></tr>
+<tr name="314" id="314">
+<td><a id="l314" class='ln'>314</a></td><td>      <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="315" id="315">
+<td><a id="l315" class='ln'>315</a></td><td>        <a id="315c9" class="tk">y</a> = (<a id="315c14" class="tk">rtInfF</a>);</td></tr>
+<tr name="316" id="316">
+<td><a id="l316" class='ln'>316</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="317" id="317">
+<td><a id="l317" class='ln'>317</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> (<a id="317c16" class="tk">tmp_0</a> <a id="317c22" class="tk">==</a> 0.0F) <span class="br">{</span></td></tr>
+<tr name="318" id="318">
+<td><a id="l318" class='ln'>318</a></td><td>      <a id="318c7" class="tk">y</a> = 1.0F;</td></tr>
+<tr name="319" id="319">
+<td><a id="l319" class='ln'>319</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> (<a id="319c16" class="tk">tmp_0</a> <a id="319c22" class="tk">==</a> 1.0F) <span class="br">{</span></td></tr>
+<tr name="320" id="320">
+<td><a id="l320" class='ln'>320</a></td><td>      <span class="kw">if</span> (<a id="320c11" class="tk">u1</a> <a id="320c14" class="tk">&gt;</a> 0.0F) <span class="br">{</span></td></tr>
+<tr name="321" id="321">
+<td><a id="l321" class='ln'>321</a></td><td>        <a id="321c9" class="tk">y</a> = <a id="321c13" class="tk">u0</a>;</td></tr>
+<tr name="322" id="322">
+<td><a id="l322" class='ln'>322</a></td><td>      <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="323" id="323">
+<td><a id="l323" class='ln'>323</a></td><td>        <a id="323c9" class="tk">y</a> = 1.0F <a id="323c18" class="tk">/</a> <a id="323c20" class="tk">u0</a>;</td></tr>
+<tr name="324" id="324">
+<td><a id="l324" class='ln'>324</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="325" id="325">
+<td><a id="l325" class='ln'>325</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> (<a id="325c16" class="tk">u1</a> <a id="325c19" class="tk">==</a> 2.0F) <span class="br">{</span></td></tr>
+<tr name="326" id="326">
+<td><a id="l326" class='ln'>326</a></td><td>      <a id="326c7" class="tk">y</a> = <a id="326c11" class="tk">u0</a> <a id="326c14" class="tk">*</a> <a id="326c16" class="tk">u0</a>;</td></tr>
+<tr name="327" id="327">
+<td><a id="l327" class='ln'>327</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> ((<a id="327c17" class="tk">u1</a> <a id="327c20" class="tk">==</a> 0.5F) <a id="327c29" class="tk">&amp;&amp;</a> (<a id="327c33" class="tk">u0</a> <a id="327c36" class="tk">&gt;=</a> 0.0F)) <span class="br">{</span></td></tr>
+<tr name="328" id="328">
+<td><a id="l328" class='ln'>328</a></td><td>      <a id="328c7" class="tk">y</a> = (<a id="328c12" class="tk">real32_T</a>)<a id="328c21" class="tk">sqrt</a>(<a id="328c26" class="tk">u0</a>);</td></tr>
+<tr name="329" id="329">
+<td><a id="l329" class='ln'>329</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="kw">if</span> ((<a id="329c17" class="tk">u0</a> <a id="329c20" class="tk">&lt;</a> 0.0F) <a id="329c28" class="tk">&amp;&amp;</a> (<a id="329c32" class="tk">u1</a> <a id="329c35" class="tk">&gt;</a> (<a id="329c38" class="tk">real32_T</a>)<a id="329c47" class="tk">floor</a>(<a id="329c53" class="tk">u1</a>))) <span class="br">{</span></td></tr>
+<tr name="330" id="330">
+<td><a id="l330" class='ln'>330</a></td><td>      <a id="330c7" class="tk">y</a> = (<a id="330c12" class="tk">rtNaNF</a>);</td></tr>
+<tr name="331" id="331">
+<td><a id="l331" class='ln'>331</a></td><td>    <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="332" id="332">
+<td><a id="l332" class='ln'>332</a></td><td>      <a id="332c7" class="tk">y</a> = (<a id="332c12" class="tk">real32_T</a>)<a id="332c21" class="tk">pow</a>(<a id="332c25" class="tk">u0</a>, <a id="332c29" class="tk">u1</a>);</td></tr>
+<tr name="333" id="333">
+<td><a id="l333" class='ln'>333</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="334" id="334">
+<td><a id="l334" class='ln'>334</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="335" id="335">
+<td><a id="l335" class='ln'>335</a></td><td></td></tr>
+<tr name="336" id="336">
+<td><a id="l336" class='ln'>336</a></td><td>  <span class="kw">return</span> <a id="336c10" class="tk">y</a>;</td></tr>
+<tr name="337" id="337">
+<td><a id="l337" class='ln'>337</a></td><td><span class="br">}</span></td></tr>
+<tr name="338" id="338">
+<td><a id="l338" class='ln'>338</a></td><td></td></tr>
+<tr name="339" id="339">
+<td><a id="l339" class='ln'>339</a></td><td><span class="ct">/* Model step function */</span></td></tr>
+<tr name="340" id="340">
+<td><a id="l340" class='ln'>340</a></td><td><span class="kw">void</span> <a id="340c6" class="tk">RT_CPU_step</a>(<span class="kw">void</span>)</td></tr>
+<tr name="341" id="341">
+<td><a id="l341" class='ln'>341</a></td><td><span class="br">{</span></td></tr>
+<tr name="342" id="342">
+<td><a id="l342" class='ln'>342</a></td><td>  <a id="342c3" class="tk">real32_T</a> <a id="342c12" class="tk">tf</a>;</td></tr>
+<tr name="343" id="343">
+<td><a id="l343" class='ln'>343</a></td><td>  <a id="343c3" class="tk">real32_T</a> <a id="343c12" class="tk">y_data</a>[258];</td></tr>
+<tr name="344" id="344">
+<td><a id="l344" class='ln'>344</a></td><td>  <a id="344c3" class="tk">real32_T</a> <a id="344c12" class="tk">x_data</a>[257];</td></tr>
+<tr name="345" id="345">
+<td><a id="l345" class='ln'>345</a></td><td>  <a id="345c3" class="tk">real32_T</a> <a id="345c12" class="tk">x1_data</a>[256];</td></tr>
+<tr name="346" id="346">
+<td><a id="l346" class='ln'>346</a></td><td>  <a id="346c3" class="tk">real32_T</a> <a id="346c12" class="tk">yy_data</a>[261];</td></tr>
+<tr name="347" id="347">
+<td><a id="l347" class='ln'>347</a></td><td>  <a id="347c3" class="tk">real32_T</a> <a id="347c12" class="tk">b_y</a>;</td></tr>
+<tr name="348" id="348">
+<td><a id="l348" class='ln'>348</a></td><td>  <a id="348c3" class="tk">real32_T</a> <a id="348c12" class="tk">c_y</a>;</td></tr>
+<tr name="349" id="349">
+<td><a id="l349" class='ln'>349</a></td><td>  <span class="kw">static</span> <span class="kw">const</span> <a id="349c16" class="tk">int8_T</a> <a id="349c23" class="tk">cfd</a>[16] = <span class="br">{</span> 1, <a id="349c38" class="tk">-</a>1, 1, <a id="349c45" class="tk">-</a>1, 0, 1, <a id="349c55" class="tk">-</a>2, 3, 0, 0, 1, <a id="349c71" class="tk">-</a>3, 0, 0,</td></tr>
+<tr name="350" id="350">
+<td><a id="l350" class='ln'>350</a></td><td>    0, 1 <span class="br">}</span>;</td></tr>
+<tr name="351" id="351">
+<td><a id="l351" class='ln'>351</a></td><td></td></tr>
+<tr name="352" id="352">
+<td><a id="l352" class='ln'>352</a></td><td>  <a id="352c3" class="tk">real32_T</a> <a id="352c12" class="tk">rtb_cc</a>[1024];</td></tr>
+<tr name="353" id="353">
+<td><a id="l353" class='ln'>353</a></td><td>  <a id="353c3" class="tk">real32_T</a> <a id="353c12" class="tk">rtb_b</a>[255];</td></tr>
+<tr name="354" id="354">
+<td><a id="l354" class='ln'>354</a></td><td>  <a id="354c3" class="tk">real_T</a> <a id="354c10" class="tk">tmp_data</a>[257];</td></tr>
+<tr name="355" id="355">
+<td><a id="l355" class='ln'>355</a></td><td>  <a id="355c3" class="tk">int32_T</a> <a id="355c11" class="tk">loop_ub</a>;</td></tr>
+<tr name="356" id="356">
+<td><a id="l356" class='ln'>356</a></td><td>  <a id="356c3" class="tk">int32_T</a> <a id="356c11" class="tk">i</a>;</td></tr>
+<tr name="357" id="357">
+<td><a id="l357" class='ln'>357</a></td><td>  <a id="357c3" class="tk">real32_T</a> <a id="357c12" class="tk">y_data_0</a>[259];</td></tr>
+<tr name="358" id="358">
+<td><a id="l358" class='ln'>358</a></td><td>  <a id="358c3" class="tk">int32_T</a> <a id="358c11" class="tk">i_0</a>;</td></tr>
+<tr name="359" id="359">
+<td><a id="l359" class='ln'>359</a></td><td>  <a id="359c3" class="tk">int32_T</a> <a id="359c11" class="tk">x_size</a>[2];</td></tr>
+<tr name="360" id="360">
+<td><a id="l360" class='ln'>360</a></td><td>  <a id="360c3" class="tk">int32_T</a> <a id="360c11" class="tk">tmp_size</a>[2];</td></tr>
+<tr name="361" id="361">
+<td><a id="l361" class='ln'>361</a></td><td>  <a id="361c3" class="tk">int32_T</a> <a id="361c11" class="tk">tmp_size_0</a>[2];</td></tr>
+<tr name="362" id="362">
+<td><a id="l362" class='ln'>362</a></td><td>  <a id="362c3" class="tk">int32_T</a> <a id="362c11" class="tk">x1_size_idx_1</a>;</td></tr>
+<tr name="363" id="363">
+<td><a id="l363" class='ln'>363</a></td><td>  <a id="363c3" class="tk">int32_T</a> <a id="363c11" class="tk">y_size_idx_1</a>;</td></tr>
+<tr name="364" id="364">
+<td><a id="l364" class='ln'>364</a></td><td>  <a id="364c3" class="tk">int32_T</a> <a id="364c11" class="tk">loop_ub_tmp</a>;</td></tr>
+<tr name="365" id="365">
+<td><a id="l365" class='ln'>365</a></td><td></td></tr>
+<tr name="366" id="366">
+<td><a id="l366" class='ln'>366</a></td><td>  <span class="ct">/* MATLAB Function: '<a class="ct blk" blk_line="366">&lt;Root&gt;/RT_CPU</a>' incorporates:</span></td></tr>
+<tr name="367" id="367">
+<td><a id="l367" class='ln'>367</a></td><td><span class="ct">   *  Inport: '<a class="ct blk" blk_line="367">&lt;Root&gt;/A</a>'</span></td></tr>
+<tr name="368" id="368">
+<td><a id="l368" class='ln'>368</a></td><td><span class="ct">   *  Inport: '<a class="ct blk" blk_line="368">&lt;Root&gt;/breakPoints</a>'</span></td></tr>
+<tr name="369" id="369">
+<td><a id="l369" class='ln'>369</a></td><td><span class="ct">   *  Inport: '<a class="ct blk" blk_line="369">&lt;Root&gt;/ch</a>'</span></td></tr>
+<tr name="370" id="370">
+<td><a id="l370" class='ln'>370</a></td><td><span class="ct">   *  Inport: '<a class="ct blk" blk_line="370">&lt;Root&gt;/dutyCycle</a>'</span></td></tr>
+<tr name="371" id="371">
+<td><a id="l371" class='ln'>371</a></td><td><span class="ct">   *  Inport: '<a class="ct blk" blk_line="371">&lt;Root&gt;/f</a>'</span></td></tr>
+<tr name="372" id="372">
+<td><a id="l372" class='ln'>372</a></td><td><span class="ct">   *  Inport: '<a class="ct blk" blk_line="372">&lt;Root&gt;/mode</a>'</span></td></tr>
+<tr name="373" id="373">
+<td><a id="l373" class='ln'>373</a></td><td><span class="ct">   *  Inport: '<a class="ct blk" blk_line="373">&lt;Root&gt;/pOrder</a>'</span></td></tr>
+<tr name="374" id="374">
+<td><a id="l374" class='ln'>374</a></td><td><span class="ct">   */</span></td></tr>
+<tr name="375" id="375">
+<td><a id="l375" class='ln'>375</a></td><td>  <span class="ct">/* MATLAB Function 'RT_CPU': '<a class="ct blk" blk_line="375">&lt;S1&gt;:1</a>' */</span></td></tr>
+<tr name="376" id="376">
+<td><a id="l376" class='ln'>376</a></td><td>  <span class="ct">/* '<a class="ct blk" blk_line="376">&lt;S1&gt;:1:65</a>' */</span></td></tr>
+<tr name="377" id="377">
+<td><a id="l377" class='ln'>377</a></td><td>  <span class="ct">/* '<a class="ct blk" blk_line="377">&lt;S1&gt;:1:77</a>' */</span></td></tr>
+<tr name="378" id="378">
+<td><a id="l378" class='ln'>378</a></td><td>  <span class="kw">if</span> (<a id="378c7" class="tk">!</a><a id="378c8" class="tk">rtDW</a>.<a id="378c13" class="tk">cc0_not_empty</a>) <span class="br">{</span></td></tr>
+<tr name="379" id="379">
+<td><a id="l379" class='ln'>379</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="379">&lt;S1&gt;:1:15</a>' */</span></td></tr>
+<tr name="380" id="380">
+<td><a id="l380" class='ln'>380</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="380">&lt;S1&gt;:1:16</a>' */</span></td></tr>
+<tr name="381" id="381">
+<td><a id="l381" class='ln'>381</a></td><td>    <a id="381c5" class="tk">rtDW</a>.<a id="381c10" class="tk">cc0</a>.<a id="381c14" class="tk">size</a>[0] = 101;</td></tr>
+<tr name="382" id="382">
+<td><a id="l382" class='ln'>382</a></td><td>    <a id="382c5" class="tk">rtDW</a>.<a id="382c10" class="tk">cc0</a>.<a id="382c14" class="tk">size</a>[1] = 3;</td></tr>
+<tr name="383" id="383">
+<td><a id="l383" class='ln'>383</a></td><td>    <a id="383c5" class="tk">memset</a>(<a id="383c12" class="tk">&amp;</a><a id="383c13" class="tk">rtDW</a>.<a id="383c18" class="tk">cc0</a>.<a id="383c22" class="tk">data</a>[0], 0, 303U <a id="383c39" class="tk">*</a> <span class="kw">sizeof</span>(<a id="383c48" class="tk">real32_T</a>));</td></tr>
+<tr name="384" id="384">
+<td><a id="l384" class='ln'>384</a></td><td>    <a id="384c5" class="tk">rtDW</a>.<a id="384c10" class="tk">cc0_not_empty</a> = true;</td></tr>
+<tr name="385" id="385">
+<td><a id="l385" class='ln'>385</a></td><td></td></tr>
+<tr name="386" id="386">
+<td><a id="l386" class='ln'>386</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="386">&lt;S1&gt;:1:17</a>' */</span></td></tr>
+<tr name="387" id="387">
+<td><a id="l387" class='ln'>387</a></td><td>    <a id="387c5" class="tk">rtDW</a>.<a id="387c10" class="tk">b0</a>.<a id="387c13" class="tk">size</a>[0] = 1;</td></tr>
+<tr name="388" id="388">
+<td><a id="l388" class='ln'>388</a></td><td>    <a id="388c5" class="tk">rtDW</a>.<a id="388c10" class="tk">b0</a>.<a id="388c13" class="tk">size</a>[1] = 101;</td></tr>
+<tr name="389" id="389">
+<td><a id="l389" class='ln'>389</a></td><td>    <a id="389c5" class="tk">memset</a>(<a id="389c12" class="tk">&amp;</a><a id="389c13" class="tk">rtDW</a>.<a id="389c18" class="tk">b0</a>.<a id="389c21" class="tk">data</a>[0], 0, 101U <a id="389c38" class="tk">*</a> <span class="kw">sizeof</span>(<a id="389c47" class="tk">real32_T</a>));</td></tr>
+<tr name="390" id="390">
+<td><a id="l390" class='ln'>390</a></td><td></td></tr>
+<tr name="391" id="391">
+<td><a id="l391" class='ln'>391</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="391">&lt;S1&gt;:1:18</a>' */</span></td></tr>
+<tr name="392" id="392">
+<td><a id="l392" class='ln'>392</a></td><td>    <a id="392c5" class="tk">rtDW</a>.<a id="392c10" class="tk">i0</a> = 0.0F;</td></tr>
+<tr name="393" id="393">
+<td><a id="l393" class='ln'>393</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="394" id="394">
+<td><a id="l394" class='ln'>394</a></td><td></td></tr>
+<tr name="395" id="395">
+<td><a id="l395" class='ln'>395</a></td><td>  <span class="kw">if</span> (<a id="395c7" class="tk">rtU</a>.<a id="395c11" class="tk">ch</a> <a id="395c14" class="tk">||</a> (<a id="395c18" class="tk">rtDW</a>.<a id="395c23" class="tk">i0</a> <a id="395c26" class="tk">&lt;</a> 1.0F)) <span class="br">{</span></td></tr>
+<tr name="396" id="396">
+<td><a id="l396" class='ln'>396</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="396">&lt;S1&gt;:1:20</a>' */</span></td></tr>
+<tr name="397" id="397">
+<td><a id="l397" class='ln'>397</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="397">&lt;S1&gt;:1:22</a>' */</span></td></tr>
+<tr name="398" id="398">
+<td><a id="l398" class='ln'>398</a></td><td>    <a id="398c5" class="tk">rtDW</a>.<a id="398c10" class="tk">i0</a> = 1.0F;</td></tr>
+<tr name="399" id="399">
+<td><a id="l399" class='ln'>399</a></td><td></td></tr>
+<tr name="400" id="400">
+<td><a id="l400" class='ln'>400</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="400">&lt;S1&gt;:1:28</a>' */</span></td></tr>
+<tr name="401" id="401">
+<td><a id="l401" class='ln'>401</a></td><td>    <a id="401c5" class="tk">rtDW</a>.<a id="401c10" class="tk">SFunction_DIMS2</a>[0] = (<a id="401c32" class="tk">int32_T</a>)(<a id="401c41" class="tk">rtU</a>.<a id="401c45" class="tk">Breakpoints</a> <a id="401c57" class="tk">+</a> 1.0F);</td></tr>
+<tr name="402" id="402">
+<td><a id="l402" class='ln'>402</a></td><td>    <a id="402c5" class="tk">rtDW</a>.<a id="402c10" class="tk">SFunction_DIMS2</a>[1] = 3;</td></tr>
+<tr name="403" id="403">
+<td><a id="l403" class='ln'>403</a></td><td>    <a id="403c5" class="tk">loop_ub</a> = (<a id="403c16" class="tk">int32_T</a>)(<a id="403c25" class="tk">rtU</a>.<a id="403c29" class="tk">Breakpoints</a> <a id="403c41" class="tk">+</a> 1.0F) <a id="403c49" class="tk">*</a> 3;</td></tr>
+<tr name="404" id="404">
+<td><a id="l404" class='ln'>404</a></td><td>    <span class="kw">if</span> (0 <a id="404c11" class="tk">&lt;=</a> <a id="404c14" class="tk">loop_ub</a> <a id="404c22" class="tk">-</a> 1) <span class="br">{</span></td></tr>
+<tr name="405" id="405">
+<td><a id="l405" class='ln'>405</a></td><td>      <a id="405c7" class="tk">memset</a>(<a id="405c14" class="tk">&amp;</a><a id="405c15" class="tk">rtb_cc</a>[0], 0, <a id="405c29" class="tk">loop_ub</a> <a id="405c37" class="tk">*</a> <span class="kw">sizeof</span>(<a id="405c46" class="tk">real32_T</a>));</td></tr>
+<tr name="406" id="406">
+<td><a id="l406" class='ln'>406</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="407" id="407">
+<td><a id="l407" class='ln'>407</a></td><td></td></tr>
+<tr name="408" id="408">
+<td><a id="l408" class='ln'>408</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="408">&lt;S1&gt;:1:29</a>' */</span></td></tr>
+<tr name="409" id="409">
+<td><a id="l409" class='ln'>409</a></td><td>    <a id="409c5" class="tk">rtDW</a>.<a id="409c10" class="tk">b0</a>.<a id="409c13" class="tk">size</a>[0] = 1;</td></tr>
+<tr name="410" id="410">
+<td><a id="l410" class='ln'>410</a></td><td>    <a id="410c5" class="tk">rtDW</a>.<a id="410c10" class="tk">b0</a>.<a id="410c13" class="tk">size</a>[1] = (<a id="410c24" class="tk">int32_T</a>)(<a id="410c33" class="tk">rtU</a>.<a id="410c37" class="tk">Breakpoints</a> <a id="410c49" class="tk">+</a> 1.0F);</td></tr>
+<tr name="411" id="411">
+<td><a id="l411" class='ln'>411</a></td><td>    <a id="411c5" class="tk">loop_ub_tmp</a> = (<a id="411c20" class="tk">int32_T</a>)(<a id="411c29" class="tk">rtU</a>.<a id="411c33" class="tk">Breakpoints</a> <a id="411c45" class="tk">+</a> 1.0F) <a id="411c53" class="tk">-</a> 1;</td></tr>
+<tr name="412" id="412">
+<td><a id="l412" class='ln'>412</a></td><td>    <span class="kw">if</span> (0 <a id="412c11" class="tk">&lt;=</a> <a id="412c14" class="tk">loop_ub_tmp</a>) <span class="br">{</span></td></tr>
+<tr name="413" id="413">
+<td><a id="l413" class='ln'>413</a></td><td>      <a id="413c7" class="tk">memset</a>(<a id="413c14" class="tk">&amp;</a><a id="413c15" class="tk">rtDW</a>.<a id="413c20" class="tk">b0</a>.<a id="413c23" class="tk">data</a>[0], 0, (<a id="413c36" class="tk">loop_ub_tmp</a> <a id="413c48" class="tk">+</a> 1) <a id="413c53" class="tk">*</a> <span class="kw">sizeof</span>(<a id="413c62" class="tk">real32_T</a>));</td></tr>
+<tr name="414" id="414">
+<td><a id="l414" class='ln'>414</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="415" id="415">
+<td><a id="l415" class='ln'>415</a></td><td></td></tr>
+<tr name="416" id="416">
+<td><a id="l416" class='ln'>416</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="416">&lt;S1&gt;:1:30</a>' */</span></td></tr>
+<tr name="417" id="417">
+<td><a id="l417" class='ln'>417</a></td><td>    <a id="417c5" class="tk">tf</a> = 1.0F <a id="417c15" class="tk">/</a> <a id="417c17" class="tk">rtU</a>.<a id="417c21" class="tk">f</a>;</td></tr>
+<tr name="418" id="418">
+<td><a id="l418" class='ln'>418</a></td><td></td></tr>
+<tr name="419" id="419">
+<td><a id="l419" class='ln'>419</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="419">&lt;S1&gt;:1:32</a>' */</span></td></tr>
+<tr name="420" id="420">
+<td><a id="l420" class='ln'>420</a></td><td>    <a id="420c5" class="tk">linspace</a>(<a id="420c14" class="tk">rtU</a>.<a id="420c18" class="tk">Breakpoints</a> <a id="420c30" class="tk">+</a> 1.0F, <a id="420c38" class="tk">tmp_data</a>, <a id="420c48" class="tk">tmp_size_0</a>);</td></tr>
+<tr name="421" id="421">
+<td><a id="l421" class='ln'>421</a></td><td>    <a id="421c5" class="tk">x_size</a>[1] = <a id="421c17" class="tk">tmp_size_0</a>[1];</td></tr>
+<tr name="422" id="422">
+<td><a id="l422" class='ln'>422</a></td><td>    <a id="422c5" class="tk">loop_ub</a> = <a id="422c15" class="tk">tmp_size_0</a>[0] <a id="422c29" class="tk">*</a> <a id="422c31" class="tk">tmp_size_0</a>[1];</td></tr>
+<tr name="423" id="423">
+<td><a id="l423" class='ln'>423</a></td><td>    <span class="kw">for</span> (<a id="423c10" class="tk">i</a> = 0; <a id="423c17" class="tk">i</a> <a id="423c19" class="tk">&lt;</a> <a id="423c21" class="tk">loop_ub</a>; <a id="423c30" class="tk">i</a><a id="423c31" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="424" id="424">
+<td><a id="l424" class='ln'>424</a></td><td>      <a id="424c7" class="tk">x_data</a>[<a id="424c14" class="tk">i</a>] = (<a id="424c20" class="tk">real32_T</a>)<a id="424c29" class="tk">tmp_data</a>[<a id="424c38" class="tk">i</a>];</td></tr>
+<tr name="425" id="425">
+<td><a id="l425" class='ln'>425</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="426" id="426">
+<td><a id="l426" class='ln'>426</a></td><td></td></tr>
+<tr name="427" id="427">
+<td><a id="l427" class='ln'>427</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="427">&lt;S1&gt;:1:33</a>' */</span></td></tr>
+<tr name="428" id="428">
+<td><a id="l428" class='ln'>428</a></td><td>    <a id="428c5" class="tk">linspace</a>(<a id="428c14" class="tk">rtU</a>.<a id="428c18" class="tk">Breakpoints</a>, <a id="428c31" class="tk">tmp_data</a>, <a id="428c41" class="tk">tmp_size</a>);</td></tr>
+<tr name="429" id="429">
+<td><a id="l429" class='ln'>429</a></td><td>    <a id="429c5" class="tk">x1_size_idx_1</a> = <a id="429c21" class="tk">tmp_size</a>[1];</td></tr>
+<tr name="430" id="430">
+<td><a id="l430" class='ln'>430</a></td><td>    <a id="430c5" class="tk">loop_ub</a> = <a id="430c15" class="tk">tmp_size</a>[0] <a id="430c27" class="tk">*</a> <a id="430c29" class="tk">tmp_size</a>[1];</td></tr>
+<tr name="431" id="431">
+<td><a id="l431" class='ln'>431</a></td><td>    <span class="kw">for</span> (<a id="431c10" class="tk">i</a> = 0; <a id="431c17" class="tk">i</a> <a id="431c19" class="tk">&lt;</a> <a id="431c21" class="tk">loop_ub</a>; <a id="431c30" class="tk">i</a><a id="431c31" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="432" id="432">
+<td><a id="l432" class='ln'>432</a></td><td>      <a id="432c7" class="tk">x1_data</a>[<a id="432c15" class="tk">i</a>] = (<a id="432c21" class="tk">real32_T</a>)<a id="432c30" class="tk">tmp_data</a>[<a id="432c39" class="tk">i</a>];</td></tr>
+<tr name="433" id="433">
+<td><a id="l433" class='ln'>433</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="434" id="434">
+<td><a id="l434" class='ln'>434</a></td><td></td></tr>
+<tr name="435" id="435">
+<td><a id="l435" class='ln'>435</a></td><td>    <span class="kw">switch</span> ((<a id="435c14" class="tk">int32_T</a>)<a id="435c22" class="tk">rtU</a>.<a id="435c26" class="tk">mode</a>) <span class="br">{</span></td></tr>
+<tr name="436" id="436">
+<td><a id="l436" class='ln'>436</a></td><td>     <span class="kw">case</span> 0<a id="436c12" class="tk">:</a></td></tr>
+<tr name="437" id="437">
+<td><a id="l437" class='ln'>437</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="437">&lt;S1&gt;:1:38</a>' */</span></td></tr>
+<tr name="438" id="438">
+<td><a id="l438" class='ln'>438</a></td><td>      <a id="438c7" class="tk">x_size</a>[0] = 1;</td></tr>
+<tr name="439" id="439">
+<td><a id="l439" class='ln'>439</a></td><td>      <a id="439c7" class="tk">loop_ub</a> = <a id="439c17" class="tk">tmp_size_0</a>[1] <a id="439c31" class="tk">-</a> 1;</td></tr>
+<tr name="440" id="440">
+<td><a id="l440" class='ln'>440</a></td><td>      <span class="kw">for</span> (<a id="440c12" class="tk">i</a> = 0; <a id="440c19" class="tk">i</a> <a id="440c21" class="tk">&lt;=</a> <a id="440c24" class="tk">loop_ub</a>; <a id="440c33" class="tk">i</a><a id="440c34" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="441" id="441">
+<td><a id="l441" class='ln'>441</a></td><td>        <a id="441c9" class="tk">x_data</a>[<a id="441c16" class="tk">i</a>] <a id="441c19" class="tk">*=</a> 6.28318548F;</td></tr>
+<tr name="442" id="442">
+<td><a id="l442" class='ln'>442</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="443" id="443">
+<td><a id="l443" class='ln'>443</a></td><td></td></tr>
+<tr name="444" id="444">
+<td><a id="l444" class='ln'>444</a></td><td>      <a id="444c7" class="tk">sin_h</a>(<a id="444c13" class="tk">x_data</a>, <a id="444c21" class="tk">x_size</a>);</td></tr>
+<tr name="445" id="445">
+<td><a id="l445" class='ln'>445</a></td><td>      <a id="445c7" class="tk">y_size_idx_1</a> = <a id="445c22" class="tk">x_size</a>[1];</td></tr>
+<tr name="446" id="446">
+<td><a id="l446" class='ln'>446</a></td><td>      <a id="446c7" class="tk">loop_ub</a> = <a id="446c17" class="tk">x_size</a>[0] <a id="446c27" class="tk">*</a> <a id="446c29" class="tk">x_size</a>[1] <a id="446c39" class="tk">-</a> 1;</td></tr>
+<tr name="447" id="447">
+<td><a id="l447" class='ln'>447</a></td><td>      <span class="kw">for</span> (<a id="447c12" class="tk">i</a> = 0; <a id="447c19" class="tk">i</a> <a id="447c21" class="tk">&lt;=</a> <a id="447c24" class="tk">loop_ub</a>; <a id="447c33" class="tk">i</a><a id="447c34" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="448" id="448">
+<td><a id="l448" class='ln'>448</a></td><td>        <a id="448c9" class="tk">y_data</a>[<a id="448c16" class="tk">i</a>] = <a id="448c21" class="tk">rtU</a>.<a id="448c25" class="tk">A</a> <a id="448c27" class="tk">*</a> <a id="448c29" class="tk">x_data</a>[<a id="448c36" class="tk">i</a>];</td></tr>
+<tr name="449" id="449">
+<td><a id="l449" class='ln'>449</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="450" id="450">
+<td><a id="l450" class='ln'>450</a></td><td>      <span class="kw">break</span>;</td></tr>
+<tr name="451" id="451">
+<td><a id="l451" class='ln'>451</a></td><td></td></tr>
+<tr name="452" id="452">
+<td><a id="l452" class='ln'>452</a></td><td>     <span class="kw">case</span> 1<a id="452c12" class="tk">:</a></td></tr>
+<tr name="453" id="453">
+<td><a id="l453" class='ln'>453</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="453">&lt;S1&gt;:1:42</a>' */</span></td></tr>
+<tr name="454" id="454">
+<td><a id="l454" class='ln'>454</a></td><td>      <a id="454c7" class="tk">y_size_idx_1</a> = <a id="454c22" class="tk">tmp_size_0</a>[1];</td></tr>
+<tr name="455" id="455">
+<td><a id="l455" class='ln'>455</a></td><td>      <a id="455c7" class="tk">loop_ub</a> = <a id="455c17" class="tk">tmp_size_0</a>[1] <a id="455c31" class="tk">-</a> 1;</td></tr>
+<tr name="456" id="456">
+<td><a id="l456" class='ln'>456</a></td><td>      <span class="kw">for</span> (<a id="456c12" class="tk">i</a> = 0; <a id="456c19" class="tk">i</a> <a id="456c21" class="tk">&lt;=</a> <a id="456c24" class="tk">loop_ub</a>; <a id="456c33" class="tk">i</a><a id="456c34" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="457" id="457">
+<td><a id="l457" class='ln'>457</a></td><td>        <a id="457c9" class="tk">y_data</a>[<a id="457c16" class="tk">i</a>] = (<a id="457c22" class="tk">real32_T</a>)(<a id="457c32" class="tk">x_data</a>[<a id="457c39" class="tk">i</a>] <a id="457c42" class="tk">&lt;</a> <a id="457c44" class="tk">rtU</a>.<a id="457c48" class="tk">DutyCycle</a>) <a id="457c59" class="tk">*</a> <a id="457c61" class="tk">rtU</a>.<a id="457c65" class="tk">A</a> <a id="457c67" class="tk">+</a> (<a id="457c70" class="tk">real32_T</a>)</td></tr>
+<tr name="458" id="458">
+<td><a id="l458" class='ln'>458</a></td><td>          (<a id="458c12" class="tk">x_data</a>[<a id="458c19" class="tk">i</a>] <a id="458c22" class="tk">&gt;=</a> <a id="458c25" class="tk">rtU</a>.<a id="458c29" class="tk">DutyCycle</a>) <a id="458c40" class="tk">*</a> <a id="458c42" class="tk">-</a><a id="458c43" class="tk">rtU</a>.<a id="458c47" class="tk">A</a>;</td></tr>
+<tr name="459" id="459">
+<td><a id="l459" class='ln'>459</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="460" id="460">
+<td><a id="l460" class='ln'>460</a></td><td></td></tr>
+<tr name="461" id="461">
+<td><a id="l461" class='ln'>461</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="461">&lt;S1&gt;:1:43</a>' */</span></td></tr>
+<tr name="462" id="462">
+<td><a id="l462" class='ln'>462</a></td><td>      <a id="462c7" class="tk">y_data</a>[<a id="462c14" class="tk">loop_ub_tmp</a>] = <a id="462c29" class="tk">rtU</a>.<a id="462c33" class="tk">A</a>;</td></tr>
+<tr name="463" id="463">
+<td><a id="l463" class='ln'>463</a></td><td>      <span class="kw">break</span>;</td></tr>
+<tr name="464" id="464">
+<td><a id="l464" class='ln'>464</a></td><td></td></tr>
+<tr name="465" id="465">
+<td><a id="l465" class='ln'>465</a></td><td>     <span class="kw">case</span> 2<a id="465c12" class="tk">:</a></td></tr>
+<tr name="466" id="466">
+<td><a id="l466" class='ln'>466</a></td><td>      <span class="kw">if</span> ((<a id="466c12" class="tk">rtU</a>.<a id="466c16" class="tk">DutyCycle</a> <a id="466c26" class="tk">==</a> 0.0F) <a id="466c35" class="tk">||</a> (<a id="466c39" class="tk">rtU</a>.<a id="466c43" class="tk">DutyCycle</a> <a id="466c53" class="tk">==</a> 1.0F)) <span class="br">{</span></td></tr>
+<tr name="467" id="467">
+<td><a id="l467" class='ln'>467</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="467">&lt;S1&gt;:1:47</a>' */</span></td></tr>
+<tr name="468" id="468">
+<td><a id="l468" class='ln'>468</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="468">&lt;S1&gt;:1:49</a>' */</span></td></tr>
+<tr name="469" id="469">
+<td><a id="l469" class='ln'>469</a></td><td>        <a id="469c9" class="tk">loop_ub</a> = <a id="469c19" class="tk">tmp_size</a>[1] <a id="469c31" class="tk">-</a> 1;</td></tr>
+<tr name="470" id="470">
+<td><a id="l470" class='ln'>470</a></td><td>        <a id="470c9" class="tk">i</a> = (<a id="470c14" class="tk">rtU</a>.<a id="470c18" class="tk">DutyCycle</a> <a id="470c28" class="tk">==</a> 1.0F);</td></tr>
+<tr name="471" id="471">
+<td><a id="l471" class='ln'>471</a></td><td>        <a id="471c9" class="tk">y_size_idx_1</a> = (<a id="471c25" class="tk">rtU</a>.<a id="471c29" class="tk">DutyCycle</a> <a id="471c39" class="tk">==</a> 0.0F);</td></tr>
+<tr name="472" id="472">
+<td><a id="l472" class='ln'>472</a></td><td>        <span class="kw">for</span> (<a id="472c14" class="tk">i_0</a> = 0; <a id="472c23" class="tk">i_0</a> <a id="472c27" class="tk">&lt;=</a> <a id="472c30" class="tk">loop_ub</a>; <a id="472c39" class="tk">i_0</a><a id="472c42" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="473" id="473">
+<td><a id="l473" class='ln'>473</a></td><td>          <a id="473c11" class="tk">y_data</a>[<a id="473c18" class="tk">i_0</a>] = ((1.0F <a id="473c32" class="tk">-</a> <a id="473c34" class="tk">x1_data</a>[<a id="473c42" class="tk">i_0</a>]) <a id="473c48" class="tk">*</a> <a id="473c50" class="tk">rtU</a>.<a id="473c54" class="tk">A</a> <a id="473c56" class="tk">*</a> 2.0F <a id="473c63" class="tk">+</a> <a id="473c65" class="tk">-</a><a id="473c66" class="tk">rtU</a>.<a id="473c70" class="tk">A</a>) <a id="473c73" class="tk">*</a></td></tr>
+<tr name="474" id="474">
+<td><a id="l474" class='ln'>474</a></td><td>            (<a id="474c14" class="tk">real32_T</a>)<a id="474c23" class="tk">y_size_idx_1</a> <a id="474c36" class="tk">+</a> (<a id="474c39" class="tk">x1_data</a>[<a id="474c47" class="tk">i_0</a>] <a id="474c52" class="tk">*</a> <a id="474c54" class="tk">rtU</a>.<a id="474c58" class="tk">A</a> <a id="474c60" class="tk">*</a> 2.0F <a id="474c67" class="tk">+</a> <a id="474c69" class="tk">-</a><a id="474c70" class="tk">rtU</a>.<a id="474c74" class="tk">A</a>) <a id="474c77" class="tk">*</a></td></tr>
+<tr name="475" id="475">
+<td><a id="l475" class='ln'>475</a></td><td>            (<a id="475c14" class="tk">real32_T</a>)<a id="475c23" class="tk">i</a>;</td></tr>
+<tr name="476" id="476">
+<td><a id="l476" class='ln'>476</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="477" id="477">
+<td><a id="l477" class='ln'>477</a></td><td></td></tr>
+<tr name="478" id="478">
+<td><a id="l478" class='ln'>478</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="478">&lt;S1&gt;:1:51</a>' */</span></td></tr>
+<tr name="479" id="479">
+<td><a id="l479" class='ln'>479</a></td><td>        <a id="479c9" class="tk">y_size_idx_1</a> = <a id="479c24" class="tk">tmp_size</a>[1] <a id="479c36" class="tk">+</a> 1;</td></tr>
+<tr name="480" id="480">
+<td><a id="l480" class='ln'>480</a></td><td>        <span class="kw">if</span> (0 <a id="480c15" class="tk">&lt;=</a> <a id="480c18" class="tk">x1_size_idx_1</a> <a id="480c32" class="tk">-</a> 1) <span class="br">{</span></td></tr>
+<tr name="481" id="481">
+<td><a id="l481" class='ln'>481</a></td><td>          <a id="481c11" class="tk">memcpy</a>(<a id="481c18" class="tk">&amp;</a><a id="481c19" class="tk">y_data_0</a>[0], <a id="481c32" class="tk">&amp;</a><a id="481c33" class="tk">y_data</a>[0], <a id="481c44" class="tk">x1_size_idx_1</a> <a id="481c58" class="tk">*</a> <span class="kw">sizeof</span>(<a id="481c67" class="tk">real32_T</a>));</td></tr>
+<tr name="482" id="482">
+<td><a id="l482" class='ln'>482</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="483" id="483">
+<td><a id="l483" class='ln'>483</a></td><td></td></tr>
+<tr name="484" id="484">
+<td><a id="l484" class='ln'>484</a></td><td>        <a id="484c9" class="tk">y_data_0</a>[<a id="484c18" class="tk">tmp_size</a>[1]] = <a id="484c33" class="tk">y_data</a>[0];</td></tr>
+<tr name="485" id="485">
+<td><a id="l485" class='ln'>485</a></td><td>        <span class="kw">if</span> (0 <a id="485c15" class="tk">&lt;=</a> <a id="485c18" class="tk">y_size_idx_1</a> <a id="485c31" class="tk">-</a> 1) <span class="br">{</span></td></tr>
+<tr name="486" id="486">
+<td><a id="l486" class='ln'>486</a></td><td>          <a id="486c11" class="tk">memcpy</a>(<a id="486c18" class="tk">&amp;</a><a id="486c19" class="tk">y_data</a>[0], <a id="486c30" class="tk">&amp;</a><a id="486c31" class="tk">y_data_0</a>[0], <a id="486c44" class="tk">y_size_idx_1</a> <a id="486c57" class="tk">*</a> <span class="kw">sizeof</span>(<a id="486c66" class="tk">real32_T</a>));</td></tr>
+<tr name="487" id="487">
+<td><a id="l487" class='ln'>487</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="488" id="488">
+<td><a id="l488" class='ln'>488</a></td><td>      <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="489" id="489">
+<td><a id="l489" class='ln'>489</a></td><td>        <a id="489c9" class="tk">b_y</a> = 2.0F <a id="489c20" class="tk">/</a> <a id="489c22" class="tk">rtU</a>.<a id="489c26" class="tk">DutyCycle</a>;</td></tr>
+<tr name="490" id="490">
+<td><a id="l490" class='ln'>490</a></td><td>        <a id="490c9" class="tk">c_y</a> = 2.0F <a id="490c20" class="tk">/</a> (1.0F <a id="490c28" class="tk">-</a> <a id="490c30" class="tk">rtU</a>.<a id="490c34" class="tk">DutyCycle</a>);</td></tr>
+<tr name="491" id="491">
+<td><a id="l491" class='ln'>491</a></td><td></td></tr>
+<tr name="492" id="492">
+<td><a id="l492" class='ln'>492</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="492">&lt;S1&gt;:1:54</a>' */</span></td></tr>
+<tr name="493" id="493">
+<td><a id="l493" class='ln'>493</a></td><td>        <a id="493c9" class="tk">y_size_idx_1</a> = <a id="493c24" class="tk">tmp_size_0</a>[1];</td></tr>
+<tr name="494" id="494">
+<td><a id="l494" class='ln'>494</a></td><td>        <a id="494c9" class="tk">loop_ub</a> = <a id="494c19" class="tk">tmp_size_0</a>[1] <a id="494c33" class="tk">-</a> 1;</td></tr>
+<tr name="495" id="495">
+<td><a id="l495" class='ln'>495</a></td><td>        <span class="kw">for</span> (<a id="495c14" class="tk">i</a> = 0; <a id="495c21" class="tk">i</a> <a id="495c23" class="tk">&lt;=</a> <a id="495c26" class="tk">loop_ub</a>; <a id="495c35" class="tk">i</a><a id="495c36" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="496" id="496">
+<td><a id="l496" class='ln'>496</a></td><td>          <a id="496c11" class="tk">y_data</a>[<a id="496c18" class="tk">i</a>] = ((1.0F <a id="496c30" class="tk">-</a> <a id="496c32" class="tk">x_data</a>[<a id="496c39" class="tk">i</a>]) <a id="496c43" class="tk">*</a> <a id="496c45" class="tk">rtU</a>.<a id="496c49" class="tk">A</a> <a id="496c51" class="tk">*</a> <a id="496c53" class="tk">c_y</a> <a id="496c57" class="tk">+</a> <a id="496c59" class="tk">-</a><a id="496c60" class="tk">rtU</a>.<a id="496c64" class="tk">A</a>) <a id="496c67" class="tk">*</a> (<a id="496c70" class="tk">real32_T</a>)</td></tr>
+<tr name="497" id="497">
+<td><a id="l497" class='ln'>497</a></td><td>            (<a id="497c14" class="tk">x_data</a>[<a id="497c21" class="tk">i</a>] <a id="497c24" class="tk">&gt;</a> <a id="497c26" class="tk">rtU</a>.<a id="497c30" class="tk">DutyCycle</a>) <a id="497c41" class="tk">+</a> (<a id="497c44" class="tk">x_data</a>[<a id="497c51" class="tk">i</a>] <a id="497c54" class="tk">*</a> <a id="497c56" class="tk">rtU</a>.<a id="497c60" class="tk">A</a> <a id="497c62" class="tk">*</a> <a id="497c64" class="tk">b_y</a> <a id="497c68" class="tk">+</a> <a id="497c70" class="tk">-</a><a id="497c71" class="tk">rtU</a>.<a id="497c75" class="tk">A</a>) <a id="497c78" class="tk">*</a></td></tr>
+<tr name="498" id="498">
+<td><a id="l498" class='ln'>498</a></td><td>            (<a id="498c14" class="tk">real32_T</a>)(<a id="498c24" class="tk">x_data</a>[<a id="498c31" class="tk">i</a>] <a id="498c34" class="tk">&lt;=</a> <a id="498c37" class="tk">rtU</a>.<a id="498c41" class="tk">DutyCycle</a>);</td></tr>
+<tr name="499" id="499">
+<td><a id="l499" class='ln'>499</a></td><td>        <span class="br">}</span></td></tr>
+<tr name="500" id="500">
+<td><a id="l500" class='ln'>500</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="501" id="501">
+<td><a id="l501" class='ln'>501</a></td><td>      <span class="kw">break</span>;</td></tr>
+<tr name="502" id="502">
+<td><a id="l502" class='ln'>502</a></td><td></td></tr>
+<tr name="503" id="503">
+<td><a id="l503" class='ln'>503</a></td><td>     <span class="kw">default</span><a id="503c13" class="tk">:</a></td></tr>
+<tr name="504" id="504">
+<td><a id="l504" class='ln'>504</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="504">&lt;S1&gt;:1:60</a>' */</span></td></tr>
+<tr name="505" id="505">
+<td><a id="l505" class='ln'>505</a></td><td>      <a id="505c7" class="tk">y_size_idx_1</a> = 1;</td></tr>
+<tr name="506" id="506">
+<td><a id="l506" class='ln'>506</a></td><td>      <a id="506c7" class="tk">y_data</a>[0] = 0.0F;</td></tr>
+<tr name="507" id="507">
+<td><a id="l507" class='ln'>507</a></td><td>      <span class="kw">break</span>;</td></tr>
+<tr name="508" id="508">
+<td><a id="l508" class='ln'>508</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="509" id="509">
+<td><a id="l509" class='ln'>509</a></td><td></td></tr>
+<tr name="510" id="510">
+<td><a id="l510" class='ln'>510</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="510">&lt;S1&gt;:1:65</a>' */</span></td></tr>
+<tr name="511" id="511">
+<td><a id="l511" class='ln'>511</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="511">&lt;S1&gt;:1:71</a>' */</span></td></tr>
+<tr name="512" id="512">
+<td><a id="l512" class='ln'>512</a></td><td>    <span class="kw">if</span> (0 <a id="512c11" class="tk">&lt;=</a> <a id="512c14" class="tk">y_size_idx_1</a> <a id="512c27" class="tk">-</a> 1) <span class="br">{</span></td></tr>
+<tr name="513" id="513">
+<td><a id="l513" class='ln'>513</a></td><td>      <a id="513c7" class="tk">memcpy</a>(<a id="513c14" class="tk">&amp;</a><a id="513c15" class="tk">yy_data</a>[0], <a id="513c27" class="tk">&amp;</a><a id="513c28" class="tk">y_data</a>[0], <a id="513c39" class="tk">y_size_idx_1</a> <a id="513c52" class="tk">*</a> <span class="kw">sizeof</span>(<a id="513c61" class="tk">real32_T</a>));</td></tr>
+<tr name="514" id="514">
+<td><a id="l514" class='ln'>514</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="515" id="515">
+<td><a id="l515" class='ln'>515</a></td><td></td></tr>
+<tr name="516" id="516">
+<td><a id="l516" class='ln'>516</a></td><td>    <a id="516c5" class="tk">yy_data</a>[<a id="516c13" class="tk">y_size_idx_1</a>] = <a id="516c29" class="tk">y_data</a>[1];</td></tr>
+<tr name="517" id="517">
+<td><a id="l517" class='ln'>517</a></td><td>    <a id="517c5" class="tk">yy_data</a>[1 <a id="517c15" class="tk">+</a> <a id="517c17" class="tk">y_size_idx_1</a>] = <a id="517c33" class="tk">y_data</a>[2];</td></tr>
+<tr name="518" id="518">
+<td><a id="l518" class='ln'>518</a></td><td>    <a id="518c5" class="tk">yy_data</a>[2 <a id="518c15" class="tk">+</a> <a id="518c17" class="tk">y_size_idx_1</a>] = <a id="518c33" class="tk">y_data</a>[3];</td></tr>
+<tr name="519" id="519">
+<td><a id="l519" class='ln'>519</a></td><td></td></tr>
+<tr name="520" id="520">
+<td><a id="l520" class='ln'>520</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="520">&lt;S1&gt;:1:73</a>' */</span></td></tr>
+<tr name="521" id="521">
+<td><a id="l521" class='ln'>521</a></td><td>    <span class="kw">for</span> (<a id="521c10" class="tk">loop_ub</a> = 0; <a id="521c23" class="tk">loop_ub</a> <a id="521c31" class="tk">&lt;=</a> <a id="521c34" class="tk">loop_ub_tmp</a>; <a id="521c47" class="tk">loop_ub</a><a id="521c54" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="522" id="522">
+<td><a id="l522" class='ln'>522</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="522">&lt;S1&gt;:1:73</a>' */</span></td></tr>
+<tr name="523" id="523">
+<td><a id="l523" class='ln'>523</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="523">&lt;S1&gt;:1:74</a>' */</span></td></tr>
+<tr name="524" id="524">
+<td><a id="l524" class='ln'>524</a></td><td>      <a id="524c7" class="tk">i</a> = (<a id="524c12" class="tk">int32_T</a>)((<a id="524c22" class="tk">real32_T</a>)<a id="524c31" class="tk">loop_ub</a> <a id="524c39" class="tk">+</a> 1.0F);</td></tr>
+<tr name="525" id="525">
+<td><a id="l525" class='ln'>525</a></td><td>      <a id="525c7" class="tk">y_size_idx_1</a> = <a id="525c22" class="tk">i</a> <a id="525c24" class="tk">-</a> 1;</td></tr>
+<tr name="526" id="526">
+<td><a id="l526" class='ln'>526</a></td><td>      <a id="526c7" class="tk">rtDW</a>.<a id="526c12" class="tk">b0</a>.<a id="526c15" class="tk">data</a>[<a id="526c20" class="tk">rtDW</a>.<a id="526c25" class="tk">b0</a>.<a id="526c28" class="tk">size</a>[0] <a id="526c36" class="tk">*</a> <a id="526c38" class="tk">y_size_idx_1</a>] = (<a id="526c55" class="tk">real32_T</a>)<a id="526c64" class="tk">loop_ub</a> <a id="526c72" class="tk">*</a> <a id="526c74" class="tk">tf</a> <a id="526c77" class="tk">/</a></td></tr>
+<tr name="527" id="527">
+<td><a id="l527" class='ln'>527</a></td><td>        <a id="527c9" class="tk">rtU</a>.<a id="527c13" class="tk">Breakpoints</a>;</td></tr>
+<tr name="528" id="528">
+<td><a id="l528" class='ln'>528</a></td><td></td></tr>
+<tr name="529" id="529">
+<td><a id="l529" class='ln'>529</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="529">&lt;S1&gt;:1:75</a>' */</span></td></tr>
+<tr name="530" id="530">
+<td><a id="l530" class='ln'>530</a></td><td>      <span class="ct">/* '<a class="ct blk" blk_line="530">&lt;S1&gt;:1:76</a>' */</span></td></tr>
+<tr name="531" id="531">
+<td><a id="l531" class='ln'>531</a></td><td>      <span class="kw">for</span> (<a id="531c12" class="tk">x1_size_idx_1</a> = 0; <a id="531c31" class="tk">x1_size_idx_1</a> <a id="531c45" class="tk">&lt;</a> (<a id="531c48" class="tk">int32_T</a>)(<a id="531c57" class="tk">rtU</a>.<a id="531c61" class="tk">pOrder</a> <a id="531c68" class="tk">+</a> 1.0F);</td></tr>
+<tr name="532" id="532">
+<td><a id="l532" class='ln'>532</a></td><td>           <a id="532c12" class="tk">x1_size_idx_1</a><a id="532c25" class="tk">++</a>) <span class="br">{</span></td></tr>
+<tr name="533" id="533">
+<td><a id="l533" class='ln'>533</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="533">&lt;S1&gt;:1:76</a>' */</span></td></tr>
+<tr name="534" id="534">
+<td><a id="l534" class='ln'>534</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="534">&lt;S1&gt;:1:77</a>' */</span></td></tr>
+<tr name="535" id="535">
+<td><a id="l535" class='ln'>535</a></td><td>        <span class="ct">/* '<a class="ct blk" blk_line="535">&lt;S1&gt;:1:78</a>' */</span></td></tr>
+<tr name="536" id="536">
+<td><a id="l536" class='ln'>536</a></td><td>        <a id="536c9" class="tk">b_y</a> = (<a id="536c16" class="tk">real32_T</a>)<a id="536c25" class="tk">x1_size_idx_1</a>;</td></tr>
+<tr name="537" id="537">
+<td><a id="l537" class='ln'>537</a></td><td>        <a id="537c9" class="tk">factorial</a>(<a id="537c19" class="tk">&amp;</a><a id="537c20" class="tk">b_y</a>);</td></tr>
+<tr name="538" id="538">
+<td><a id="l538" class='ln'>538</a></td><td>        <a id="538c9" class="tk">i_0</a> = (<a id="538c16" class="tk">int32_T</a>)((<a id="538c26" class="tk">real32_T</a>)<a id="538c35" class="tk">x1_size_idx_1</a> <a id="538c49" class="tk">+</a> 1.0F);</td></tr>
+<tr name="539" id="539">
+<td><a id="l539" class='ln'>539</a></td><td>        <a id="539c9" class="tk">rtb_cc</a>[(<a id="539c17" class="tk">i</a> <a id="539c19" class="tk">+</a> <a id="539c21" class="tk">rtDW</a>.<a id="539c26" class="tk">SFunction_DIMS2</a>[0] <a id="539c45" class="tk">*</a> ((<a id="539c49" class="tk">int32_T</a>)((<a id="539c59" class="tk">real32_T</a>)<a id="539c68" class="tk">x1_size_idx_1</a></td></tr>
+<tr name="540" id="540">
+<td><a id="l540" class='ln'>540</a></td><td>                  <a id="540c19" class="tk">+</a> 1.0F) <a id="540c27" class="tk">-</a> 1)) <a id="540c33" class="tk">-</a> 1] = (((<a id="540c43" class="tk">yy_data</a>[<a id="540c51" class="tk">y_size_idx_1</a>] <a id="540c65" class="tk">*</a> (<a id="540c68" class="tk">real32_T</a>)</td></tr>
+<tr name="541" id="541">
+<td><a id="l541" class='ln'>541</a></td><td>          <a id="541c11" class="tk">cfd</a>[<a id="541c15" class="tk">i_0</a> <a id="541c19" class="tk">-</a> 1] <a id="541c24" class="tk">+</a> <a id="541c26" class="tk">yy_data</a>[(<a id="541c35" class="tk">int32_T</a>)((<a id="541c45" class="tk">real32_T</a>)<a id="541c54" class="tk">loop_ub</a> <a id="541c62" class="tk">+</a> 2.0F) <a id="541c70" class="tk">-</a> 1] <a id="541c75" class="tk">*</a></td></tr>
+<tr name="542" id="542">
+<td><a id="l542" class='ln'>542</a></td><td>          (<a id="542c12" class="tk">real32_T</a>)<a id="542c21" class="tk">cfd</a>[<a id="542c25" class="tk">i_0</a> <a id="542c29" class="tk">+</a> 3]) <a id="542c35" class="tk">+</a> <a id="542c37" class="tk">yy_data</a>[(<a id="542c46" class="tk">int32_T</a>)((<a id="542c56" class="tk">real32_T</a>)<a id="542c65" class="tk">loop_ub</a> <a id="542c73" class="tk">+</a> 3.0F)</td></tr>
+<tr name="543" id="543">
+<td><a id="l543" class='ln'>543</a></td><td>          <a id="543c11" class="tk">-</a> 1] <a id="543c16" class="tk">*</a> (<a id="543c19" class="tk">real32_T</a>)<a id="543c28" class="tk">cfd</a>[<a id="543c32" class="tk">i_0</a> <a id="543c36" class="tk">+</a> 7]) <a id="543c42" class="tk">+</a> <a id="543c44" class="tk">yy_data</a>[(<a id="543c53" class="tk">int32_T</a>)((<a id="543c63" class="tk">real32_T</a>)<a id="543c72" class="tk">loop_ub</a> <a id="543c80" class="tk">+</a></td></tr>
+<tr name="544" id="544">
+<td><a id="l544" class='ln'>544</a></td><td>          4.0F) <a id="544c17" class="tk">-</a> 1] <a id="544c22" class="tk">*</a> (<a id="544c25" class="tk">real32_T</a>)<a id="544c34" class="tk">cfd</a>[<a id="544c38" class="tk">i_0</a> <a id="544c42" class="tk">+</a> 11]) <a id="544c49" class="tk">/</a> <a id="544c51" class="tk">rt_powf_snf</a>(<a id="544c63" class="tk">tf</a> <a id="544c66" class="tk">/</a></td></tr>
+<tr name="545" id="545">
+<td><a id="l545" class='ln'>545</a></td><td>          <a id="545c11" class="tk">rtU</a>.<a id="545c15" class="tk">Breakpoints</a>, (<a id="545c29" class="tk">real32_T</a>)<a id="545c38" class="tk">x1_size_idx_1</a>) <a id="545c53" class="tk">/</a> <a id="545c55" class="tk">b_y</a>;</td></tr>
+<tr name="546" id="546">
+<td><a id="l546" class='ln'>546</a></td><td>      <span class="br">}</span></td></tr>
+<tr name="547" id="547">
+<td><a id="l547" class='ln'>547</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="548" id="548">
+<td><a id="l548" class='ln'>548</a></td><td></td></tr>
+<tr name="549" id="549">
+<td><a id="l549" class='ln'>549</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="549">&lt;S1&gt;:1:83</a>' */</span></td></tr>
+<tr name="550" id="550">
+<td><a id="l550" class='ln'>550</a></td><td>    <a id="550c5" class="tk">rtDW</a>.<a id="550c10" class="tk">cc0</a>.<a id="550c14" class="tk">size</a>[0] = <a id="550c24" class="tk">rtDW</a>.<a id="550c29" class="tk">SFunction_DIMS2</a>[0];</td></tr>
+<tr name="551" id="551">
+<td><a id="l551" class='ln'>551</a></td><td>    <a id="551c5" class="tk">rtDW</a>.<a id="551c10" class="tk">cc0</a>.<a id="551c14" class="tk">size</a>[1] = <a id="551c24" class="tk">rtDW</a>.<a id="551c29" class="tk">SFunction_DIMS2</a>[1];</td></tr>
+<tr name="552" id="552">
+<td><a id="l552" class='ln'>552</a></td><td>    <a id="552c5" class="tk">loop_ub</a> = <a id="552c15" class="tk">rtDW</a>.<a id="552c20" class="tk">SFunction_DIMS2</a>[0] <a id="552c39" class="tk">*</a> <a id="552c41" class="tk">rtDW</a>.<a id="552c46" class="tk">SFunction_DIMS2</a>[1] <a id="552c65" class="tk">-</a> 1;</td></tr>
+<tr name="553" id="553">
+<td><a id="l553" class='ln'>553</a></td><td>    <span class="kw">if</span> (0 <a id="553c11" class="tk">&lt;=</a> <a id="553c14" class="tk">loop_ub</a>) <span class="br">{</span></td></tr>
+<tr name="554" id="554">
+<td><a id="l554" class='ln'>554</a></td><td>      <a id="554c7" class="tk">memcpy</a>(<a id="554c14" class="tk">&amp;</a><a id="554c15" class="tk">rtDW</a>.<a id="554c20" class="tk">cc0</a>.<a id="554c24" class="tk">data</a>[0], <a id="554c33" class="tk">&amp;</a><a id="554c34" class="tk">rtb_cc</a>[0], (<a id="554c46" class="tk">loop_ub</a> <a id="554c54" class="tk">+</a> 1) <a id="554c59" class="tk">*</a> <span class="kw">sizeof</span>(<a id="554c68" class="tk">real32_T</a>));</td></tr>
+<tr name="555" id="555">
+<td><a id="l555" class='ln'>555</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="556" id="556">
+<td><a id="l556" class='ln'>556</a></td><td></td></tr>
+<tr name="557" id="557">
+<td><a id="l557" class='ln'>557</a></td><td>    <a id="557c5" class="tk">rtDW</a>.<a id="557c10" class="tk">cc0_not_empty</a> = <a id="557c26" class="tk">!</a>(<a id="557c28" class="tk">rtDW</a>.<a id="557c33" class="tk">cc0</a>.<a id="557c37" class="tk">size</a>[0] <a id="557c45" class="tk">==</a> 0);</td></tr>
+<tr name="558" id="558">
+<td><a id="l558" class='ln'>558</a></td><td></td></tr>
+<tr name="559" id="559">
+<td><a id="l559" class='ln'>559</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="559">&lt;S1&gt;:1:84</a>' */</span></td></tr>
+<tr name="560" id="560">
+<td><a id="l560" class='ln'>560</a></td><td>  <span class="br">}</span> <span class="kw">else</span> <span class="br">{</span></td></tr>
+<tr name="561" id="561">
+<td><a id="l561" class='ln'>561</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="561">&lt;S1&gt;:1:87</a>' */</span></td></tr>
+<tr name="562" id="562">
+<td><a id="l562" class='ln'>562</a></td><td>    <a id="562c5" class="tk">rtDW</a>.<a id="562c10" class="tk">SFunction_DIMS2</a>[0] = <a id="562c31" class="tk">rtDW</a>.<a id="562c36" class="tk">cc0</a>.<a id="562c40" class="tk">size</a>[0];</td></tr>
+<tr name="563" id="563">
+<td><a id="l563" class='ln'>563</a></td><td>    <a id="563c5" class="tk">rtDW</a>.<a id="563c10" class="tk">SFunction_DIMS2</a>[1] = <a id="563c31" class="tk">rtDW</a>.<a id="563c36" class="tk">cc0</a>.<a id="563c40" class="tk">size</a>[1];</td></tr>
+<tr name="564" id="564">
+<td><a id="l564" class='ln'>564</a></td><td>    <a id="564c5" class="tk">loop_ub</a> = <a id="564c15" class="tk">rtDW</a>.<a id="564c20" class="tk">cc0</a>.<a id="564c24" class="tk">size</a>[0] <a id="564c32" class="tk">*</a> <a id="564c34" class="tk">rtDW</a>.<a id="564c39" class="tk">cc0</a>.<a id="564c43" class="tk">size</a>[1];</td></tr>
+<tr name="565" id="565">
+<td><a id="l565" class='ln'>565</a></td><td>    <span class="kw">if</span> (0 <a id="565c11" class="tk">&lt;=</a> <a id="565c14" class="tk">loop_ub</a> <a id="565c22" class="tk">-</a> 1) <span class="br">{</span></td></tr>
+<tr name="566" id="566">
+<td><a id="l566" class='ln'>566</a></td><td>      <a id="566c7" class="tk">memcpy</a>(<a id="566c14" class="tk">&amp;</a><a id="566c15" class="tk">rtb_cc</a>[0], <a id="566c26" class="tk">&amp;</a><a id="566c27" class="tk">rtDW</a>.<a id="566c32" class="tk">cc0</a>.<a id="566c36" class="tk">data</a>[0], <a id="566c45" class="tk">loop_ub</a> <a id="566c53" class="tk">*</a> <span class="kw">sizeof</span>(<a id="566c62" class="tk">real32_T</a>));</td></tr>
+<tr name="567" id="567">
+<td><a id="l567" class='ln'>567</a></td><td>    <span class="br">}</span></td></tr>
+<tr name="568" id="568">
+<td><a id="l568" class='ln'>568</a></td><td></td></tr>
+<tr name="569" id="569">
+<td><a id="l569" class='ln'>569</a></td><td>    <span class="ct">/* '<a class="ct blk" blk_line="569">&lt;S1&gt;:1:88</a>' */</span></td></tr>
+<tr name="570" id="570">
+<td><a id="l570" class='ln'>570</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="571" id="571">
+<td><a id="l571" class='ln'>571</a></td><td></td></tr>
+<tr name="572" id="572">
+<td><a id="l572" class='ln'>572</a></td><td>  <a id="572c3" class="tk">rtDW</a>.<a id="572c8" class="tk">SFunction_DIMS3</a>[0] = <a id="572c29" class="tk">rtDW</a>.<a id="572c34" class="tk">b0</a>.<a id="572c37" class="tk">size</a>[0];</td></tr>
+<tr name="573" id="573">
+<td><a id="l573" class='ln'>573</a></td><td>  <a id="573c3" class="tk">rtDW</a>.<a id="573c8" class="tk">SFunction_DIMS3</a>[1] = <a id="573c29" class="tk">rtDW</a>.<a id="573c34" class="tk">b0</a>.<a id="573c37" class="tk">size</a>[1];</td></tr>
+<tr name="574" id="574">
+<td><a id="l574" class='ln'>574</a></td><td>  <a id="574c3" class="tk">loop_ub</a> = <a id="574c13" class="tk">rtDW</a>.<a id="574c18" class="tk">b0</a>.<a id="574c21" class="tk">size</a>[0] <a id="574c29" class="tk">*</a> <a id="574c31" class="tk">rtDW</a>.<a id="574c36" class="tk">b0</a>.<a id="574c39" class="tk">size</a>[1];</td></tr>
+<tr name="575" id="575">
+<td><a id="l575" class='ln'>575</a></td><td>  <span class="kw">if</span> (0 <a id="575c9" class="tk">&lt;=</a> <a id="575c12" class="tk">loop_ub</a> <a id="575c20" class="tk">-</a> 1) <span class="br">{</span></td></tr>
+<tr name="576" id="576">
+<td><a id="l576" class='ln'>576</a></td><td>    <a id="576c5" class="tk">memcpy</a>(<a id="576c12" class="tk">&amp;</a><a id="576c13" class="tk">rtb_b</a>[0], <a id="576c23" class="tk">&amp;</a><a id="576c24" class="tk">rtDW</a>.<a id="576c29" class="tk">b0</a>.<a id="576c32" class="tk">data</a>[0], <a id="576c41" class="tk">loop_ub</a> <a id="576c49" class="tk">*</a> <span class="kw">sizeof</span>(<a id="576c58" class="tk">real32_T</a>));</td></tr>
+<tr name="577" id="577">
+<td><a id="l577" class='ln'>577</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="578" id="578">
+<td><a id="l578" class='ln'>578</a></td><td></td></tr>
+<tr name="579" id="579">
+<td><a id="l579" class='ln'>579</a></td><td>  <span class="ct">/* End of MATLAB Function: '<a class="ct blk" blk_line="579">&lt;Root&gt;/RT_CPU</a>' */</span></td></tr>
+<tr name="580" id="580">
+<td><a id="l580" class='ln'>580</a></td><td></td></tr>
+<tr name="581" id="581">
+<td><a id="l581" class='ln'>581</a></td><td>  <span class="ct">/* Outport: '<a class="ct blk" blk_line="581">&lt;Root&gt;/cc</a>' */</span></td></tr>
+<tr name="582" id="582">
+<td><a id="l582" class='ln'>582</a></td><td>  <a id="582c3" class="tk">rtYSize</a>.<a id="582c11" class="tk">cc</a>[0] = <a id="582c19" class="tk">rtDW</a>.<a id="582c24" class="tk">SFunction_DIMS2</a>[0];</td></tr>
+<tr name="583" id="583">
+<td><a id="l583" class='ln'>583</a></td><td>  <a id="583c3" class="tk">rtYSize</a>.<a id="583c11" class="tk">cc</a>[1] = <a id="583c19" class="tk">rtDW</a>.<a id="583c24" class="tk">SFunction_DIMS2</a>[1];</td></tr>
+<tr name="584" id="584">
+<td><a id="l584" class='ln'>584</a></td><td>  <a id="584c3" class="tk">loop_ub</a> = <a id="584c13" class="tk">rtDW</a>.<a id="584c18" class="tk">SFunction_DIMS2</a>[0] <a id="584c37" class="tk">*</a> <a id="584c39" class="tk">rtDW</a>.<a id="584c44" class="tk">SFunction_DIMS2</a>[1];</td></tr>
+<tr name="585" id="585">
+<td><a id="l585" class='ln'>585</a></td><td>  <span class="kw">if</span> (0 <a id="585c9" class="tk">&lt;=</a> <a id="585c12" class="tk">loop_ub</a> <a id="585c20" class="tk">-</a> 1) <span class="br">{</span></td></tr>
+<tr name="586" id="586">
+<td><a id="l586" class='ln'>586</a></td><td>    <a id="586c5" class="tk">memcpy</a>(<a id="586c12" class="tk">&amp;</a><a id="586c13" class="tk">rtY</a>.<a id="586c17" class="tk">cc</a>[0], <a id="586c24" class="tk">&amp;</a><a id="586c25" class="tk">rtb_cc</a>[0], <a id="586c36" class="tk">loop_ub</a> <a id="586c44" class="tk">*</a> <span class="kw">sizeof</span>(<a id="586c53" class="tk">real32_T</a>));</td></tr>
+<tr name="587" id="587">
+<td><a id="l587" class='ln'>587</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="588" id="588">
+<td><a id="l588" class='ln'>588</a></td><td></td></tr>
+<tr name="589" id="589">
+<td><a id="l589" class='ln'>589</a></td><td>  <span class="ct">/* End of Outport: '<a class="ct blk" blk_line="589">&lt;Root&gt;/cc</a>' */</span></td></tr>
+<tr name="590" id="590">
+<td><a id="l590" class='ln'>590</a></td><td></td></tr>
+<tr name="591" id="591">
+<td><a id="l591" class='ln'>591</a></td><td>  <span class="ct">/* Outport: '<a class="ct blk" blk_line="591">&lt;Root&gt;/b</a>' */</span></td></tr>
+<tr name="592" id="592">
+<td><a id="l592" class='ln'>592</a></td><td>  <a id="592c3" class="tk">rtYSize</a>.<a id="592c11" class="tk">b</a>[0] = <a id="592c18" class="tk">rtDW</a>.<a id="592c23" class="tk">SFunction_DIMS3</a>[0];</td></tr>
+<tr name="593" id="593">
+<td><a id="l593" class='ln'>593</a></td><td>  <a id="593c3" class="tk">rtYSize</a>.<a id="593c11" class="tk">b</a>[1] = <a id="593c18" class="tk">rtDW</a>.<a id="593c23" class="tk">SFunction_DIMS3</a>[1];</td></tr>
+<tr name="594" id="594">
+<td><a id="l594" class='ln'>594</a></td><td>  <a id="594c3" class="tk">loop_ub</a> = <a id="594c13" class="tk">rtDW</a>.<a id="594c18" class="tk">SFunction_DIMS3</a>[0] <a id="594c37" class="tk">*</a> <a id="594c39" class="tk">rtDW</a>.<a id="594c44" class="tk">SFunction_DIMS3</a>[1];</td></tr>
+<tr name="595" id="595">
+<td><a id="l595" class='ln'>595</a></td><td>  <span class="kw">if</span> (0 <a id="595c9" class="tk">&lt;=</a> <a id="595c12" class="tk">loop_ub</a> <a id="595c20" class="tk">-</a> 1) <span class="br">{</span></td></tr>
+<tr name="596" id="596">
+<td><a id="l596" class='ln'>596</a></td><td>    <a id="596c5" class="tk">memcpy</a>(<a id="596c12" class="tk">&amp;</a><a id="596c13" class="tk">rtY</a>.<a id="596c17" class="tk">b</a>[0], <a id="596c23" class="tk">&amp;</a><a id="596c24" class="tk">rtb_b</a>[0], <a id="596c34" class="tk">loop_ub</a> <a id="596c42" class="tk">*</a> <span class="kw">sizeof</span>(<a id="596c51" class="tk">real32_T</a>));</td></tr>
+<tr name="597" id="597">
+<td><a id="l597" class='ln'>597</a></td><td>  <span class="br">}</span></td></tr>
+<tr name="598" id="598">
+<td><a id="l598" class='ln'>598</a></td><td></td></tr>
+<tr name="599" id="599">
+<td><a id="l599" class='ln'>599</a></td><td>  <span class="ct">/* End of Outport: '<a class="ct blk" blk_line="599">&lt;Root&gt;/b</a>' */</span></td></tr>
+<tr name="600" id="600">
+<td><a id="l600" class='ln'>600</a></td><td><span class="br">}</span></td></tr>
+<tr name="601" id="601">
+<td><a id="l601" class='ln'>601</a></td><td></td></tr>
+<tr name="602" id="602">
+<td><a id="l602" class='ln'>602</a></td><td><span class="ct">/* Model initialize function */</span></td></tr>
+<tr name="603" id="603">
+<td><a id="l603" class='ln'>603</a></td><td><span class="kw">void</span> <a id="603c6" class="tk">RT_CPU_initialize</a>(<span class="kw">void</span>)</td></tr>
+<tr name="604" id="604">
+<td><a id="l604" class='ln'>604</a></td><td><span class="br">{</span></td></tr>
+<tr name="605" id="605">
+<td><a id="l605" class='ln'>605</a></td><td>  <span class="ct">/* Registration code */</span></td></tr>
+<tr name="606" id="606">
+<td><a id="l606" class='ln'>606</a></td><td></td></tr>
+<tr name="607" id="607">
+<td><a id="l607" class='ln'>607</a></td><td>  <span class="ct">/* initialize non-finites */</span></td></tr>
+<tr name="608" id="608">
+<td><a id="l608" class='ln'>608</a></td><td>  <a id="608c3" class="tk">rt_InitInfAndNaN</a>(<span class="kw">sizeof</span>(<a id="608c27" class="tk">real_T</a>));</td></tr>
+<tr name="609" id="609">
+<td><a id="l609" class='ln'>609</a></td><td><span class="br">}</span></td></tr>
+<tr name="610" id="610">
+<td><a id="l610" class='ln'>610</a></td><td></td></tr>
+<tr name="611" id="611">
+<td><a id="l611" class='ln'>611</a></td><td><span class="ct">/*</span></td></tr>
+<tr name="612" id="612">
+<td><a id="l612" class='ln'>612</a></td><td><span class="ct"> * File trailer for generated code.</span></td></tr>
+<tr name="613" id="613">
+<td><a id="l613" class='ln'>613</a></td><td><span class="ct"> *</span></td></tr>
+<tr name="614" id="614">
+<td><a id="l614" class='ln'>614</a></td><td><span class="ct"> * [EOF]</span></td></tr>
+<tr name="615" id="615">
+<td><a id="l615" class='ln'>615</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="616" id="616">
+<td><a id="l616" class='ln'>616</a></td><td></td></tr>
+</table>
+</pre>
+</body>
+</html>

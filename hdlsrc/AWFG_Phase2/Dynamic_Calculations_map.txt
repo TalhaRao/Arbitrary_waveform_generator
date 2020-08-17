@@ -1,0 +1,9 @@
+ --> Dynamic_Calculations_pkg
+Dynamic_Calculations/FPGA_Calculation/Polynomial_Calculation/Difference_Time --> Difference_Time
+Dynamic_Calculations/FPGA_Calculation/Polynomial_Calculation --> Polynomial_Calculation
+Dynamic_Calculations/FPGA_Calculation/TimeGenerator --> TimeGenerator
+Dynamic_Calculations/FPGA_Calculation/Write_to_Memory/SinglePortRAM_generic --> SinglePortRAM_generic
+Dynamic_Calculations/FPGA_Calculation/Write_to_Memory --> Write_to_Memory
+Dynamic_Calculations/FPGA_Calculation --> FPGA_Calculation
+Dynamic_Calculations/Signal Scaling  & Casting --> Signal_Scaling_Casting
+Dynamic_Calculations --> Dynamic_Calculations

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Aug 28 20:29:08 2018
+# Process ID: 490512
+# Current directory: F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/jtag_mac_fifo_synth_1
+# Command line: vivado.exe -log jtag_mac_fifo.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source jtag_mac_fifo.tcl
+# Log file: F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/jtag_mac_fifo_synth_1/jtag_mac_fifo.vds
+# Journal file: F:/Master_Studies/Semester_2/Model_Based_Simulation/Labs/Lab_4/Practical_work/fpgaproj/fil_test_fil.runs/jtag_mac_fifo_synth_1\vivado.jou
+#-----------------------------------------------------------
+source jtag_mac_fifo.tcl -notrace

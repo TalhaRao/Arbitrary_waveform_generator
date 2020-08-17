@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope itemtype="https://www.mathworks.com/help/schema/MathWorksDocPage">
+<head>
+<title>HDL Check Report for 'uc3_preparation1_2017'</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script type="text/javascript" src="file://F:/Program%20Files/MATLAB/R2018a/toolbox/hdlcoder/hdlcommon/js_css/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="file://F:/Program%20Files/MATLAB/R2018a/toolbox/hdlcoder/hdlcommon/js_css/docscripts.js"></script>
+        
+        <link href="file://F:/Program%20Files/MATLAB/R2018a/toolbox/hdlcoder/hdlcommon/js_css/ice_960.css" rel="stylesheet" type="text/css">
+        <link href="file://F:/Program%20Files/MATLAB/R2018a/toolbox/hdlcoder/hdlcommon/js_css/HDLsite5.css" rel="stylesheet" type="text/css">
+        <link href="file://F:/Program%20Files/MATLAB/R2018a/toolbox/hdlcoder/hdlcommon/js_css/ice_doc_center.css" rel="stylesheet" type="text/css">
+        <link href="file://F:/Program%20Files/MATLAB/R2018a/toolbox/hdlcoder/hdlcommon/js_css/ice_doc_center_installed.css" rel="stylesheet" type="text/css">
+        <link href="file://F:/Program%20Files/MATLAB/R2018a/toolbox/hdlcoder/hdlcommon/js_css/ice_doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+        <script type="text/javascript">
+            if (navigator.appName != "ICEbrowser") {
+            var cssStyleSheets = $("link").filter(function(){
+            var href = $(this).attr('href');
+            return href.indexOf("ice_doc_center_print.css") == -1});
+            var hrefElements = $.map(cssStyleSheets, function(elem) {
+            var href = $(elem).attr('href');
+            var hrefArray = href.split("/");
+            hrefArray[hrefArray.length - 1] = hrefArray[hrefArray.length - 1].replace("ice_", "");
+            return {
+            href: hrefArray.join("/"),
+            media: $(elem).attr('media')
+            };
+            });
+            cssStyleSheets.remove();
+            for (var i = 0; i < hrefElements.length; i++) {
+            if ($.browser.msie && $.browser.version <= 8) {
+            document.createStyleSheet(hrefElements[i].href);
+            } else {
+            var link = $('<link rel="stylesheet" href=' + hrefElements[i].href + ' type="text/css" />');
+            if (hrefElements[i].media) {
+            link.attr('media', hrefElements[i].media);
+            }
+            $('head').append(link);
+            }
+            }
+            }
+    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<div class="container_192">
+<div class="grid_192">
+ <div class="page_container"><div class="content_frame">
+<h1>HDL Code Generation Check Report for 'uc3_preparation1_2017'
+<a href="matlab:open_system('uc3_preparation1_2017');">open model 'uc3_preparation1_2017'</a><BR>
+Generated on 2018-08-28 20:41:58</h1>
+<H2>HDL check for 'uc3_preparation1_2017' complete with 22 errors, 2 warnings, and 0 messages.</H2><BR>
+<H3>The following table describes blocks for which errors, warnings or messages were reported.</H3><BR>
+<TABLE>
+<TR><TD> <B>Simulink Blocks and resources</B> </TD><TD> <B>Level</B> </TD><TD> <B>Description</B> </TD></TR><TR bgcolor="#F0F0F0"><TD>
+<a alt="hdlcommon:nativefloatingpoint:SingleShouldUseNFP" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 68 97 116 97 32 84 121 112 101 32 67 111 110 118 101 114 115 105 111 110 49]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Data Type Conversion1</a>
+</TD>
+<TD>Error</TD>
+<TD>Signals of type 'Single' will not generate synthesizable HDL. For synthesizable HDL code, <a href="matlab:helpview(fullfile(docroot, 'hdlcoder', 'helptargets.map'),'msginfo_hdlcoder_NFP_FloatDataTypeSelectNFP')">consider enabling native floating-point mode</a>. For simulation-only HDL code, <a href="matlab:configset.internal.open('uc3_preparation1_2017','TreatRealsInGeneratedCodeAs')">set the "Check for presence of reals in generated HDL code" diagnostic to "Warning" or "None"</a>.</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<a alt="hdlcoder:validate:illegalconversiondtc" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 68 97 116 97 32 84 121 112 101 32 67 111 110 118 101 114 115 105 111 110 49]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Data Type Conversion1</a>
+</TD>
+<TD>Error</TD>
+<TD>Illegal conversion to/from floating point and fixed-point in uc3_preparation1_2017/CandHDL_c/cgenerate/Data Type Conversion1. Consider selecting 'Native Floating Point' as the Floating Point IP Library to enable this conversion.</TD>
+</TR>
+<TR bgcolor="#F0F0F0"><TD>
+<a alt="hdlcoder:validate:illegalconversiondtc" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 68 97 116 97 32 84 121 112 101 32 67 111 110 118 101 114 115 105 111 110 52]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Data Type Conversion4</a>
+</TD>
+<TD>Error</TD>
+<TD>Illegal conversion to/from floating point and fixed-point in uc3_preparation1_2017/CandHDL_c/cgenerate/Data Type Conversion4. Consider selecting 'Native Floating Point' as the Floating Point IP Library to enable this conversion.</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<a alt="hdlcoder:validate:illegalconversiondtc" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 68 97 116 97 32 84 121 112 101 32 67 111 110 118 101 114 115 105 111 110 53]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Data Type Conversion5</a>
+</TD>
+<TD>Error</TD>
+<TD>Illegal conversion to/from floating point and fixed-point in uc3_preparation1_2017/CandHDL_c/cgenerate/Data Type Conversion5. Consider selecting 'Native Floating Point' as the Floating Point IP Library to enable this conversion.</TD>
+</TR>
+<TR bgcolor="#F0F0F0"><TD>
+<a alt="hdlcoder:validate:illegalconversiondtc" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 68 97 116 97 32 84 121 112 101 32 67 111 110 118 101 114 115 105 111 110 54]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Data Type Conversion6</a>
+</TD>
+<TD>Error</TD>
+<TD>Illegal conversion to/from floating point and fixed-point in uc3_preparation1_2017/CandHDL_c/cgenerate/Data Type Conversion6. Consider selecting 'Native Floating Point' as the Floating Point IP Library to enable this conversion.</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<a alt="hdlcoder:validate:illegalconversiondtc" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 68 97 116 97 32 84 121 112 101 32 67 111 110 118 101 114 115 105 111 110 55]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Data Type Conversion7</a>
+</TD>
+<TD>Error</TD>
+<TD>Illegal conversion to/from floating point and fixed-point in uc3_preparation1_2017/CandHDL_c/cgenerate/Data Type Conversion7. Consider selecting 'Native Floating Point' as the Floating Point IP Library to enable this conversion.</TD>
+</TR>
+<TR bgcolor="#F0F0F0"><TD>
+<a alt="hdlcoder:validate:illegalconversiondtc" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 68 97 116 97 32 84 121 112 101 32 67 111 110 118 101 114 115 105 111 110 52]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/Data Type Conversion4</a>
+</TD>
+<TD>Error</TD>
+<TD>Illegal conversion to/from floating point and fixed-point in uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/Data Type Conversion4. Consider selecting 'Native Floating Point' as the Floating Point IP Library to enable this conversion.</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<a alt="hdlcoder:validate:mixeddoubleUnhandled" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 67 111 117 110 116 101 114 47 83 117 109 50]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/Counter/Sum2</a>
+</TD>
+<TD>Error</TD>
+<TD>Unhandled mixed double, single, and non-real datatypes at ports of block.</TD>
+</TR>
+<TR bgcolor="#F0F0F0"><TD>
+<a alt="hdlcoder:validate:illegalconversiondtc" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 112 114 101 99 97 108 99 117 108 97 116 105 111 110 115 47 68 97 116 97 32 84 121 112 101 32 67 111 110 118 101 114 115 105 111 110 49]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/precalculations/Data Type Conversion1</a>
+</TD>
+<TD>Error</TD>
+<TD>Illegal conversion to/from floating point and fixed-point in uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/precalculations/Data Type Conversion1. Consider selecting 'Native Floating Point' as the Floating Point IP Library to enable this conversion.</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<a alt="hdlcoder:validate:illegalconversiondtc" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 112 114 101 99 97 108 99 117 108 97 116 105 111 110 115 47 68 97 116 97 32 84 121 112 101 32 67 111 110 118 101 114 115 105 111 110 50]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/precalculations/Data Type Conversion2</a>
+</TD>
+<TD>Error</TD>
+<TD>Illegal conversion to/from floating point and fixed-point in uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/precalculations/Data Type Conversion2. Consider selecting 'Native Floating Point' as the Floating Point IP Library to enable this conversion.</TD>
+</TR>
+<TR bgcolor="#F0F0F0"><TD>
+<a alt="hdlcoder:validate:TargetCodeGenInvalidMathFunction" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 112 114 101 99 97 108 99 117 108 97 116 105 111 110 115 47 77 97 116 104 10 70 117 110 99 116 105 111 110 49]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/precalculations/Math
+Function1</a>
+</TD>
+<TD>Error</TD>
+<TD>Math Function 'pow' is supported only in native floating-point mode.</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<a alt="hdlcoder:validate:TargetCodeGenInvalidMathFunction" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 112 114 101 99 97 108 99 117 108 97 116 105 111 110 115 47 77 97 116 104 10 70 117 110 99 116 105 111 110 50]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/precalculations/Math
+Function2</a>
+</TD>
+<TD>Error</TD>
+<TD>Math Function 'reciprocal' is supported only in native floating-point mode.</TD>
+</TR>
+<TR bgcolor="#F0F0F0"><TD>
+<a alt="hdlcoder:validate:mixeddoubleUnhandled" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 112 114 101 99 97 108 99 117 108 97 116 105 111 110 115 47 102 95 105 110 95 102 99 108 107]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/precalculations/f_in_fclk</a>
+</TD>
+<TD>Error</TD>
+<TD>Unhandled mixed double, single, and non-real datatypes at ports of block.</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<a alt="hdlcoder:validate:produnsupportedrnd" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 112 114 101 99 97 108 99 117 108 97 116 105 111 110 115 47 102 95 105 110 95 102 99 108 107]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/precalculations/f_in_fclk</a>
+</TD>
+<TD>Error</TD>
+<TD>Product block with divide input (/) only supports Zero or Simplest rounding mode. When using Simplest rounding mode, set the "Signed integer division rounds to" parameter of your target hardware to either 'Zero' or 'Simplest'. This parameter is found in the Configuration Parameters Hardware Implementation pane.</TD>
+</TR>
+<TR bgcolor="#F0F0F0"><TD>
+<a alt="hdlcoder:validate:produnsupportedsat" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 112 114 101 99 97 108 99 117 108 97 116 105 111 110 115 47 102 95 105 110 95 102 99 108 107]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/precalculations/f_in_fclk</a>
+</TD>
+<TD>Error</TD>
+<TD>Product block with divide input (/) only supports Saturation "On".</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<a alt="hdlcoder:validate:illegalconversiondtc" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 115 101 108 101 99 116 114 111 114 47 68 97 116 97 32 84 121 112 101 32 67 111 110 118 101 114 115 105 111 110]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/selectror/Data Type Conversion</a>
+</TD>
+<TD>Error</TD>
+<TD>Illegal conversion to/from floating point and fixed-point in uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/selectror/Data Type Conversion. Consider selecting 'Native Floating Point' as the Floating Point IP Library to enable this conversion.</TD>
+</TR>
+<TR bgcolor="#F0F0F0"><TD>
+<a alt="hdlcoder:validate:illegalconversiondtc" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 115 101 108 101 99 116 114 111 114 47 68 97 116 97 32 84 121 112 101 32 67 111 110 118 101 114 115 105 111 110 49]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/selectror/Data Type Conversion1</a>
+</TD>
+<TD>Error</TD>
+<TD>Illegal conversion to/from floating point and fixed-point in uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/selectror/Data Type Conversion1. Consider selecting 'Native Floating Point' as the Floating Point IP Library to enable this conversion.</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<a alt="hdlcoder:validate:illegalconversiondtc" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 115 101 108 101 99 116 114 111 114 47 68 97 116 97 32 84 121 112 101 32 67 111 110 118 101 114 115 105 111 110 50]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/selectror/Data Type Conversion2</a>
+</TD>
+<TD>Error</TD>
+<TD>Illegal conversion to/from floating point and fixed-point in uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/selectror/Data Type Conversion2. Consider selecting 'Native Floating Point' as the Floating Point IP Library to enable this conversion.</TD>
+</TR>
+<TR bgcolor="#F0F0F0"><TD>
+<a alt="hdlcoder:matrix:SelectorModeUnsupported" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 115 101 108 101 99 116 114 111 114 47 83 101 108 101 99 116 111 114]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/selectror/Selector</a>
+</TD>
+<TD>Error</TD>
+<TD>Selector block does not support mode 'Index vector (port)' with a matrix input.</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<a alt="hdlcoder:matrix:SelectorModeUnsupported" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 115 101 108 101 99 116 114 111 114 47 83 101 108 101 99 116 111 114]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/selectror/Selector</a>
+</TD>
+<TD>Error</TD>
+<TD>Selector block does not support mode 'Index vector (port)' with a matrix input.</TD>
+</TR>
+<TR bgcolor="#F0F0F0"><TD>
+<a alt="hdlcoder:matrix:SelectAll" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 115 101 108 101 99 116 114 111 114 47 83 101 108 101 99 116 111 114]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/selectror/Selector</a>
+</TD>
+<TD>Error</TD>
+<TD>When the Selector block is selecting a row or column from a matrix input, one of the Index Options must be specified as 'Select all'.</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<a alt="hdlcoder:matrix:blocknotsupported" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 82 84 95 67 80 85]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/RT_CPU</a>
+</TD>
+<TD>Error</TD>
+<TD>Block 'uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/RT_CPU' does not support matrix types on its ports for HDL code generation.</TD>
+</TR>
+<TR bgcolor="#F0F0F0"><TD>
+<a alt="hdlcoder:engine:ReuseRequiresInvariantConstants" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');open_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]))">uc3_preparation1_2017</a>
+</TD>
+<TD>Warning</TD>
+<TD>HDL code from identical atomic subsystems can only be shared when the optimization configuration parameter 'Default parameter behavior' is set to 'Inlined'.</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
+<a alt="hdlcoder:matrix:InconsistentMatrixSettings" href="matlab:hilite(get_param(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55]),'object'),'none');hilite_system(char([117 99 51 95 112 114 101 112 97 114 97 116 105 111 110 49 95 50 48 49 55 47 67 97 110 100 72 68 76 95 99 47 99 103 101 110 101 114 97 116 101 47 83 117 98 115 121 115 116 101 109 47 82 84 95 67 80 85]))">uc3_preparation1_2017/CandHDL_c/cgenerate/Subsystem/RT_CPU</a>
+</TD>
+<TD>Warning</TD>
+<TD>Block 'RT_CPU' has property 'UseMatrixTypesInHDL' set to 'off', but it is connected to matrix signals. Enabling matrix support for this block.</TD>
+</TR>
+</TABLE>
+<BR><BR> </div></div></div></div>
+                    <div class="grid_192">
+                        <div class="footer_container">
+                            <div class="footer">
+                                <ul class="footernav">
+                                    <li class="footernav_trademarks"><a href="F:/Program Files/MATLAB/R2018a/help/acknowledgments.html">Acknowledgments</a></li>
+                                    <li class="footernav_trademarks"><a href="F:/Program%20Files/MATLAB/R2018a/trademarks.txt">Trademarks</a></li>
+                                    <li class="footernav_patents"><a href="F:/Program%20Files/MATLAB/R2018a/patents.txt">Patents</a></li>
+                                    <li class="footernav_help"><a href="F:/Program Files/MATLAB/R2018a/license_agreement.txt">Terms of Use</a></li>
+                                </ul>
+                                <div class="copyright">&copy; 1994-2018 The MathWorks, Inc.</div>
+                            </div>
+                        </div>
+                    </div>
+
+        <script type="text/javascript">
+
+$(document).ready( setTimeout( function () {
+                   $(".expandAllLink").trigger('click');
+            }, 50 ) );
+
+        </script>
+        
+</body>
+</html>
